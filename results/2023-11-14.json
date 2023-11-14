@@ -1,1 +1,1 @@
-{"zero_shot_classification": [false], "count_fruit": [false], "request_times": [1.356907844543457, 1.4885571002960205, 8.274598121643066, 4.83161997795105], "document_ocr": [false], "handwriting_ocr": [false]}
+{"zero_shot_classification": [true], "count_fruit": [true], "request_times": [2.079479694366455, 1.3974571228027344, 12.67345905303955, 3.7373461723327637], "document_ocr": [true], "handwriting_ocr": [true]}

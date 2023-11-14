@@ -211,7 +211,7 @@
             #lenny {
                 position: absolute;
                 right: 30%;
-                top: 26em;
+                top: 47.5%;
             }
             @media screen and (max-width: 600px) {
                 .feature_cards {
@@ -284,11 +284,11 @@
                     <div class="feature_response_start">
                         <h2>Response Time</h2>
                         <p class="explanation">Over the last {{results['day_count']}} day{% if results['day_count'] > 1 %}s{% endif %}, the average response time was {{results['avg_response_time']}}ms.</p>
+                        <p class="explanation">This number only accounts for requests made by this application.</p>
                     </div>
                     <div class="chart">
                         <div class="chart_box">
-                            <p>100.0%</p>
-                            <p>Uptime</p>
+                            <p>{{results['avg_response_time']}} ms</p>
                         </div>
                     </div>
                 </div>
@@ -309,13 +309,13 @@
                     <div class="explainer">
                         <h3>Prompt</h3>
                         <pre>
-                            What is in the image? Return the class of the object in the image. Here are the classes: fruit, bowl. You can only return one class from that list.
+                            What is in the image? Return the class of the object in the image. Here are the classes: Toyota Camry, Tesla Model 3. You can only return one class from that list.
                         </pre>
                         <h3>Image</h3>
-                        <img src="images/fruit.jpeg" />
-                        <h3>Answer</h3>
+                        <img src="images/car.jpeg" />
+                        <h3>Result</h3>
                         <pre>
-                            {{ results['zero_shot_classification_answer'] }}
+                            {{ results['zero_shot_result'] }}
                         </pre>
                     </div>
                 </div>
@@ -338,8 +338,9 @@
                         </pre>
                         <h3>Image</h3>
                         <img src="images/fruit.jpeg" />
+                        <h3>Result</h3>
                         <pre>
-                            {{ results['count_fruit_answer'] }}
+                            {{ results['count_result'] }}
                         </pre>
                     </div>
                 </div>
@@ -362,8 +363,9 @@
                         </pre>
                         <h3>Image</h3>
                         <img src="images/swift.png" />
+                        <h3>Result</h3>
                         <pre>
-                            {{ results['document_ocr_answer'] }}
+                            {{ results['document_ocr_result'] }}
                         </pre>
                     </div>
                 </div>
@@ -387,9 +389,9 @@
                         </pre>
                         <h3>Image</h3>
                         <img src="images/ocr.jpeg" />
-                        <h3>Image</h3>
+                        <h3>Result</h3>
                         <pre>
-                            {{ results['handwriting_ocr_image'] }}
+                            {{ results['handwriting_result'] }}
                         </pre>
                     </div>
                 </div>
@@ -402,7 +404,7 @@
                 <div>
                     <p class="explanation">Every day, we run a set of tests to evaluate how GPT-4 Vision (GPT-4V) performs over time.</p>
                     <p class="explanation">These tests are designed to monitor core features of GPT-4V.</p>
-                    <p class="explanation">Each test runs the same prompt and image through GPT-4V and compares the answer to a human-written answer.</p>
+                    <p class="explanation">Each test runs the same prompt and image through GPT-4V and compares the Result to a human-written Result.</p>
                     <p class="explanation">While making this website, we experimented with prompts and chose the prompt that gave the most accurate results.</p>
                     <p class="explanation">Tests are run at 1am PT every day. This site is updated when all tests are complete.</p>
                     <p class="explanation">If a line is red, it means the test failed that day; if a line is green, the test passed.</p>

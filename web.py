@@ -78,16 +78,20 @@ class GPT4V(DetectionBaseModel):
             return response.choices[0].message.content, inference_time
 
 def zero_shot_classification():
+    classes = ["Tesla Model 3", "Toyota Camry"]
+
     base_model = GPT4V(
         ontology=CaptionOntology({"Tesla Model 3": "Tesla Model 3", "Toyota Camry": "Toyota Camry"}),
         api_key=os.environ["OPENAI_API_KEY"],
     )
 
-    result, inference_time = base_model.predict("images/car.jpeg", classes=["Tesla Model 3", "Toyota Camry"])
+    result, inference_time = base_model.predict("images/car.jpeg", classes=classes)
 
     return (
-        result == sv.Classifications(class_id=np.array([0]), confidence=np.array([1])),
+        # 1 maps with Tesla Model 3
+        result == sv.Classifications(class_id=np.array([1]), confidence=np.array([1])),
         inference_time,
+        classes[result.class_id[0]],
     )
 
 
@@ -104,7 +108,7 @@ def count_fruit():
         prompt="Count the fruit in the image. Return a single number.",
     )
 
-    return result == "6", inference_time
+    return result == "10", inference_time, result
 
 def document_ocr():
     base_model = GPT4V(
@@ -116,10 +120,10 @@ def document_ocr():
         "images/swift.png",
         classes=[],
         result_serialization="text",
-        prompt="Read the text in the image."
+        prompt="Read the text in the image. Return only the text, with puncuation."
     )
 
-    return result == "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times.", inference_time
+    return result == "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times.", inference_time, result
 
 
 def handwriting_ocr():
@@ -132,18 +136,18 @@ def handwriting_ocr():
         "images/ocr.jpeg",
         classes=[],
         result_serialization="text",
-        prompt="Read the text in the image."
+        prompt="Read the text in the image. Return only the text, with puncuation."
     )
 
-    return result == 'The words of songs on the album have been echoing in my head all week. "Fades into the grey of my day old tea."', inference_time
+    return result == 'The words of songs on the album have been echoing in my head all week. "Fades into the grey of my day old tea."', inference_time, result
 
 
 results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": []}
 
-zero_shot, inference_time = zero_shot_classification()
-count_fruit, count_inference_time = count_fruit()
-document_ocr, ocr_inference_time = document_ocr()
-handwriting_ocr, handwriting_inference_time = handwriting_ocr()
+zero_shot, inference_time, zero_shot_result = zero_shot_classification()
+count_fruit, count_inference_time, count_result = count_fruit()
+document_ocr, ocr_inference_time, ocr_result = document_ocr()
+handwriting_ocr, handwriting_inference_time, handwriting_result = handwriting_ocr()
 
 results["zero_shot_classification"].append(zero_shot)
 results["count_fruit"].append(count_fruit)
@@ -176,27 +180,30 @@ for file in os.listdir("results"):
 
 og_results = results.copy()
 
+print(results, "rrr")
+
 results = {
-    k: ",".join([str(1 if v else 0) for v in value]) for k, value in results.items()
+    k: ",".join([str(1 if v[0] else 0) for v in value]) for k, value in results.items()
 }
+print(results, "rrr")
 
 results["zero_shot_classification_success_rate"] = (
-    sum([1 if i else 0 for i in og_results["zero_shot_classification"]])
+    sum([1 if i[0] else 0 for i in og_results["zero_shot_classification"]])
     / len(og_results["zero_shot_classification"])
     * 100
 )
 results["count_fruit_success_rate"] = (
-    sum([1 if i else 0 for i in og_results["count_fruit"]])
+    sum([1 if i[0] else 0 for i in og_results["count_fruit"]])
     / len(og_results["count_fruit"])
     * 100
 )
 results["document_ocr_success_rate"] = (
-    sum([1 if i else 0 for i in og_results["document_ocr"]])
+    sum([1 if i[0] else 0 for i in og_results["document_ocr"]])
     / len(og_results["document_ocr"])
     * 100
 )
 results["handwriting_ocr_success_rate"] = (
-    sum([1 if i else 0 for i in og_results["handwriting_ocr"]])
+    sum([1 if i[0] else 0 for i in og_results["handwriting_ocr"]])
     / len(og_results["handwriting_ocr"])
     * 100
 )
@@ -205,6 +212,11 @@ results["zero_shot_classification_length"] = len(og_results["zero_shot_classific
 results["count_fruit_length"] = len(og_results["count_fruit"])
 results["document_ocr_length"] = len(og_results["document_ocr"])
 results["handwriting_ocr_length"] = len(og_results["handwriting_ocr"])
+
+results["document_ocr_result"] = ocr_result
+results["handwriting_result"] = handwriting_result
+results["zero_shot_result"] = zero_shot_result
+results["count_result"] = count_result
 
 results["avg_response_time"] = round(sum([float(i) for i in results["request_times"]]) / len(
     results["request_times"]

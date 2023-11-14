@@ -110,6 +110,22 @@
             .cost_text {
                 margin-bottom: -5px;
             }
+            footer p {
+                color: var(--gray-500, #6B7280);
+
+                /* text-xs/font-medium */
+                font-family: Inter;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 16px; /* 133.333% */
+
+                margin: 0;
+
+                text-align: center;
+
+                margin-bottom: 24px;
+            }
             h2 {
                 color: var(--gray-900, #111827);
 
@@ -195,7 +211,7 @@
             #lenny {
                 position: absolute;
                 right: 30%;
-                top: 26em;
+                top: 47.5%;
             }
             @media screen and (max-width: 600px) {
                 .feature_cards {
@@ -249,29 +265,13 @@
 
             gtag('config', 'G-S0F5Y25KSC');
         </script>
-
-        <script>
-            function openCard (element) {
-                var el = element.parentElement.parentElement.parentElement.parentElement.querySelector('.explainer');
-
-                if (el.style.display === 'block') {
-                    el.style.display = 'none';
-                    element.innerText = 'Learn more about this test.';
-                    return;
-                }
-
-                element.innerText = 'Hide explanation';
-                
-                el.style.display = 'block';
-                el.scrollIntoView();
-            }
-        </script>
     </head>
     <body>
         <img src="./assets/roboflow_full_logo_color.png" class="logo" alt="Roboflow Logo" />
         <header>
             <h1>How's GPT-4V Doing?</h1>
             <p style="margin: 0;">A collection of experiments measuring the performance of <a href="https://openai.com">GPT-4 Vision</a>.</p>
+            <p style="margin: 0;">Percentages measure how many of our tests passed.</p>
             <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
             <p>Last updated November 14, 2023.</p>
             <a href="#methodology" class="button">Learn about our methodology.</a>
@@ -283,13 +283,12 @@
                 <div class="feature_header_response">
                     <div class="feature_response_start">
                         <h2>Response Time</h2>
-                        <p class="explanation">Over the last 1 day
-                            , the average response time was 1.0ms.</p>
+                        <p class="explanation">Over the last 1 day, the average response time was 1.0ms.</p>
+                        <p class="explanation">This number only accounts for requests made by this application.</p>
                     </div>
                     <div class="chart">
                         <div class="chart_box">
-                            <p>100.0%</p>
-                            <p>Uptime</p>
+                            <p>1.0 ms</p>
                         </div>
                     </div>
                 </div>
@@ -299,8 +298,6 @@
                     <div class="feature_header">
                         <div>
                             <h2>Zero-Shot Classification</h2>
-                            <p class="explanation">Validate GPT-4V's ability to classify objects.</p>
-                            <p><a href="#" class="learn_more" onclick="openCard(this)">Learn more about this test</a>.</p>
                         </div>
                         <div class="chart">
                             <div class="chart_box">
@@ -310,16 +307,15 @@
                     </div>
                     <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,1" alt="Zero-Shot Classification Test" />
                     <div class="explainer">
-                        <p class="explanation">In this test, we test GPT-4V's ability to classify an object.</p>
                         <h3>Prompt</h3>
                         <pre>
-                            What is in the image? Return the class of the object in the image. Here are the classes: fruit, bowl. You can only return one class from that list.
+                            What is in the image? Return the class of the object in the image. Here are the classes: Toyota Camry, Tesla Model 3. You can only return one class from that list.
                         </pre>
                         <h3>Image</h3>
-                        <img src="images/fruit.jpeg" />
-                        <h3>Answer</h3>
+                        <img src="images/car.jpeg" />
+                        <h3>Result</h3>
                         <pre>
-                            
+                            Toyota Camry
                         </pre>
                     </div>
                 </div>
@@ -327,8 +323,6 @@
                     <div class="feature_header">
                         <div>
                             <h2>Counting</h2>
-                            <p class="explanation">Validate GPT-4V's ability to count objects.</p>
-                            <p><a href="#" class="learn_more" onclick="openCard(this)">Learn more about this test</a>.</p>
                         </div>
                         <div class="chart">
                             <div class="chart_box">
@@ -338,15 +332,15 @@
                     </div>
                     <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,1" alt="Zero-Shot Classification Test" />
                     <div class="explainer">
-                        <p class="explanation">In this test, we test GPT-4V's ability to count objects.</p>
                         <h3>Prompt</h3>
                         <pre>
                             Count the fruit in the image. Return a single number.
                         </pre>
                         <h3>Image</h3>
                         <img src="images/fruit.jpeg" />
+                        <h3>Result</h3>
                         <pre>
-                            
+                            10
                         </pre>
                     </div>
                 </div>
@@ -354,8 +348,6 @@
                     <div class="feature_header">
                         <div>
                             <h2>Document OCR</h2>
-                            <p class="explanation">Validate GPT-4V's ability to read document text.</p>
-                            <p><a href="#" class="learn_more" onclick="openCard(this)">Learn more about this test</a>.</p>
                         </div>
                         <div class="chart">
                             <div class="chart_box">
@@ -371,8 +363,9 @@
                         </pre>
                         <h3>Image</h3>
                         <img src="images/swift.png" />
+                        <h3>Result</h3>
                         <pre>
-                            
+                            I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times.
                         </pre>
                     </div>
                 </div>
@@ -381,7 +374,6 @@
                         <div>
                             <h2>Handwriting OCR</h2>
                             <p class="explanation">Validate GPT-4V's ability to read handwriting.</p>
-                            <p><a href="#" class="learn_more" onclick="openCard(this)">Learn more about this test</a>.</p>
                         </div>
                         <div class="chart">
                             <div class="chart_box">
@@ -397,9 +389,9 @@
                         </pre>
                         <h3>Image</h3>
                         <img src="images/ocr.jpeg" />
-                        <h3>Image</h3>
+                        <h3>Result</h3>
                         <pre>
-                            
+                            The words of songs on the album have been echoing in my head all week. "Fades into the grey of my day old tea."
                         </pre>
                     </div>
                 </div>
@@ -412,13 +404,16 @@
                 <div>
                     <p class="explanation">Every day, we run a set of tests to evaluate how GPT-4 Vision (GPT-4V) performs over time.</p>
                     <p class="explanation">These tests are designed to monitor core features of GPT-4V.</p>
-                    <p class="explanation">Each test runs the same prompt and image through GPT-4V and compares the answer to a human-written answer.</p>
+                    <p class="explanation">Each test runs the same prompt and image through GPT-4V and compares the Result to a human-written Result.</p>
                     <p class="explanation">While making this website, we experimented with prompts and chose the prompt that gave the most accurate results.</p>
                     <p class="explanation">Tests are run at 1am PT every day. This site is updated when all tests are complete.</p>
                     <p class="explanation">If a line is red, it means the test failed that day; if a line is green, the test passed.</p>
                 </div>
             </section>
         </main>
+        <footer>
+            <p>This project is not affiliated with OpenAI.</p>
+        </footer>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
     </body>
 </html>
