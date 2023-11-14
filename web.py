@@ -77,15 +77,13 @@ class GPT4V(DetectionBaseModel):
         else:
             return response.choices[0].message.content, inference_time
 
-
-base_model = GPT4V(
-    ontology=CaptionOntology({"fruit": "fruit", "bowl": "bowl"}),
-    api_key=os.environ["OPENAI_API_KEY"],
-)
-
-
 def zero_shot_classification():
-    result, inference_time = base_model.predict("images/fruit.jpeg", classes=["fruit", "bowl"])
+    base_model = GPT4V(
+        ontology=CaptionOntology({"Tesla Model 3": "Tesla Model 3", "Toyota Camry": "Toyota Camry"}),
+        api_key=os.environ["OPENAI_API_KEY"],
+    )
+
+    result, inference_time = base_model.predict("images/car.jpeg", classes=["Tesla Model 3", "Toyota Camry"])
 
     return (
         result == sv.Classifications(class_id=np.array([0]), confidence=np.array([1])),
@@ -94,6 +92,11 @@ def zero_shot_classification():
 
 
 def count_fruit():
+    base_model = GPT4V(
+        ontology=CaptionOntology({"fruit": "fruit", "bowl": "bowl"}),
+        api_key=os.environ["OPENAI_API_KEY"],
+    )
+
     result, inference_time = base_model.predict(
         "images/fruit.jpeg",
         classes=["fruit", "bowl"],
@@ -103,17 +106,54 @@ def count_fruit():
 
     return result == "6", inference_time
 
+def document_ocr():
+    base_model = GPT4V(
+        ontology=CaptionOntology({"none": "none"}),
+        api_key=os.environ["OPENAI_API_KEY"],
+    )
 
-results = {"zero_shot_classification": [], "count_fruit": [], "request_times": []}
+    result, inference_time = base_model.predict(
+        "images/swift.png",
+        classes=[],
+        result_serialization="text",
+        prompt="Read the text in the image."
+    )
+
+    return result == "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times.", inference_time
+
+
+def handwriting_ocr():
+    base_model = GPT4V(
+        ontology=CaptionOntology({"none": "none"}),
+        api_key=os.environ["OPENAI_API_KEY"],
+    )
+
+    result, inference_time = base_model.predict(
+        "images/ocr.jpeg",
+        classes=[],
+        result_serialization="text",
+        prompt="Read the text in the image."
+    )
+
+    return result == 'The words of songs on the album have been echoing in my head all week. "Fades into the grey of my day old tea."', inference_time
+
+
+results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": []}
 
 zero_shot, inference_time = zero_shot_classification()
 count_fruit, count_inference_time = count_fruit()
+document_ocr, ocr_inference_time = document_ocr()
+handwriting_ocr, handwriting_inference_time = handwriting_ocr()
 
 results["zero_shot_classification"].append(zero_shot)
 results["count_fruit"].append(count_fruit)
+results["document_ocr"].append(document_ocr)
+results["handwriting_ocr"].append(handwriting_ocr)
 
 results["request_times"].append(inference_time)
 results["request_times"].append(count_inference_time)
+results["request_times"].append(ocr_inference_time)
+results["request_times"].append(handwriting_inference_time)
 
 # save as today in 2023-01-01 format
 # make results dir
@@ -125,7 +165,7 @@ today = datetime.datetime.now().strftime("%Y-%m-%d")
 with open(f"results/{today}.json", "w+") as file:
     json.dump(results, file)
 
-results = {"zero_shot_classification": [], "count_fruit": [], "request_times": []}
+results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": []}
 
 for file in os.listdir("results"):
     with open(f"results/{file}") as f:
@@ -150,8 +190,21 @@ results["count_fruit_success_rate"] = (
     / len(og_results["count_fruit"])
     * 100
 )
+results["document_ocr_success_rate"] = (
+    sum([1 if i else 0 for i in og_results["document_ocr"]])
+    / len(og_results["document_ocr"])
+    * 100
+)
+results["handwriting_ocr_success_rate"] = (
+    sum([1 if i else 0 for i in og_results["handwriting_ocr"]])
+    / len(og_results["handwriting_ocr"])
+    * 100
+)
+
 results["zero_shot_classification_length"] = len(og_results["zero_shot_classification"])
 results["count_fruit_length"] = len(og_results["count_fruit"])
+results["document_ocr_length"] = len(og_results["document_ocr"])
+results["handwriting_ocr_length"] = len(og_results["handwriting_ocr"])
 
 results["avg_response_time"] = round(sum([float(i) for i in results["request_times"]]) / len(
     results["request_times"]

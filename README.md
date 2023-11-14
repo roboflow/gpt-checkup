@@ -1,6 +1,6 @@
-# GPT-4V Monitor
+# GPT-4V Checkup
 
-Open source monitor that tests how GPT-4V performs on image prompts over time.
+Open source monitor that tests how [GPT-4V](https://openai.com/research/gpt-4v-system-card) performs on image prompts over time.
 
 This project is not affiliated with OpenAI.
 

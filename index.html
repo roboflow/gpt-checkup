@@ -3,12 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GPT-4V Monitor</title>
+        <title>GPT-4V Checkup</title>
 
-        <link rel="icon" href="./logomark.png" />
+        <link rel="icon" href="./assets/logomark.png" />
 
         <meta name="description" content="A collection of experiments measuring the performance of GPT-4 Vision over time.">
-        <meta name="og:title" content="GPT-4V Monitor">
+        <meta name="og:title" content="GPT-4V Checkup">
         <meta name="og:description" content="A collection of experiments measuring the performance of GPT-4 Vision over time.">
 
         <style>
@@ -195,6 +195,11 @@
                 height: 50px;
                 width: initial;
             }
+            #lenny {
+                position: absolute;
+                right: 30%;
+                top: 26em;
+            }
             @media screen and (max-width: 600px) {
                 .feature_cards {
                     flex-direction: column;
@@ -209,11 +214,9 @@
                     display: block !important;
                     margin: 0 auto;
                 }
-            }
-            #lenny {
-                position: absolute;
-                right: 30%;
-                top: 26em;
+                #lenny img {
+                    display: none;
+                }
             }
             .cost {
                 color: var(--gray-500, #6B7280);
@@ -283,7 +286,8 @@
                 <div class="feature_header_response">
                     <div class="feature_response_start">
                         <h2>Response Time</h2>
-                        <p class="explanation">Over the last 1 days, the average response time was 1.0ms.</p>
+                        <p class="explanation">Over the last 1 day
+                            , the average response time was 1.0ms.</p>
                     </div>
                     <div class="chart">
                         <div class="chart_box">
@@ -340,6 +344,52 @@
                         </pre>
                         <h3>Image</h3>
                         <img src="images/fruit.jpeg" />
+                    </div>
+                </div>
+                <div class="feature_card">
+                    <div class="feature_header">
+                        <div>
+                            <h2>Document OCR</h2>
+                            <p class="explanation">Validate GPT-4V's ability to read document text.</p>
+                            <p><a href="#" class="learn_more" onclick="openCard(this)">Learn more about this test</a>.</p>
+                        </div>
+                        <div class="chart">
+                            <div class="chart_box">
+                                <p>100.0%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,1" alt="Zero-Shot Classification Test" />
+                    <div class="explainer">
+                        <h3>Prompt</h3>
+                        <pre>
+                            Read the text in the image.
+                        </pre>
+                        <h3>Image</h3>
+                        <img src="images/ocr.jpeg" />
+                    </div>
+                </div>
+                <div class="feature_card">
+                    <div class="feature_header">
+                        <div>
+                            <h2>Handwriting OCR</h2>
+                            <p class="explanation">Validate GPT-4V's ability to read handwriting.</p>
+                            <p><a href="#" class="learn_more" onclick="openCard(this)">Learn more about this test</a>.</p>
+                        </div>
+                        <div class="chart">
+                            <div class="chart_box">
+                                <p>100.0%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,1" alt="Zero-Shot Classification Test" />
+                    <div class="explainer">
+                        <h3>Prompt</h3>
+                        <pre>
+                            Read the text in the image.
+                        </pre>
+                        <h3>Image</h3>
+                        <img src="images/swift.png" />
                     </div>
                 </div>
             </section>
