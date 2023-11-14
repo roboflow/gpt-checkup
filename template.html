@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>GPT-4V Monitor</title>
 
-        <link rel="icon" href="./logomark.png" />
+        <link rel="icon" href="./assets/logomark.png" />
 
         <meta name="description" content="A collection of experiments measuring the performance of GPT-4 Vision over time.">
         <meta name="og:title" content="GPT-4V Monitor">
@@ -283,7 +283,8 @@
                 <div class="feature_header_response">
                     <div class="feature_response_start">
                         <h2>Response Time</h2>
-                        <p class="explanation">Over the last {{day_count}}, the average response time was {{results['avg_response_time']}}ms.</p>
+                        <p class="explanation">Over the last {{results['day_count']}} day{{results['day_count'] == 1 ? '' : 's'}}
+                            , the average response time was {{results['avg_response_time']}}ms.</p>
                     </div>
                     <div class="chart">
                         <div class="chart_box">
@@ -331,7 +332,7 @@
                             </div>
                         </div>
                     </div>
-                    <embed src="./svg.svg?1,1,1,1,1,1,1,1,{{results['count_fruit']}}" alt="Zero-Shot Classification Test" />
+                    <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['count_fruit']}}" alt="Zero-Shot Classification Test" />
                     <div class="explainer">
                         <p class="explanation">In this test, we test GPT-4V's ability to count objects.</p>
                         <h3>Prompt</h3>

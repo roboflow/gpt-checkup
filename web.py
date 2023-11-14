@@ -153,9 +153,10 @@ results["count_fruit_success_rate"] = (
 results["zero_shot_classification_length"] = len(og_results["zero_shot_classification"])
 results["count_fruit_length"] = len(og_results["count_fruit"])
 
-results["avg_response_time"] = sum([float(i) for i in results["request_times"]]) / len(
+results["avg_response_time"] = round(sum([float(i) for i in results["request_times"]]) / len(
     results["request_times"]
-)
+), 2)
+
 results["day_count"] = len(results["request_times"])
 
 print(results)
