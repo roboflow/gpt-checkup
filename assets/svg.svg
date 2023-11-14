@@ -1,0 +1,71 @@
+<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" width="100%" 
+height="100%" onload="draw()">
+  <script><![CDATA[
+    function draw() {
+        var parts = [], mx = 0, mn = 999999;
+        location.search.substr(1).split(",").forEach(function(n) {
+            var integ = parseInt(n, 10);
+            parts.push(integ);
+            mx = Math.max(mx, integ);
+            mn = Math.min(mn, integ);
+        });
+        var x1 = 0, y1 = 0, x2 = 0, y2 = 100 - (100 * (parts[0] - mn) / (mx - mn));
+        var d = "M0,100 "; // Start the path from the bottom-left corner
+        for (var i=0; i<parts.length; i++) {
+            y1 = y2; x1 = x2;
+            x2 = 100 * (i / parts.length), y2 = 100 - (100 * (parts[i] - mn) / (mx - mn));
+            d += "L" + x2 + "%," + y2 + "% ";
+        }
+        d += "L100%,100% Z"; // Draw a line to the bottom-right corner and close the path
+
+        var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", d);
+        // if 0, fill with red, else fill with green
+        if (parts[parts.length-1] == 0) {
+            path.setAttribute("fill", "rgba(255,0,0,0.5)");
+        } else {
+            path.setAttribute("fill", "rgba(0,255,0,0.5)");
+        }
+
+        document.getElementsByTagName("svg")[0].appendChild(path);
+
+        for (var i=0; i<parts.length; i++) {
+            var ln = document.createElementNS ("http://www.w3.org/2000/svg", "line");
+            y1 = 100 - (100 * (parts[i-1] - mn) / (mx - mn)); x1 = 100 * ((i-1) / parts.length);
+            y2 = 100 - (100 * (parts[i] - mn) / (mx - mn)); x2 = 100 * (i / parts.length);
+            ln.setAttribute("x1", x1 + "%");
+            ln.setAttribute("x2", x2 + "%");
+            ln.setAttribute("y1", y1 + "%");
+            ln.setAttribute("y2", y2 + "%");
+            if (parts[i] == 0) {
+                ln.setAttribute("stroke", "rgba(255,0,0,1)");
+            } else {
+                ln.setAttribute("stroke", "rgba(0,255,0,1)");
+            }
+            ln.setAttribute("stroke-width", "1");
+            document.getElementsByTagName("svg")[0].appendChild(ln);
+        }
+
+        var ln = document.createElementNS ("http://www.w3.org/2000/svg", "line");
+        ln.setAttribute("x1", "0%");
+        ln.setAttribute("x2", "100%");
+        ln.setAttribute("y1", "100%");
+        ln.setAttribute("y2", "100%");
+        ln.setAttribute("stroke", "rgba(0,0,0,0.5)");
+        ln.setAttribute("stroke-width", "1");
+        document.getElementsByTagName("svg")[0].appendChild(ln);
+
+        // do line on left axis
+        var ln = document.createElementNS ("http://www.w3.org/2000/svg", "line");
+        ln.setAttribute("x1", "0%");
+        ln.setAttribute("x2", "0%");
+        ln.setAttribute("y1", "0%");
+        ln.setAttribute("y2", "100%");
+        ln.setAttribute("stroke", "rgba(0,0,0,0.5)");
+        ln.setAttribute("stroke-width", "1");
+        document.getElementsByTagName("svg")[0].appendChild(ln);
+    }
+  ]]></script>
+<line x1="0%" x2="0%" y1="NaN%" y2="NaN%" stroke="rgba(255,0,0,1)" stroke-width="1"></line>
+</svg>

@@ -1,0 +1,6 @@
+jinja2
+numpy
+supervision
+autodistill
+openai
+roboflow

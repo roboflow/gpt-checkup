@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GPT-4V Monitor</title>
+
+        <link rel="icon" href="./logomark.png" />
+
+        <meta name="description" content="A collection of experiments measuring the performance of GPT-4 Vision over time.">
+        <meta name="og:title" content="GPT-4V Monitor">
+        <meta name="og:description" content="A collection of experiments measuring the performance of GPT-4 Vision over time.">
+
+        <style>
+            @font-face {
+                font-family: Inter;
+                src: url(./assets/Inter-VariableFont_slnt,wght.ttf);
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+            }
+            * {
+                font-family: Inter;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 21.35%), 
+            linear-gradient(90deg, #E2C8FE 0%, #BFDBFE 51.04%, #AEFFF0 100%),
+            lightgray;
+            }
+            h1 {
+                color: #1F0050;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 60px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 100%; /* 60px */
+            }
+            main {
+                margin: 0 auto;
+                margin-top: 36px;
+                max-width: 1000px;
+                padding: 1rem;
+                margin-bottom: 36px;
+            }
+            a {
+                color: #6706CE;
+                text-decoration: none;
+            }
+            .response_time_card {
+                display: flex;
+                padding: 24px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                align-self: stretch;
+                border-radius: var(--border-radius-rounded-lg, 8px);
+                border: 1px solid var(--gray-200, #E5E7EB);
+                background: var(--white, #FFF);
+                box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.05), 0px 8px 10px -6px rgba(0, 0, 0, 0.02);
+            }
+            .feature_card {
+                display: flex;
+                padding: 24px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                flex: 1 0 0;
+                border-radius: var(--border-radius-rounded-lg, 8px);
+                border: 1px solid var(--gray-200, #E5E7EB);
+                background: var(--white, #FFF);
+                box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.05), 0px 8px 10px -6px rgba(0, 0, 0, 0.02);
+            }
+            .feature_cards {
+                display: flex;
+                align-items: flex-start;
+                gap: 24px;
+                align-self: stretch;
+                margin-top: 24px;
+                flex-wrap: wrap;
+                margin-bottom: 24px;
+            }
+            h1 {
+                margin: 10px;
+            }
+            header {
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                width: 100%;
+                margin: auto;
+            }
+            .logo {
+                display: inline-flex;
+                padding: 32px var(--spacing-sizing-10, 40px);
+                align-items: center;
+                gap: 12px;
+            }
+            .button {
+                display: flex;
+                padding: var(--spacing-sizing-2, 8px) var(--spacing-sizing-3, 12px);
+                align-items: center;
+                gap: var(--spacing-sizing-2, 8px);
+                border-radius: 8px;
+                background: var(--colors-bg-primary, #8315F9);
+                box-shadow: 0px 4px 32px 0px rgba(131, 21, 249, 0.40);
+            }
+            .explainer {
+                display: none;
+            }
+            .cost_text {
+                margin-bottom: -5px;
+            }
+            h2 {
+                color: var(--gray-900, #111827);
+
+                /* text-xl/font-semibold */
+                font-family: Inter;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 28px; /* 140% */
+            }
+            .explanation {
+                color: var(--gray-700, #374151);
+
+                /* text-sm/font-medium */
+                font-family: Inter;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 20px; /* 142.857% */
+            }
+            .chart {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 8px;
+            }
+            .chart_box {
+                display: flex;
+                padding: 8px 16px;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                border-radius: var(--border-radius-rounded-lg, 8px);
+                border: 1px solid var(--green-500, #10B981);
+                background: var(--green-50, #ECFDF5);
+            }
+            .button {
+                color: var(--white, #FFF);
+                font-family: Inter;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 20px; /* 142.857% */
+            }
+            pre {
+                background-color: var(--gray-100, #F3F4F6);
+                border-radius: var(--border-radius-rounded-lg, 8px);
+                white-space: normal;
+                padding: 16px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .feature_header {
+                display: flex;
+                align-items: flex-start;
+                gap: 16px;
+                align-self: stretch;
+            }
+            .feature_header_response {
+                display: flex;
+                align-items: flex-start;
+                gap: 16px;
+                align-self: stretch;
+            }
+            .feature_response_start {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2px;
+                flex: 1 0 0;
+            }
+            .explainer img {
+                width: 100%;
+            }
+            .logo {
+                display: inline-flex;
+                padding: 32px var(--spacing-sizing-10, 40px);
+                align-items: center;
+                gap: 12px;
+                height: 50px;
+                width: initial;
+            }
+            @media screen and (max-width: 600px) {
+                .feature_cards {
+                    flex-direction: column;
+                }
+                .feature_card {
+                    flex: 1 0 0;
+                }
+                header {
+                    text-align: center;
+                }
+                img {
+                    display: block !important;
+                    margin: 0 auto;
+                }
+            }
+            #lenny {
+                position: absolute;
+                right: 30%;
+                top: 26em;
+            }
+            .cost {
+                color: var(--gray-500, #6B7280);
+
+                /* text-xs/font-medium */
+                font-family: Inter;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 16px; /* 133.333% */
+
+                margin: 0;
+            }
+            .learn_more {
+                color: var(--colors-bg-primary, #8315F9);
+
+                /* text-sm/font-medium */
+                font-family: Inter;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 20px; /* 142.857% */
+            }
+        </style>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0F5Y25KSC"></script>
+        
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-S0F5Y25KSC');
+        </script>
+
+        <script>
+            function openCard (element) {
+                var el = element.parentElement.parentElement.parentElement.parentElement.querySelector('.explainer');
+
+                if (el.style.display === 'block') {
+                    el.style.display = 'none';
+                    element.innerText = 'Learn more about this test.';
+                    return;
+                }
+
+                element.innerText = 'Hide explanation';
+                
+                el.style.display = 'block';
+                el.scrollIntoView();
+            }
+        </script>
+    </head>
+    <body>
+        <img src="./assets/roboflow_full_logo_color.png" class="logo" alt="Roboflow Logo" />
+        <header>
+            <h1>How's GPT-4V Doing?</h1>
+            <p style="margin: 0;">A collection of experiments measuring the performance of <a href="https://openai.com">GPT-4 Vision</a>.</p>
+            <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
+            <p>Last updated November 14, 2023.</p>
+            <a href="https://roboflow.com" class="button">Learn about our methodology.</a>
+            <a class="github-button" href="https://github.com/roboflow/gpt4v-monitor" data-icon="octicon-star" aria-label="Star roboflow/gpt4v-monitor on GitHub">Star</a>
+        </header>
+        <main>
+            <img src="./assets/lenny.svg" id="lenny" />
+            <section class="response_time_card">
+                <div class="feature_header_response">
+                    <div class="feature_response_start">
+                        <h2>Response Time</h2>
+                        <p class="explanation">Over the last , the average response time was 1.0ms.</p>
+                    </div>
+                    <div class="chart">
+                        <div class="chart_box">
+                            <p>100.0%</p>
+                            <p>Uptime</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="feature_cards">
+                <div class="feature_card">
+                    <div class="feature_header">
+                        <div>
+                            <h2>Zero-Shot Classification</h2>
+                            <p class="explanation">Validate GPT-4V's ability to classify objects.</p>
+                            <p><a href="#" class="learn_more" onclick="openCard(this)">Learn more about this test</a>.</p>
+                        </div>
+                        <div class="chart">
+                            <div class="chart_box">
+                                <p>100.0%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <embed src="./svg.svg?1,1,1,1,1,1,1,1,1" alt="Zero-Shot Classification Test" />
+                    <div class="explainer">
+                        <p class="explanation">In this test, we test GPT-4V's ability to classify an object.</p>
+                        <h3>Prompt</h3>
+                        <pre>
+                            What is in the image? Return the class of the object in the image. Here are the classes: fruit, bowl. You can only return one class from that list.
+                        </pre>
+                        <h3>Image</h3>
+                        <img src="images/fruit.jpeg" />
+                    </div>
+                </div>
+                <div class="feature_card">
+                    <div class="feature_header">
+                        <div>
+                            <h2>Counting</h2>
+                            <p class="explanation">Validate GPT-4V's ability to count objects.</p>
+                            <p><a href="#" class="learn_more" onclick="openCard(this)">Learn more about this test</a>.</p>
+                        </div>
+                        <div class="chart">
+                            <div class="chart_box">
+                                <p>100.0%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <embed src="./svg.svg?1,1,1,1,1,1,1,1,1" alt="Zero-Shot Classification Test" />
+                    <div class="explainer">
+                        <p class="explanation">In this test, we test GPT-4V's ability to count objects.</p>
+                        <h3>Prompt</h3>
+                        <pre>
+                            Count the fruit in the image. Return a single number.
+                        </pre>
+                        <h3>Image</h3>
+                        <img src="images/fruit.jpeg" />
+                    </div>
+                </div>
+            </section>
+            <section class="response_time_card">
+                <div>
+                    <h2>Methodology</h2>
+                    <p class="explanation">How we built this project.</p>
+                </div>
+                <div>
+                    <p class="explanation">Every day, we run a set of tests to evaluate how GPT-4 Vision (GPT-4V) performs over time.</p>
+                    <p class="explanation">These tests are designed to monitor core features of GPT-4V.</p>
+                    <p class="explanation">Tests are run at 1am PT every day. This site is updated when all tests are complete.</p>
+                    <p class="explanation">If a line is red, it means the test failed that day; if a line is green, the test passed.</p>
+                </div>
+            </section>
+        </main>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </body>
+</html>
