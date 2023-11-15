@@ -6,6 +6,7 @@ import time
 from dataclasses import dataclass
 import re
 from Levenshtein import ratio
+from statistics import mean
 
 import jinja2
 import numpy as np
@@ -198,28 +199,30 @@ def math_ocr():
     return accuracy, inference_time, str(answer_equation)
 
 
-results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": [], "extraction_ocr": [], "math_ocr": []}
+tests = [
+    "zero_shot_classification",
+    "count_fruit",
+    "document_ocr",
+    "handwriting_ocr",
+    "extraction_ocr",
+    "math_ocr"
+]
 
-zero_shot, inference_time, zero_shot_result = zero_shot_classification()
-count_fruit, count_inference_time, count_result = count_fruit()
-document_ocr, ocr_inference_time, ocr_result = document_ocr()
-handwriting_ocr, handwriting_inference_time, handwriting_result = handwriting_ocr()
-extraction_ocr, extraction_inference_time, extraction_result = extraction_ocr()
-math_ocr, math_inference_time, math_result = math_ocr()
+current_results = {}
+for i in tests:
+    test = globals()[i]
 
-results["zero_shot_classification"].append(zero_shot)
-results["count_fruit"].append(count_fruit)
-results["document_ocr"].append(document_ocr)
-results["handwriting_ocr"].append(handwriting_ocr)
-results["extraction_ocr"].append(extraction_ocr)
-results["math_ocr"].append(math_ocr)
+    test_result = test()
+    score, response_time, result = test_result
 
-results["request_times"].append(inference_time)
-results["request_times"].append(count_inference_time)
-results["request_times"].append(ocr_inference_time)
-results["request_times"].append(handwriting_inference_time)
-results["request_times"].append(extraction_inference_time)
-results["request_times"].append(math_inference_time)
+    score = (1 if score is True else (0 if score is False else score))
+
+    current_results[i] = {}
+    current_results[i]["score"] = score
+    current_results[i]["response_time"] = response_time
+    current_results[i]["result"] = result
+
+print("current_results", current_results)
 
 # save as today in 2023-01-01 format
 # make results dir
@@ -229,76 +232,53 @@ if not os.path.exists("results"):
 today = datetime.datetime.now().strftime("%Y-%m-%d")
 
 with open(f"results/{today}.json", "w+") as file:
-    json.dump(results, file)
+    json.dump(current_results, file)
 
-results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": [], "extraction_ocr": [], "math_ocr": []}
+historical_results = {}
+for i in tests:
+    historical_results[i] = {}
+    historical_results[i]["scores"] = []
+    historical_results[i]["response_times"] = []
 
 for file in os.listdir("results"):
+    if os.path.isdir(f"results/{file}"): continue
     with open(f"results/{file}") as f:
         data = json.load(f)
 
         for key, value in data.items():
-            def conversion(s):
-                return (1 if s is True else (0 if s is False else s))
-            scores = list(map(conversion, value))
-            results[key] = scores
+            print(key, value)
+            historical_results[key]["scores"].append(value["score"])
+            historical_results[key]["response_times"].append(value["response_time"])
+            historical_results[key]["days"] = len(historical_results[key]["scores"])
 
-og_results = results.copy()
 
-print(results, "rrr")
+print("historical_results", historical_results)
 
-results["zero_shot_classification_success_rate"] = (
-    sum(og_results["zero_shot_classification"])
-    / len(og_results["zero_shot_classification"])
-    * 100
-)
-results["count_fruit_success_rate"] = (
-    sum(og_results["count_fruit"])
-    / len(og_results["count_fruit"])
-    * 100
-)
-results["document_ocr_success_rate"] = (
-    sum(og_results["document_ocr"])
-    / len(og_results["document_ocr"])
-    * 100
-)
-results["handwriting_ocr_success_rate"] = (
-    sum(og_results["handwriting_ocr"])
-    / len(og_results["handwriting_ocr"])
-    * 100
-)
-results["extraction_ocr_success_rate"] = (
-    sum(og_results["extraction_ocr"])
-    / len(og_results["extraction_ocr"])
-    * 100
-)
-results["math_ocr_success_rate"] = (
-    sum(og_results["math_ocr"])
-    / len(og_results["math_ocr"])
-    * 100
-)
+historical_averages = {}
+for i in tests:
+    historical_averages[i] = {}
+    historical_averages[i]["scores"] = mean(historical_results[i]["scores"])
+    historical_averages[i]["response_times"] = mean(historical_results[i]["response_times"])
+    historical_averages[i]["success_percent"] = round(historical_averages[i]["scores"]*100,2)
 
-results["zero_shot_classification_length"] = len(og_results["zero_shot_classification"])
-results["count_fruit_length"] = len(og_results["count_fruit"])
-results["document_ocr_length"] = len(og_results["document_ocr"])
-results["handwriting_ocr_length"] = len(og_results["handwriting_ocr"])
-results["extraction_ocr_length"] = len(og_results["extraction_ocr"])
-results["math_ocr_length"] = len(og_results["math_ocr"])
+print("historical_averages", historical_averages)
 
-results["document_ocr_result"] = ocr_result
-results["handwriting_result"] = handwriting_result
-results["zero_shot_result"] = zero_shot_result
-results["count_result"] = count_result
-results["extraction_ocr_result"] = extraction_result
-results["math_ocr_result"] = math_result
+response_times = []
+for i in historical_averages:
+    response_times.append(historical_averages[i]["response_times"])
 
-results["avg_response_time"] = round(sum([float(i) for i in results["request_times"]]) / len(
-    results["request_times"]
-), 2)
+average_response_time = round(mean(response_times),2)
+day_count = len(response_times)
 
-results["day_count"] = len(results["request_times"])
+results = {
+    'current': current_results,
+    'past': historical_results,
+    'averages': historical_averages,
+    'avg_time': average_response_time,
+    'days': day_count
+}
 
-print(results)
+print(json.dumps(result, indent=4))
 
 template = jinja2.Template(open("template.html").read())
 
