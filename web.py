@@ -192,8 +192,6 @@ def math_ocr():
     answer_array = json.loads(code_blocks[0])
     answer_equation = answer_array[0].replace(" ", "")
 
-    print(result,answer_array,answer_equation)
-
     correct_equation = "3x^2-6x+2"
 
     accuracy = ratio(str(answer_equation).lower(), str(correct_equation).lower())
