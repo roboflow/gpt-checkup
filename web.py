@@ -176,34 +176,32 @@ for file in os.listdir("results"):
         data = json.load(f)
 
         for key, value in data.items():
-            results[key].append(value)
+            def conversion(s): 
+                return (1 if s is True else (0 if s is False else s))
+            scores = list(map(conversion, value))
+            results[key] = scores
 
 og_results = results.copy()
 
 print(results, "rrr")
 
-results = {
-    k: ",".join([str(1 if v[0] else 0) for v in value]) for k, value in results.items()
-}
-print(results, "rrr")
-
 results["zero_shot_classification_success_rate"] = (
-    sum([1 if i[0] else 0 for i in og_results["zero_shot_classification"]])
+    sum(og_results["zero_shot_classification"])
     / len(og_results["zero_shot_classification"])
     * 100
 )
 results["count_fruit_success_rate"] = (
-    sum([1 if i[0] else 0 for i in og_results["count_fruit"]])
+    sum(og_results["count_fruit"])
     / len(og_results["count_fruit"])
     * 100
 )
 results["document_ocr_success_rate"] = (
-    sum([1 if i[0] else 0 for i in og_results["document_ocr"]])
+    sum(og_results["document_ocr"])
     / len(og_results["document_ocr"])
     * 100
 )
 results["handwriting_ocr_success_rate"] = (
-    sum([1 if i[0] else 0 for i in og_results["handwriting_ocr"]])
+    sum(og_results["handwriting_ocr"])
     / len(og_results["handwriting_ocr"])
     * 100
 )
