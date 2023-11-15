@@ -174,25 +174,29 @@ def extraction_ocr():
     accuracy = ratio(str(answer_array).lower(), str(correct_array).lower())
     return accuracy, inference_time, str(answer_array)
 
-results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": [], "extraction_ocr": []}
+
+results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": [], "extraction_ocr": [], "math_ocr": []}
 
 zero_shot, inference_time, zero_shot_result = zero_shot_classification()
 count_fruit, count_inference_time, count_result = count_fruit()
 document_ocr, ocr_inference_time, ocr_result = document_ocr()
 handwriting_ocr, handwriting_inference_time, handwriting_result = handwriting_ocr()
 extraction_ocr, extraction_inference_time, extraction_result = extraction_ocr()
+math_ocr, math_inference_time, math_result = math_ocr()
 
 results["zero_shot_classification"].append(zero_shot)
 results["count_fruit"].append(count_fruit)
 results["document_ocr"].append(document_ocr)
 results["handwriting_ocr"].append(handwriting_ocr)
 results["extraction_ocr"].append(extraction_ocr)
+results["math_ocr"].append(math_ocr)
 
 results["request_times"].append(inference_time)
 results["request_times"].append(count_inference_time)
 results["request_times"].append(ocr_inference_time)
 results["request_times"].append(handwriting_inference_time)
-results["request_times"].append(extraction_ocr)
+results["request_times"].append(extraction_inference_time)
+results["request_times"].append(math_inference_time)
 
 # save as today in 2023-01-01 format
 # make results dir
@@ -204,7 +208,7 @@ today = datetime.datetime.now().strftime("%Y-%m-%d")
 with open(f"results/{today}.json", "w+") as file:
     json.dump(results, file)
 
-results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": [], "extraction_ocr": []}
+results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": [], "extraction_ocr": [], "math_ocr": []}
 
 for file in os.listdir("results"):
     with open(f"results/{file}") as f:
@@ -245,18 +249,25 @@ results["extraction_ocr_success_rate"] = (
     / len(og_results["extraction_ocr"])
     * 100
 )
+results["math_ocr_success_rate"] = (
+    sum(og_results["math_ocr"])
+    / len(og_results["math_ocr"])
+    * 100
+)
 
 results["zero_shot_classification_length"] = len(og_results["zero_shot_classification"])
 results["count_fruit_length"] = len(og_results["count_fruit"])
 results["document_ocr_length"] = len(og_results["document_ocr"])
 results["handwriting_ocr_length"] = len(og_results["handwriting_ocr"])
-results["extraction_ocr"] = len(og_results["extraction_ocr"])
+results["extraction_ocr_length"] = len(og_results["extraction_ocr"])
+results["math_ocr_length"] = len(og_results["math_ocr"])
 
 results["document_ocr_result"] = ocr_result
 results["handwriting_result"] = handwriting_result
 results["zero_shot_result"] = zero_shot_result
 results["count_result"] = count_result
 results["extraction_ocr_result"] = extraction_result
+results["math_ocr_result"] = math_result
 
 results["avg_response_time"] = round(sum([float(i) for i in results["request_times"]]) / len(
     results["request_times"]
