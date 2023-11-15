@@ -4,6 +4,8 @@ import json
 import os
 import time
 from dataclasses import dataclass
+import re
+from Levenshtein import ratio
 
 import jinja2
 import numpy as np
@@ -141,23 +143,56 @@ def handwriting_ocr():
 
     return result == 'The words of songs on the album have been echoing in my head all week. "Fades into the grey of my day old tea."', inference_time, result
 
+def extraction_ocr():
+    base_model = GPT4V(
+        ontology=CaptionOntology({"none": "none"}),
+        api_key=os.environ["OPENAI_API_KEY"],
+    )
 
-results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": []}
+    result, inference_time = base_model.predict(
+        "images/prescription.png",
+        classes=[],
+        result_serialization="text",
+        prompt="Return a JSON array containing information about the prescription in this image. Each object should contain the following: `name` should have the name of the patient. `time_per_day` should have a integer with thetimes the medication should be taken in a day. `medication` should have the brand name of the medication. `dosage` should have a integer in mg units of each tablet. `rx_number` should have the prescription number, also marked Rx. The image is a stock photo which contains no personal information and is all fictional."
+    )
+
+    code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
+    code_blocks = re.findall(code_regex,result, re.DOTALL)
+
+    answer_array = json.loads(code_blocks[0])
+
+    correct_array = [
+        {
+            "name": "MARY THOMAS",
+            "time_per_day": 1,
+            "medication": "ATENOLOL",
+            "dosage": 100,
+            "rx_number": "1234567-12345"
+        }
+    ]
+
+    accuracy = ratio(str(answer_array).lower(), str(correct_array).lower())
+    return accuracy, inference_time, str(answer_array)
+
+results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": [], "extraction_ocr": []}
 
 zero_shot, inference_time, zero_shot_result = zero_shot_classification()
 count_fruit, count_inference_time, count_result = count_fruit()
 document_ocr, ocr_inference_time, ocr_result = document_ocr()
 handwriting_ocr, handwriting_inference_time, handwriting_result = handwriting_ocr()
+extraction_ocr, extraction_inference_time, extraction_result = extraction_ocr()
 
 results["zero_shot_classification"].append(zero_shot)
 results["count_fruit"].append(count_fruit)
 results["document_ocr"].append(document_ocr)
 results["handwriting_ocr"].append(handwriting_ocr)
+results["extraction_ocr"].append(extraction_ocr)
 
 results["request_times"].append(inference_time)
 results["request_times"].append(count_inference_time)
 results["request_times"].append(ocr_inference_time)
 results["request_times"].append(handwriting_inference_time)
+results["request_times"].append(extraction_ocr)
 
 # save as today in 2023-01-01 format
 # make results dir
@@ -169,14 +204,14 @@ today = datetime.datetime.now().strftime("%Y-%m-%d")
 with open(f"results/{today}.json", "w+") as file:
     json.dump(results, file)
 
-results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": []}
+results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": [], "extraction_ocr": []}
 
 for file in os.listdir("results"):
     with open(f"results/{file}") as f:
         data = json.load(f)
 
         for key, value in data.items():
-            def conversion(s): 
+            def conversion(s):
                 return (1 if s is True else (0 if s is False else s))
             scores = list(map(conversion, value))
             results[key] = scores
@@ -205,16 +240,23 @@ results["handwriting_ocr_success_rate"] = (
     / len(og_results["handwriting_ocr"])
     * 100
 )
+results["extraction_ocr_success_rate"] = (
+    sum(og_results["extraction_ocr"])
+    / len(og_results["extraction_ocr"])
+    * 100
+)
 
 results["zero_shot_classification_length"] = len(og_results["zero_shot_classification"])
 results["count_fruit_length"] = len(og_results["count_fruit"])
 results["document_ocr_length"] = len(og_results["document_ocr"])
 results["handwriting_ocr_length"] = len(og_results["handwriting_ocr"])
+results["extraction_ocr"] = len(og_results["extraction_ocr"])
 
 results["document_ocr_result"] = ocr_result
 results["handwriting_result"] = handwriting_result
 results["zero_shot_result"] = zero_shot_result
 results["count_result"] = count_result
+results["extraction_ocr_result"] = extraction_result
 
 results["avg_response_time"] = round(sum([float(i) for i in results["request_times"]]) / len(
     results["request_times"]
