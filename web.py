@@ -174,6 +174,31 @@ def extraction_ocr():
     accuracy = ratio(str(answer_array).lower(), str(correct_array).lower())
     return accuracy, inference_time, str(answer_array)
 
+def math_ocr():
+    base_model = GPT4V(
+        ontology=CaptionOntology({"none": "none"}),
+        api_key=os.environ["OPENAI_API_KEY"],
+    )
+
+    result, inference_time = base_model.predict(
+        "images/math.jpeg",
+        classes=[],
+        result_serialization="text",
+        prompt="Produce a JSON array with a LaTeX string of each equation in the image."
+    )
+
+    code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
+    code_blocks = re.findall(code_regex,result, re.DOTALL)
+    answer_array = json.loads(code_blocks[0])
+    answer_equation = answer_array[0].replace(" ", "")
+
+    print(result,answer_array,answer_equation)
+
+    correct_equation = "3x^2-6x+2"
+
+    accuracy = ratio(str(answer_equation).lower(), str(correct_equation).lower())
+    return accuracy, inference_time, str(answer_equation)
+
 
 results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": [], "extraction_ocr": [], "math_ocr": []}
 
