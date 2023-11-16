@@ -4,3 +4,4 @@ supervision
 autodistill
 openai
 roboflow
+levenshtein

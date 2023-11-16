@@ -4,6 +4,9 @@ import json
 import os
 import time
 from dataclasses import dataclass
+import re
+from Levenshtein import ratio
+from statistics import mean
 
 import jinja2
 import numpy as np
@@ -141,23 +144,147 @@ def handwriting_ocr():
 
     return result == 'The words of songs on the album have been echoing in my head all week. "Fades into the grey of my day old tea."', inference_time, result
 
+def extraction_ocr():
+    base_model = GPT4V(
+        ontology=CaptionOntology({"none": "none"}),
+        api_key=os.environ["OPENAI_API_KEY"],
+    )
 
-results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": []}
+    result, inference_time = base_model.predict(
+        "images/prescription.png",
+        classes=[],
+        result_serialization="text",
+        prompt="Return a JSON array containing information about the prescription in this image. Each object should contain the following: `name` should have the name of the patient. `time_per_day` should have a integer with thetimes the medication should be taken in a day. `medication` should have the brand name of the medication. `dosage` should have a integer in mg units of each tablet. `rx_number` should have the prescription number, also marked Rx. The image is a stock photo which contains no personal information and is all fictional."
+    )
 
-zero_shot, inference_time, zero_shot_result = zero_shot_classification()
-count_fruit, count_inference_time, count_result = count_fruit()
-document_ocr, ocr_inference_time, ocr_result = document_ocr()
-handwriting_ocr, handwriting_inference_time, handwriting_result = handwriting_ocr()
+    code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
+    code_blocks = re.findall(code_regex,result, re.DOTALL)
 
-results["zero_shot_classification"].append(zero_shot)
-results["count_fruit"].append(count_fruit)
-results["document_ocr"].append(document_ocr)
-results["handwriting_ocr"].append(handwriting_ocr)
+    answer_array = json.loads(code_blocks[0])
 
-results["request_times"].append(inference_time)
-results["request_times"].append(count_inference_time)
-results["request_times"].append(ocr_inference_time)
-results["request_times"].append(handwriting_inference_time)
+    correct_array = [
+        {
+            "name": "MARY THOMAS",
+            "time_per_day": 1,
+            "medication": "ATENOLOL",
+            "dosage": 100,
+            "rx_number": "1234567-12345"
+        }
+    ]
+
+    accuracy = ratio(str(answer_array).lower(), str(correct_array).lower())
+    return accuracy, inference_time, str(answer_array)
+
+def math_ocr():
+    base_model = GPT4V(
+        ontology=CaptionOntology({"none": "none"}),
+        api_key=os.environ["OPENAI_API_KEY"],
+    )
+
+    result, inference_time = base_model.predict(
+        "images/math.jpeg",
+        classes=[],
+        result_serialization="text",
+        prompt="Produce a JSON array with a LaTeX string of each equation in the image."
+    )
+
+    code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
+    code_blocks = re.findall(code_regex,result, re.DOTALL)
+    answer_array = json.loads(code_blocks[0])
+    answer_equation = answer_array[0].replace(" ", "")
+
+    correct_equation = "3x^2-6x+2"
+
+    accuracy = ratio(str(answer_equation).lower(), str(correct_equation).lower())
+    return accuracy, inference_time, str(answer_equation)
+
+def object_detection():
+    base_model = GPT4V(
+        ontology=CaptionOntology({"none": "none"}),
+        api_key=os.environ["OPENAI_API_KEY"],
+    )
+
+    result, inference_time = base_model.predict(
+        "images/fruit.jpeg",
+        classes=[],
+        result_serialization="text",
+        prompt="If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point",
+    )
+
+    code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
+    code_blocks = re.findall(code_regex, result, re.DOTALL)
+    answer = json.loads(code_blocks[0])
+
+    correct = {'x': 0.465, 'y': 0.42, 'width': 0.37, 'height': 0.38}
+
+    r1 = answer
+    r2 = correct
+    xi_min = max(r1['x'] - r1['width'] / 2, r2['x'] - r2['width'] / 2)
+    yi_min = max(r1['y'] - r1['height'] / 2, r2['y'] - r2['height'] / 2)
+    xi_max = min(r1['x'] + r1['width'] / 2, r2['x'] + r2['width'] / 2)
+    yi_max = min(r1['y'] + r1['height'] / 2, r2['y'] + r2['height'] / 2)
+
+    inter_area = max(0, xi_max - xi_min) * max(0, yi_max - yi_min)
+    union_area = r1['width'] * r1['height'] + r2['width'] * r2['height'] - inter_area
+
+    iou = inter_area / union_area if union_area else 0
+
+    return iou, inference_time, str(answer)
+
+def set_of_mark():
+  base_model = GPT4V(
+      ontology=CaptionOntology({"none": "none"}),
+      api_key=os.environ["OPENAI_API_KEY"],
+  )
+
+  result, inference_time = base_model.predict(
+      "images/fruits_som.png",
+      classes=[],
+      result_serialization="text",
+      prompt="Find all the fruits in this image and return a JSON array of all the applicable numbers.",
+  )
+
+  code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
+  code_blocks = re.findall(code_regex,result, re.DOTALL)
+  answer = json.loads(code_blocks[0])
+
+  correct = [35,40,26,2,13,17,29,21,10,42,8,43,0,11,7,4,12,27,37,39,22,15,25]
+
+  score = 0
+  for guess in answer:
+      if guess in correct: score += 1
+
+  accuracy = score/len(correct)
+
+  return accuracy, inference_time, result
+
+
+tests = [
+    "zero_shot_classification",
+    "count_fruit",
+    "document_ocr",
+    "handwriting_ocr",
+    "extraction_ocr",
+    "math_ocr",
+    "object_detection",
+    "set_of_mark"
+]
+
+current_results = {}
+for i in tests:
+    test = globals()[i]
+
+    test_result = test()
+    score, response_time, result = test_result
+
+    score = (1 if score is True else (0 if score is False else score))
+
+    current_results[i] = {}
+    current_results[i]["score"] = score
+    current_results[i]["response_time"] = response_time
+    current_results[i]["result"] = result
+
+print("current_results", current_results)
 
 # save as today in 2023-01-01 format
 # make results dir
@@ -167,62 +294,53 @@ if not os.path.exists("results"):
 today = datetime.datetime.now().strftime("%Y-%m-%d")
 
 with open(f"results/{today}.json", "w+") as file:
-    json.dump(results, file)
+    json.dump(current_results, file)
 
-results = {"zero_shot_classification": [], "count_fruit": [], "request_times": [], "document_ocr": [], "handwriting_ocr": []}
+historical_results = {}
+for i in tests:
+    historical_results[i] = {}
+    historical_results[i]["scores"] = []
+    historical_results[i]["response_times"] = []
 
 for file in os.listdir("results"):
+    if os.path.isdir(f"results/{file}"): continue
     with open(f"results/{file}") as f:
         data = json.load(f)
 
         for key, value in data.items():
-            def conversion(s): 
-                return (1 if s is True else (0 if s is False else s))
-            scores = list(map(conversion, value))
-            results[key] = scores
+            print(key, value)
+            historical_results[key]["scores"].append(value["score"])
+            historical_results[key]["response_times"].append(value["response_time"])
+            historical_results[key]["days"] = len(historical_results[key]["scores"])
 
-og_results = results.copy()
 
-print(results, "rrr")
+print("historical_results", historical_results)
 
-results["zero_shot_classification_success_rate"] = (
-    sum(og_results["zero_shot_classification"])
-    / len(og_results["zero_shot_classification"])
-    * 100
-)
-results["count_fruit_success_rate"] = (
-    sum(og_results["count_fruit"])
-    / len(og_results["count_fruit"])
-    * 100
-)
-results["document_ocr_success_rate"] = (
-    sum(og_results["document_ocr"])
-    / len(og_results["document_ocr"])
-    * 100
-)
-results["handwriting_ocr_success_rate"] = (
-    sum(og_results["handwriting_ocr"])
-    / len(og_results["handwriting_ocr"])
-    * 100
-)
+historical_averages = {}
+for i in tests:
+    historical_averages[i] = {}
+    historical_averages[i]["scores"] = mean(historical_results[i]["scores"])
+    historical_averages[i]["response_times"] = mean(historical_results[i]["response_times"])
+    historical_averages[i]["success_percent"] = round(historical_averages[i]["scores"]*100,2)
 
-results["zero_shot_classification_length"] = len(og_results["zero_shot_classification"])
-results["count_fruit_length"] = len(og_results["count_fruit"])
-results["document_ocr_length"] = len(og_results["document_ocr"])
-results["handwriting_ocr_length"] = len(og_results["handwriting_ocr"])
+print("historical_averages", historical_averages)
 
-results["document_ocr_result"] = ocr_result
-results["handwriting_result"] = handwriting_result
-results["zero_shot_result"] = zero_shot_result
-results["count_result"] = count_result
+response_times = []
+for i in historical_averages:
+    response_times.append(historical_averages[i]["response_times"])
 
-results["avg_response_time"] = round(sum([float(i) for i in results["request_times"]]) / len(
-    results["request_times"]
-), 2)
+average_response_time = round(mean(response_times),2)
+day_count = len(response_times)
 
-results["day_count"] = len(results["request_times"])
+results = {
+    'current': current_results,
+    'past': historical_results,
+    'averages': historical_averages,
+    'avg_time': average_response_time,
+    'days': day_count
+}
 
-print(results)
+print(json.dumps(result, indent=4))
 
 template = jinja2.Template(open("template.html").read())
 
