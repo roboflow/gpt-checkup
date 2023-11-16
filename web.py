@@ -198,6 +198,39 @@ def math_ocr():
     accuracy = ratio(str(answer_equation).lower(), str(correct_equation).lower())
     return accuracy, inference_time, str(answer_equation)
 
+def object_detection():
+    base_model = GPT4V(
+        ontology=CaptionOntology({"none": "none"}),
+        api_key=os.environ["OPENAI_API_KEY"],
+    )
+
+    result, inference_time = base_model.predict(
+        "images/fruit.jpeg",
+        classes=[],
+        result_serialization="text",
+        prompt="If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point",
+    )
+
+    code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
+    code_blocks = re.findall(code_regex, result, re.DOTALL)
+    answer = json.loads(code_blocks[0])
+
+    correct = {'x': 0.465, 'y': 0.42, 'width': 0.37, 'height': 0.38}
+
+    r1 = answer
+    r2 = correct
+    xi_min = max(r1['x'] - r1['width'] / 2, r2['x'] - r2['width'] / 2)
+    yi_min = max(r1['y'] - r1['height'] / 2, r2['y'] - r2['height'] / 2)
+    xi_max = min(r1['x'] + r1['width'] / 2, r2['x'] + r2['width'] / 2)
+    yi_max = min(r1['y'] + r1['height'] / 2, r2['y'] + r2['height'] / 2)
+
+    inter_area = max(0, xi_max - xi_min) * max(0, yi_max - yi_min)
+    union_area = r1['width'] * r1['height'] + r2['width'] * r2['height'] - inter_area
+
+    iou = inter_area / union_area if union_area else 0
+
+    return iou, inference_time, str(answer)
+
 
 tests = [
     "zero_shot_classification",
@@ -205,7 +238,8 @@ tests = [
     "document_ocr",
     "handwriting_ocr",
     "extraction_ocr",
-    "math_ocr"
+    "math_ocr",
+    "object_detection"
 ]
 
 current_results = {}
