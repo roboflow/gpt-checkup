@@ -152,6 +152,7 @@ header a {
     border-radius: 8px;
     background: var(--colors-bg-primary);
     box-shadow: 0px 4px 24px 4px rgba(131, 21, 249, 0.4);
+    transition: all 200ms;
 }
 .button:hover {
     background: #8015f2;
@@ -258,6 +259,7 @@ footer p {
 }
 .dropdown:hover {
     background: var(--gray-100);
+    transition: all 200ms;
 }
 .dropdown:after {
     content: "\02795";
