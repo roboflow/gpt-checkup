@@ -37,8 +37,7 @@ h3 {
     padding: 0;
 }
 body {
-    /* background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 21.35%), linear-gradient(90deg, #e2c8fe 0%, #bfdbfe 51.04%, #aefff0 100%), lightgray; */
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 30%), linear-gradient(90deg, #e2c8fe 0%, #bfdbfe 50%, #aefff0 100%);
+    background: linear-gradient(180deg, rgba(249, 250, 251, 0) 0%, rgb(242, 246, 252) 45%), linear-gradient(90deg, #e2c8fe 0%, #bfdbfe 50%, #aefaff 100%);
 }
 main {
     margin: 0 auto;
@@ -60,7 +59,6 @@ h2 {
     font-size: 20px;
     font-weight: 500;
     line-height: 28px; /* 140% */
-    /* margin-bottom: 4px; */
 }
 h3 {
     color: var(--gray-700);
@@ -69,9 +67,6 @@ h3 {
     font-weight: 400;
     line-height: 20px;
     margin-top: 16px;
-
-    /* text-transform: uppercase; */
-    /* letter-spacing: 0.05rem; */
 }
 a {
     color: #6706ce;
@@ -80,7 +75,6 @@ a {
 .graph_paper {
     width: 100%;
     height: 100%;
-    /* background-color: var(--graph-bg-color); */
     background-image: linear-gradient(var(--graph-line-color-1) 1.5px, transparent 1.5px), linear-gradient(90deg, var(--graph-line-color-1) 1.5px, transparent 1.5px), linear-gradient(var(--graph-line-color-2) 1px, transparent 1px), linear-gradient(90deg, var(--graph-line-color-2) 1px, transparent 1px);
     background-position: -1.5px -1.5px, -1.5px -1.5px, -1px -1px, -1px -1px;
     background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
@@ -105,7 +99,6 @@ a {
 .feature_cards {
     display: flex;
     place-items: start stretch;
-    /* align-items: flex-start; */
     margin-top: var(--spacing-sizing-6);
     margin-bottom: var(--spacing-sizing-6);
     display: grid;
@@ -279,9 +272,6 @@ footer p {
     display: none;
     flex-direction: column;
     padding: 0 var(--spacing-sizing-6) var(--spacing-sizing-4) var(--spacing-sizing-6);
-    /* border-radius: var(--border-radius-rounded-lg);
-    border: 1px solid var(--gray-200); */
-
     max-height: 0;
     overflow: hidden;
     transition: all 400ms;
@@ -332,9 +322,6 @@ pre {
         display: block !important;
         margin: 0 auto;
     }
-    /* #lenny img {
-        display: none;
-    } */
 }
 .cost {
     color: var(--gray-500);
@@ -360,7 +347,6 @@ pre {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sizing-4);
-    /* list-style-type: "→"; */
     margin: 0px;
 }
 .methodology_text #red {
