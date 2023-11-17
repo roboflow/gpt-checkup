@@ -209,7 +209,7 @@ def object_detection():
         "images/fruit.jpeg",
         classes=[],
         result_serialization="text",
-        prompt="If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point",
+        prompt="If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point.",
     )
 
     code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
@@ -270,7 +270,7 @@ tests = [
     "extraction_ocr",
     "math_ocr",
     "object_detection",
-    "set_of_mark"
+    # "set_of_mark"
 ]
 
 current_results = {}
