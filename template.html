@@ -29,15 +29,16 @@
     </head>
     <body>
         <div class="graph_paper">
-            <img src="./assets/roboflow_full_logo_color.png" class="logo" alt="Roboflow Logo" />
+            <a href="https://roboflow.com"><img src="./assets/roboflow_full_logo_color.png" class="logo" alt="Roboflow Logo" /></a>
             <header>
-                <h1>How's GPT-4V Doing?</h1>
+                <h1>How's GPT-4 with Vision Doing?</h1>
                 <div class="header_text">
-                    <p>A collection of experiments measuring the performance of <a href="https://platform.openai.com/docs/guides/vision">GPT-4 Vision</a>.</p>
+                    <p>This website measures how <a href="https://platform.openai.com/docs/guides/vision">GPT-4 with Vision</a> performs across a range of experiments.</p>
+                    <p>We test tasks we know GPT-4 with Vision performs well at (i.e. classification) to measure regressions, as well as tasks GPT-4 with Vision struggles with (i.e. odometer OCR) to measure performance improvements.</p>
+                    <p>We run all of our tests every day at 1am PT and show the results below.</p>
                     <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
                 </div>
                 <div class="header_text subtitle">
-                    <p>Percentages measure how many of our daily tests since November 17th, 2023.</p>
                     <p>Last updated November 15, 2023.</p>
                 </div>
                 <div class="header_cta">
@@ -51,7 +52,7 @@
                     <div class="feature_header">
                         <div class="feature_header_text">
                             <h2>Response Time</h2>
-                            <p class="subtitle">Over the last {{results['days']}}  day{% if results['days'] > 1 %}s{% endif %}, the average response time was {{results['avg_response_time']}}ms.<br />This number only accounts for requests made by this application.</p>
+                            <p class="subtitle">Over the last {{results['days']}} day{% if results['days'] > 1 %}s{% endif %}, the average response time was {{results['avg_response_time']}}ms.<br />This number only accounts for requests made by this application.</p>
                         </div>
                         <div class="chart">
                             <div class="chart_box chart_box_green">
@@ -69,11 +70,11 @@
                             </div>
                             <div class="chart">
                                 <div class="chart_box chart_box_green">
-                                    <p>{{ results["averages"]['zero_shot_classification'].success_percent }}%</p>
+                                    <p>{% if current_results['zero_shot_classification']['success'] %}Passed{% else %}Failed{% endif %}</p>
                                 </div>
                             </div>
                         </div>
-                        <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['zero_shot_classification'].score}}" alt="Zero-Shot Classification Test" />
+                        <p>Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['zero_shot_classification'].success_percent }} of the time.</p>
                         <div class="explainer_dropdown">
                             <button type="button" class="dropdown" id="zero_shot_dropdown">Learn about this test</button>
                             <div class="explainer">
@@ -97,11 +98,11 @@
                             </div>
                             <div class="chart">
                                 <div class="chart_box chart_box_green">
-                                    <p>0{{ results["averages"]['count_fruit'].success_percent }}%</p>
+                                    <p>{% if current_results['count_fruit']['success'] %}Passed{% else %}Failed{% endif %}</p>
                                 </div>
                             </div>
                         </div>
-                        <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['count_fruit'].score}}" alt="Zero-Shot Classification Test" />
+                        <p>Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['count_fruit'].success_percent }} of the time.</p>
                         <div class="explainer_dropdown">
                             <button type="button" class="dropdown" id="zero_shot_dropdown">Learn about this test</button>
                             <div class="explainer">
@@ -124,11 +125,11 @@
                             </div>
                             <div class="chart">
                                 <div class="chart_box chart_box_green">
-                                    <p>{{ results["averages"]['document_ocr'].success_percent }}%</p>
+                                    <p>{% if current_results['document_ocr']['success'] %}Passed{% else %}Failed{% endif %}</p>
                                 </div>
                             </div>
                         </div>
-                        <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1," alt="Zero-Shot Classification Test" />
+                        <p>Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['document_ocr'].success_percent }} of the time.</p>
                         <div class="explainer_dropdown">
                             <button type="button" class="dropdown" id="zero_shot_dropdown">Learn about this test</button>
                             <div class="explainer">
@@ -151,11 +152,11 @@
                             </div>
                             <div class="chart">
                                 <div class="chart_box chart_box_green">
-                                    <p>{{ results["averages"]['handwriting_ocr'].success_percent }}%</p>
+                                    <p>{% if current_results['handwriting_ocr']['success'] %}Passed{% else %}Failed{% endif %}</p>
                                 </div>
                             </div>
                         </div>
-                        <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['handwriting_ocr'].score}} alt="Zero-Shot Classification Test" />
+                        <p>Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['handwriting_ocr'].success_percent }} of the time.</p>
                         <div class="explainer_dropdown">
                             <button type="button" class="dropdown" id="zero_shot_dropdown">Learn about this test</button>
                             <div class="explainer">
@@ -178,11 +179,11 @@
                             </div>
                             <div class="chart">
                                 <div class="chart_box chart_box_green">
-                                    <p>{{ results["averages"]['extraction_ocr'].success_percent }}%</p>
+                                    <p>{% if current_results['extraction_ocr']['success'] %}Passed{% else %}Failed{% endif %}</p>
                                 </div>
                             </div>
                         </div>
-                        <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['extraction_ocr'].score}} alt="Zero-Shot Classification Test" />
+                        <p>Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['extraction_ocr'].success_percent }} of the time.</p>
                         <div class="explainer_dropdown">
                             <button type="button" class="dropdown" id="zero_shot_dropdown">Learn about this test</button>
                             <div class="explainer">
@@ -205,11 +206,11 @@
                             </div>
                             <div class="chart">
                                 <div class="chart_box chart_box_green">
-                                    <p>{{ results["averages"]['object_detection'].success_percent }}%</p>
+                                    <p>{% if current_results['object_detection']['success'] %}Passed{% else %}Failed{% endif %}</p>
                                 </div>
                             </div>
                         </div>
-                        <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['object_detection'].score}} alt="Zero-Shot Classification Test" />
+                        <p>Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['object_detection'].success_percent }} of the time.</p>
                         <div class="explainer_dropdown">
                             <button type="button" class="dropdown" id="zero_shot_dropdown">Learn about this test</button>
                             <div class="explainer">
