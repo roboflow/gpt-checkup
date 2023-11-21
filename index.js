@@ -16,7 +16,15 @@ let i;
 for (i = 0; i < dropdowns.length; i++) {
     dropdowns[i].addEventListener("click", function (event) {
         this.classList.toggle("active");
-        var content = this.nextElementSibling;
+
+        let content;
+        content = this.nextElementSibling;
+        // if (this.classList.contains("dropdown_learn")) {
+        //     content = this.nextElementSibling;
+        // } else {
+        //     content = this.previousElementSibling;
+        // }
+        // console.log(this.classList);
 
         if (content.style.display === "flex") {
             content.style.display = "none";
@@ -31,3 +39,25 @@ for (i = 0; i < dropdowns.length; i++) {
         }
     });
 }
+
+let show_passing_btn = document.querySelector("#show_passing_btn");
+show_passing_btn.addEventListener("click", function (event) {
+    this.classList.toggle("show_passing_btn_active");
+    if (this.textContent === "Show") {
+        this.textContent = "Hide";
+    } else {
+        this.textContent = "Show";
+    }
+
+    let content = document.querySelector("#passing_tests");
+    if (content.style.overflow === "visible") {
+        content.style.overflow = "hidden";
+    } else {
+        content.style.overflow = "visible";
+    }
+    if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+    } else {
+        content.style.maxHeight = "300vh";
+    }
+});
