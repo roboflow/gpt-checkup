@@ -284,6 +284,7 @@ for i in tests:
 
     current_results[i] = {}
     current_results[i]["score"] = score
+    current_results[i]["success"] = score == 1
     current_results[i]["response_time"] = response_time
     current_results[i]["result"] = result
 
@@ -350,7 +351,7 @@ template = jinja2.Template(open("template.html").read())
 today = datetime.datetime.now().strftime("%B %d, %Y")
 
 # render template
-rendered = template.render(results=results, date=today)
+rendered = template.render(results=results, date=today, current_results=current_results)
 
 # save rendered template to index.html
 with open("index.html", "w+") as file:
