@@ -56,7 +56,7 @@ h1 {
     font-weight: 700;
 }
 h2 {
-    color: var(--gray-900);
+    color: var(--primary-dark);
     /* text-xl/font-semibold */
     font-family: Inter;
     font-size: 20px;
@@ -143,7 +143,7 @@ header a {
     transition: all 200ms;
 }
 
-#passing_tests {
+#passing_cards {
     max-height: 0;
     overflow: hidden;
     transition: all 400ms;
@@ -173,26 +173,27 @@ header a {
     grid-gap: var(--spacing-sizing-6);
 }
 h1 {
-    margin: 0px 32px;
+    margin: 0px var(--spacing-sizing-10);
 }
 header {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 24px;
+    gap: var(--spacing-sizing-10);
     width: 100%;
-    margin: 40px auto;
+    margin: var(--spacing-sizing-10) auto;
 }
 .header_text {
     color: var(--primary-dark);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: var(--spacing-sizing-4);
     font-size: 18px;
     line-height: 28px;
-    padding: 0px 32px;
+    padding: 0px var(--spacing-sizing-10);
+    max-width: 800px;
 }
 
 .header_cta {
@@ -201,12 +202,22 @@ header {
     align-items: center;
     gap: 16px;
 }
+
+.subtitle_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sizing-2);
+    margin: 0px var(--spacing-sizing-10);
+}
+
 .logo {
     height: 50px;
     width: initial;
 }
 
 .logo_link {
+    align-self: flex-start;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -308,7 +319,7 @@ footer p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: var(--spacing-sizing-2);
     flex: 1 0 0;
 }
 .explainer_dropdown {
@@ -395,7 +406,11 @@ pre {
         flex: 1 0 0;
     }
     .logo_link {
+        align-self: center;
         margin: var(--spacing-sizing-6);
+    }
+    .header_text {
+        gap: var(--spacing-sizing-6);
     }
 }
 .cost {
@@ -448,5 +463,5 @@ pre {
     height: 1px;
     width: 100px;
     margin: 0px auto;
-    background-color: var(--gray-900);
+    background-color: var(--primary-dark);
 }

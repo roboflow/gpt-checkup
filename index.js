@@ -49,7 +49,7 @@ show_passing_btn.addEventListener("click", function (event) {
         this.textContent = "Show";
     }
 
-    let content = document.querySelector("#passing_tests");
+    let content = document.querySelector("#passing_cards");
     if (content.style.overflow === "visible") {
         content.style.overflow = "hidden";
     } else {

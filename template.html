@@ -37,11 +37,12 @@
                 <div class="header_text">
                     <p>This website measures how <a href="https://platform.openai.com/docs/guides/vision">GPT-4 with Vision</a> performs across a range of experiments.</p>
                     <p>We test tasks we know GPT-4 with Vision performs well at (i.e. classification) to measure regressions, as well as tasks GPT-4 with Vision struggles with (i.e. odometer OCR) to measure performance improvements.</p>
-                    <p>We run all of our tests every day at 1am PT and show the results below.</p>
-                    <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
+                    <!-- <p>Tests are run every day at 1am PT.</p> -->
                 </div>
-                <div class="header_text subtitle">
-                    <p>Last updated November 15, 2023.</p>
+                <div class="subtitle_text subtitle">
+                    <p>Tests are run every day at 1am PT. Last updated November 15, 2023.</p>
+                    <!-- <p>Tests are run every day at 1am PT.</p> -->
+                    <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
                 </div>
                 <div class="header_cta">
                     <a href="#methodology" class="button">Learn about our methodology</a>
@@ -82,6 +83,7 @@
                                 </div>
                             </div>
                             <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['zero_shot_classification'].score}}" alt="Zero-Shot Classification Test" />
+                            <p class="subtitle">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['extraction_ocr'].success_percent }} of the time.</p>
                             <div class="explainer_dropdown">
                                 <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
                                 <div class="explainer">
@@ -137,6 +139,7 @@
                                 </div>
                             </div>
                             <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1," alt="Document OCR Test" />
+                            <p class="subtitle">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['object_detection'].success_percent }} of the time.</p>
                             <div class="explainer_dropdown">
                                 <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
                                 <div class="explainer">
@@ -165,7 +168,7 @@
                             </div>
                             <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['handwriting_ocr'].score}}" alt="Handwriting OCR Test" />
                             <div class="explainer_dropdown">
-                                <!-- <button type="button" class="dropdown dropdown_learn">Learn about this test</button> -->
+                                <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
                                 <div class="explainer">
                                     <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                     <pre>
@@ -239,7 +242,7 @@
                         <h1><i class="fad fa-check-circle" style="--fa-primary-color: #10b981; --fa-secondary-color: #10b981; --fa-secondary-opacity: 0.3"></i> Passing Tests</h1>
                         <button type="button" id="show_passing_btn">Show</button>
                     </div>
-                    <section class="feature_cards" id="passing_tests">
+                    <section class="feature_cards" id="passing_cards">
                         <div class="feature_card">
                             <div class="feature_header">
                                 <div class="feature_header_text">
@@ -253,7 +256,6 @@
                                 </div>
                             </div>
                             <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['zero_shot_classification'].score}}" alt="Zero-Shot Classification Test" />
-                            <p>Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['extraction_ocr'].success_percent }} of the time.</p>
                             <div class="explainer_dropdown">
                                 <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
                                 <div class="explainer">
@@ -309,7 +311,6 @@
                                 </div>
                             </div>
                             <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1," alt="Document OCR Test" />
-                            <p>Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['object_detection'].success_percent }} of the time.</p>
                             <div class="explainer_dropdown">
                                 <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
                                 <div class="explainer">
