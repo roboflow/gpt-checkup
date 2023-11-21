@@ -4,8 +4,7 @@ for (i = 0; i < dropdowns.length; i++) {
     dropdowns[i].addEventListener("click", function (event) {
         this.classList.toggle("active");
 
-        let content;
-        content = this.nextElementSibling;
+        let content = this.nextElementSibling;
         // if (this.classList.contains("dropdown_learn")) {
         //     content = this.nextElementSibling;
         // } else {
@@ -13,14 +12,18 @@ for (i = 0; i < dropdowns.length; i++) {
         // }
         // console.log(this.classList);
 
-        if (content.style.display === "flex") {
-            content.style.display = "none";
-        } else {
+        console.log("before: " + content.style.display);
+        // flex, null
+        // none, content.style.display
+        if (content.style.display === "none") {
             content.style.display = "flex";
+        } else {
+            content.style.display = "none";
         }
+        console.log("after: " + content.style.display);
 
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
+        if (content.style.maxHeight != "0px") {
+            content.style.maxHeight = "0px";
             // content.style.padding = "0px";
         } else {
             content.style.maxHeight = content.scrollHeight + "px";

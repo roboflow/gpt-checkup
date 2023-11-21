@@ -78,14 +78,13 @@
                                 </div>
                                 <div class="chart">
                                     <div class="chart_box chart_box_green">
-                                        <p>{{ results["averages"]['zero_shot_classification'].success_percent }}%</p>
+                                        <p>TODO</p>
                                     </div>
                                 </div>
                             </div>
-                            <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['zero_shot_classification'].score}}" alt="Zero-Shot Classification Test" />
-                            <p class="subtitle">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['extraction_ocr'].success_percent }} of the time.</p>
+                            <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['zero_shot_classification'].success_percent }}% of the time.</p>
                             <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
+                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                 <div class="explainer">
                                     <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                     <pre>
@@ -96,7 +95,6 @@
                                     <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                     <pre>{{results['current']['zero_shot_classification'].result}}</pre>
                                 </div>
-                                <!-- <button type="button" class="dropdown active active dropdown_collapse" id="zero_shot_dropdown">Learn!</button> -->
                             </div>
                         </div>
                         <div class="feature_card">
@@ -107,13 +105,13 @@
                                 </div>
                                 <div class="chart">
                                     <div class="chart_box chart_box_green">
-                                        <p>0{{ results["averages"]['count_fruit'].success_percent }}%</p>
+                                        <p>TODO</p>
                                     </div>
                                 </div>
                             </div>
-                            <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['count_fruit'].score}}" alt="Counting Test" />
+                            <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['count_fruit'].success_percent }}% of the time.</p>
                             <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
+                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                 <div class="explainer">
                                     <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                     <pre>
@@ -134,14 +132,13 @@
                                 </div>
                                 <div class="chart">
                                     <div class="chart_box chart_box_green">
-                                        <p>{{ results["averages"]['document_ocr'].success_percent }}%</p>
+                                        <p>TODO</p>
                                     </div>
                                 </div>
                             </div>
-                            <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1," alt="Document OCR Test" />
-                            <p class="subtitle">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['object_detection'].success_percent }} of the time.</p>
+                            <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['document_ocr'].success_percent }}% of the time.</p>
                             <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
+                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                 <div class="explainer">
                                     <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                     <pre>
@@ -162,13 +159,13 @@
                                 </div>
                                 <div class="chart">
                                     <div class="chart_box chart_box_green">
-                                        <p>{{ results["averages"]['handwriting_ocr'].success_percent }}%</p>
+                                        <p>TODO</p>
                                     </div>
                                 </div>
                             </div>
-                            <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['handwriting_ocr'].score}}" alt="Handwriting OCR Test" />
+                            <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['handwriting_ocr'].success_percent }}% of the time.</p>
                             <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
+                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                 <div class="explainer">
                                     <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                     <pre>
@@ -189,13 +186,13 @@
                                 </div>
                                 <div class="chart">
                                     <div class="chart_box chart_box_green">
-                                        <p>{{ results["averages"]['extraction_ocr'].success_percent }}%</p>
+                                        <p>TODO</p>
                                     </div>
                                 </div>
                             </div>
-                            <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['extraction_ocr'].score}}" alt="Structured OCR Extraction" />
+                            <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['extraction_ocr'].success_percent }}% of the time.</p>
                             <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
+                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                 <div class="explainer">
                                     <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                     <pre>
@@ -216,13 +213,13 @@
                                 </div>
                                 <div class="chart">
                                     <div class="chart_box chart_box_green">
-                                        <p>{{ results["averages"]['object_detection'].success_percent }}%</p>
+                                        <p>TODO</p>
                                     </div>
                                 </div>
                             </div>
-                            <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['object_detection'].score}}" alt="Object Detection Test" />
+                            <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['object_detection'].success_percent }}% of the time.</p>
                             <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
+                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                 <div class="explainer">
                                     <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                     <pre>
@@ -255,9 +252,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['zero_shot_classification'].score}}" alt="Zero-Shot Classification Test" />
                             <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
+                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                 <div class="explainer">
                                     <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                     <pre>
@@ -283,9 +279,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['count_fruit'].score}}" alt="Counting Test" />
                             <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
+                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                 <div class="explainer">
                                     <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                     <pre>
@@ -310,9 +305,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1," alt="Document OCR Test" />
                             <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
+                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                 <div class="explainer">
                                     <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                     <pre>
@@ -337,9 +331,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['handwriting_ocr'].score}}" alt="Handwriting OCR Test" />
                             <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
+                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                 <div class="explainer">
                                     <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                     <pre>
@@ -364,9 +357,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['extraction_ocr'].score}}" alt="Structured OCR Extraction" />
                             <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
+                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                 <div class="explainer">
                                     <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                     <pre>
@@ -391,9 +383,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <embed src="./assets/svg.svg?1,1,1,1,1,1,1,1,{{results['current']['object_detection'].score}}" alt="Object Detection Test" />
                             <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn">Learn about this test</button>
+                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                 <div class="explainer">
                                     <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                     <pre>
