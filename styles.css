@@ -279,9 +279,9 @@ footer p {
     gap: 8px;
 }
 .chart_box {
-    width: 20px;
-    height: 40px;
-    overflow: hidden;
+    /* width: 20px; */
+    /* height: 40px; */
+    /* overflow: hidden; */
 
     flex-shrink: 0;
     display: flex;
