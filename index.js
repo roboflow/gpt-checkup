@@ -1,16 +1,3 @@
-function toggleChevron(dropdown) {
-    let elem = dropdown.querySelector("#chevron");
-    elem.classList.toggle("fa-chevron-down");
-    elem.classList.toggle("fa-chevron-up");
-    // if (elem.classList.contains("fa-chevron-down")) {
-    //     elem.classList.remove("fa-chevron-down");
-    //     elem.classList.add("fa-chevron-up");
-    // } else {
-    //     elem.classList.remove("fa-chevron-up");
-    //     elem.classList.add("fa-chevron-down");
-    // }
-}
-
 let dropdowns = document.querySelectorAll(".dropdown");
 let i;
 for (i = 0; i < dropdowns.length; i++) {
@@ -34,8 +21,10 @@ for (i = 0; i < dropdowns.length; i++) {
 
         if (content.style.maxHeight) {
             content.style.maxHeight = null;
+            // content.style.padding = "0px";
         } else {
             content.style.maxHeight = content.scrollHeight + "px";
+            // content.style.padding = "0 var(--spacing-sizing-6) var(--spacing-sizing-4) var(--spacing-sizing-6)";
         }
     });
 }

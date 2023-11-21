@@ -71,7 +71,7 @@ h3 {
     line-height: 20px;
     margin-top: 16px;
 }
-header a {
+a {
     color: #6706ce;
     text-decoration: none;
     font-weight: 600;
@@ -119,13 +119,10 @@ header a {
     padding: var(--spacing-sizing-2) var(--spacing-sizing-3);
     align-items: center;
     gap: var(--spacing-sizing-2);
-    /* border: none; */
     color: var(--white);
     border: solid 1px var(--gray-700);
     background-color: var(--gray-700);
     border-radius: 8px;
-    /* background: var(--colors-bg-primary); */
-    /* box-shadow: 0px 4px 24px 4px rgba(131, 21, 249, 0.4); */
     transition: all 200ms;
     cursor: pointer;
 }
@@ -146,7 +143,7 @@ header a {
 #passing_cards {
     max-height: 0;
     overflow: hidden;
-    transition: all 400ms;
+    transition: all 400ms ease-in-out;
 }
 
 .feature_card_wide,
@@ -350,7 +347,7 @@ footer p {
     content: "\02795";
 }
 .active {
-    transition: all 200ms;
+    transition: all 400ms;
     /* border-radius: var(--border-radius-rounded-lg); */
 }
 .active:after {
