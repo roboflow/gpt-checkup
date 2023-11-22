@@ -264,7 +264,7 @@ def set_of_mark():
 
     accuracy = score/len(correct)
 
-    return accuracy, inference_time, result
+    return accuracy, inference_time, str(answer)
 
 
 tests = [
