@@ -275,7 +275,7 @@ tests = [
     "extraction_ocr",
     "math_ocr",
     "object_detection",
-    # "set_of_mark"
+    "set_of_mark"
 ]
 
 current_results = {}
