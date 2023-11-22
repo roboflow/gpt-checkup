@@ -543,5 +543,6 @@ pre,
     color: var(--colors-bg-primary);
     background-color: #ede0fa;
     font-weight: 500;
+    font-size: 14px;
     border-radius: var(--border-radius-rounded-lg);
 }
