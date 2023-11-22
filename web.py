@@ -271,6 +271,64 @@ def set_of_mark():
     return accuracy, inference_time, str(answer)
 
 
+def graph_understanding():
+    base_model = GPT4V(
+        ontology=CaptionOntology({"none": "none"}),
+        api_key=os.environ["OPENAI_API_KEY"],
+    )
+
+    result, inference_time = base_model.predict(
+        "images/graph.png",
+        classes=[],
+        result_serialization="text",
+        prompt="State positions of points A through D in a JSON with properties A-D, each having a object with properties for integers matching the respective point: `quantity` and `price`.",
+    )
+
+    code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
+    code_blocks = re.findall(code_regex, result, re.DOTALL)
+    if (len(code_blocks) == 0): 
+        return 0, inference_time, f"Failed to produce a valid JSON output: {{result}}"
+    answer = json.loads(code_blocks[0])
+
+    correct = {
+      "A": {
+        "quantity": 20,
+        "price": 10
+      },
+      "B": {
+        "quantity": 26,
+        "price": 20
+      },
+      "C": {
+        "quantity": 30,
+        "price": 30
+      },
+      "D": {
+        "quantity": 34,
+        "price": 40
+      }
+    }
+
+    total_scores = 0
+    count = 0
+
+    for letter in 'ABCD':
+        if letter in correct and letter in answer:
+            quantity_diff = abs(correct[letter]['quantity'] - answer[letter]['quantity'])
+            quantity_score = max(0, 1 - (quantity_diff / 25))
+
+            price_diff = abs(correct[letter]['price'] - answer[letter]['price'])
+            price_score = max(0, 1 - (price_diff / 25))
+
+            total_scores += (quantity_score + price_score)
+            count += 2
+
+    print(total_scores / count)
+    score = total_scores / count
+
+    return score, response_time, str(result)
+
+
 tests = [
     "zero_shot_classification",
     "count_fruit",
@@ -279,7 +337,8 @@ tests = [
     "extraction_ocr",
     "math_ocr",
     "object_detection",
-    "set_of_mark"
+    "set_of_mark",
+    "graph_understanding"
 ]
 
 current_results = {}
@@ -307,7 +366,7 @@ if not os.path.exists("results"):
 today = datetime.datetime.now().strftime("%Y-%m-%d")
 
 with open(f"results/{today}.json", "w+") as file:
-    json.dump(current_results, file)
+    json.dump(current_results, file, indent=4)
 
 historical_results = {}
 for i in tests:
