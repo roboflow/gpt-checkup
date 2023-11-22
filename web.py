@@ -65,6 +65,10 @@ class GPT4V(DetectionBaseModel):
 
         inference_time = time.time() - start_time
 
+        input_tokens = response.usage.prompt_tokens
+        output_tokens = response.usage.completion_tokens
+        tokens = (input_tokens, output_tokens)
+
         if result_serialization == "Classifications":
             class_ids = self.ontology.prompts().index(
                 response.choices[0].message.content
@@ -75,10 +79,10 @@ class GPT4V(DetectionBaseModel):
                     class_id=np.array([class_ids]),
                     confidence=np.array([1]),
                 ),
-                inference_time,
+                inference_time, tokens
             )
         else:
-            return response.choices[0].message.content, inference_time
+            return response.choices[0].message.content, inference_time, tokens
 
 
 def zero_shot_classification():
@@ -89,13 +93,14 @@ def zero_shot_classification():
         api_key=os.environ["OPENAI_API_KEY"],
     )
 
-    result, inference_time = base_model.predict("images/car.jpeg", classes=classes)
+    result, inference_time, tokens = base_model.predict("images/car.jpeg", classes=classes)
 
     return (
         # 1 maps with Tesla Model 3
         result == sv.Classifications(class_id=np.array([1]), confidence=np.array([1])),
         inference_time,
         classes[result.class_id[0]],
+        tokens
     )
 
 
@@ -105,14 +110,14 @@ def count_fruit():
         api_key=os.environ["OPENAI_API_KEY"],
     )
 
-    result, inference_time = base_model.predict(
+    result, inference_time, tokens = base_model.predict(
         "images/fruit.jpeg",
         classes=["fruit", "bowl"],
         result_serialization="text",
         prompt="Count the fruit in the image. Return a single number.",
     )
 
-    return result == "10", inference_time, result
+    return result == "10", inference_time, result, tokens
 
 
 def document_ocr():
@@ -121,14 +126,19 @@ def document_ocr():
         api_key=os.environ["OPENAI_API_KEY"],
     )
 
-    result, inference_time = base_model.predict(
+    result, inference_time, tokens = base_model.predict(
         "images/swift.png",
         classes=[],
         result_serialization="text",
         prompt="Read the text in the image. Return only the text, with puncuation."
     )
 
-    return result == "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times.", inference_time, result
+    return (
+        result == "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times.",
+        inference_time, 
+        result,
+        tokens
+    )
 
 
 def handwriting_ocr():
@@ -137,14 +147,19 @@ def handwriting_ocr():
         api_key=os.environ["OPENAI_API_KEY"],
     )
 
-    result, inference_time = base_model.predict(
+    result, inference_time, tokens = base_model.predict(
         "images/ocr.jpeg",
         classes=[],
         result_serialization="text",
         prompt="Read the text in the image. Return only the text, with puncuation."
     )
 
-    return result == 'The words of songs on the album have been echoing in my head all week. "Fades into the grey of my day old tea."', inference_time, result
+    return (
+        result == 'The words of songs on the album have been echoing in my head all week. "Fades into the grey of my day old tea."',
+        inference_time,
+        result,
+        tokens
+    )
 
 
 def extraction_ocr():
@@ -153,7 +168,7 @@ def extraction_ocr():
         api_key=os.environ["OPENAI_API_KEY"],
     )
 
-    result, inference_time = base_model.predict(
+    result, inference_time, tokens = base_model.predict(
         "images/prescription.png",
         classes=[],
         result_serialization="text",
@@ -163,7 +178,7 @@ def extraction_ocr():
     code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
     code_blocks = re.findall(code_regex,result, re.DOTALL)
     if (len(code_blocks) == 0): 
-        return 0, inference_time, f"Failed to produce a valid JSON output: {result}"
+        return 0, inference_time, f"Failed to produce a valid JSON output: {result}", tokens
     answer_array = json.loads(code_blocks[0])
 
     correct_array = [
@@ -177,7 +192,7 @@ def extraction_ocr():
     ]
 
     accuracy = ratio(str(answer_array).lower(), str(correct_array).lower())
-    return accuracy, inference_time, str(answer_array)
+    return accuracy, inference_time, str(answer_array), tokens
 
 
 def math_ocr():
@@ -186,7 +201,7 @@ def math_ocr():
         api_key=os.environ["OPENAI_API_KEY"],
     )
 
-    result, inference_time = base_model.predict(
+    result, inference_time, tokens = base_model.predict(
         "images/math.jpeg",
         classes=[],
         result_serialization="text",
@@ -196,14 +211,14 @@ def math_ocr():
     code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
     code_blocks = re.findall(code_regex,result, re.DOTALL)
     if (len(code_blocks) == 0): 
-        return 0, inference_time, f"Failed to produce a valid JSON output: {result}"
+        return 0, inference_time, f"Failed to produce a valid JSON output: {result}", tokens
     answer_array = json.loads(code_blocks[0])
     answer_equation = answer_array[0].replace(" ", "")
 
     correct_equation = "3x^2-6x+2"
 
     accuracy = ratio(str(answer_equation).lower(), str(correct_equation).lower())
-    return accuracy, inference_time, str(answer_equation)
+    return accuracy, inference_time, str(answer_equation), tokens
 
 
 def object_detection():
@@ -212,7 +227,7 @@ def object_detection():
         api_key=os.environ["OPENAI_API_KEY"],
     )
 
-    result, inference_time = base_model.predict(
+    result, inference_time, tokens = base_model.predict(
         "images/fruit.jpeg",
         classes=[],
         result_serialization="text",
@@ -222,7 +237,7 @@ def object_detection():
     code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
     code_blocks = re.findall(code_regex, result, re.DOTALL)
     if (len(code_blocks) == 0): 
-        return 0, inference_time, f"Failed to produce a valid JSON output: {result}"
+        return 0, inference_time, f"Failed to produce a valid JSON output: {result}", tokens
     answer = json.loads(code_blocks[0])
 
     correct = {'x': 0.465, 'y': 0.42, 'width': 0.37, 'height': 0.38}
@@ -239,7 +254,7 @@ def object_detection():
 
     iou = inter_area / union_area if union_area else 0
 
-    return iou, inference_time, str(answer)
+    return iou, inference_time, str(answer), tokens
 
 def set_of_mark():
     base_model = GPT4V(
@@ -247,7 +262,7 @@ def set_of_mark():
         api_key=os.environ["OPENAI_API_KEY"],
     )
 
-    result, inference_time = base_model.predict(
+    result, inference_time, tokens = base_model.predict(
         "images/fruits_som.png",
         classes=[],
         result_serialization="text",
@@ -257,7 +272,7 @@ def set_of_mark():
     code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
     code_blocks = re.findall(code_regex, result, re.DOTALL)
     if (len(code_blocks) == 0): 
-        return 0, inference_time, f"Failed to produce a valid JSON output: {result}"
+        return 0, inference_time, f"Failed to produce a valid JSON output: {result}", tokens
     answer = json.loads(code_blocks[0])
 
     correct = [35,40,26,2,13,17,29,21,10,42,8,43,0,11,7,4,12,27,37,39,22,15,25]
@@ -268,7 +283,7 @@ def set_of_mark():
 
     accuracy = score/len(correct)
 
-    return accuracy, inference_time, str(answer)
+    return accuracy, inference_time, str(answer), tokens
 
 
 def graph_understanding():
@@ -277,7 +292,7 @@ def graph_understanding():
         api_key=os.environ["OPENAI_API_KEY"],
     )
 
-    result, inference_time = base_model.predict(
+    result, inference_time, tokens = base_model.predict(
         "images/graph.png",
         classes=[],
         result_serialization="text",
@@ -287,7 +302,7 @@ def graph_understanding():
     code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
     code_blocks = re.findall(code_regex, result, re.DOTALL)
     if (len(code_blocks) == 0): 
-        return 0, inference_time, f"Failed to produce a valid JSON output: {result}"
+        return 0, inference_time, f"Failed to produce a valid JSON output: {result}", tokens
     answer = json.loads(code_blocks[0])
 
     correct = {
@@ -326,7 +341,7 @@ def graph_understanding():
     print(total_scores / count)
     score = total_scores / count
 
-    return score, response_time, str(result)
+    return score, response_time, str(result), tokens
 
 
 tests = [
@@ -346,13 +361,17 @@ for i in tests:
     test = globals()[i]
 
     test_result = test()
-    score, response_time, result = test_result
+    score, response_time, result, tokens = test_result
 
+    input_token_price = 0.01/1000
+    output_token_price = 0.03/1000
+    price = (input_token_price * tokens[0]) + (output_token_price * tokens[1])
     score = (1 if score is True else (0 if score is False else score))
 
     current_results[i] = {}
     current_results[i]["score"] = score
     current_results[i]["success"] = score == 1
+    current_results[i]["price"] = price
     current_results[i]["response_time"] = response_time
     current_results[i]["result"] = result
 
