@@ -163,7 +163,7 @@ def extraction_ocr():
     code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
     code_blocks = re.findall(code_regex,result, re.DOTALL)
     if (len(code_blocks) == 0): 
-        return 0, inference_time, f"Failed to produce a valid JSON output: {{result}}"
+        return 0, inference_time, f"Failed to produce a valid JSON output: {result}"
     answer_array = json.loads(code_blocks[0])
 
     correct_array = [
@@ -196,7 +196,7 @@ def math_ocr():
     code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
     code_blocks = re.findall(code_regex,result, re.DOTALL)
     if (len(code_blocks) == 0): 
-        return 0, inference_time, f"Failed to produce a valid JSON output: {{result}}"
+        return 0, inference_time, f"Failed to produce a valid JSON output: {result}"
     answer_array = json.loads(code_blocks[0])
     answer_equation = answer_array[0].replace(" ", "")
 
@@ -222,7 +222,7 @@ def object_detection():
     code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
     code_blocks = re.findall(code_regex, result, re.DOTALL)
     if (len(code_blocks) == 0): 
-        return 0, inference_time, f"Failed to produce a valid JSON output: {{result}}"
+        return 0, inference_time, f"Failed to produce a valid JSON output: {result}"
     answer = json.loads(code_blocks[0])
 
     correct = {'x': 0.465, 'y': 0.42, 'width': 0.37, 'height': 0.38}
@@ -257,7 +257,7 @@ def set_of_mark():
     code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
     code_blocks = re.findall(code_regex, result, re.DOTALL)
     if (len(code_blocks) == 0): 
-        return 0, inference_time, f"Failed to produce a valid JSON output: {{result}}"
+        return 0, inference_time, f"Failed to produce a valid JSON output: {result}"
     answer = json.loads(code_blocks[0])
 
     correct = [35,40,26,2,13,17,29,21,10,42,8,43,0,11,7,4,12,27,37,39,22,15,25]
@@ -287,7 +287,7 @@ def graph_understanding():
     code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
     code_blocks = re.findall(code_regex, result, re.DOTALL)
     if (len(code_blocks) == 0): 
-        return 0, inference_time, f"Failed to produce a valid JSON output: {{result}}"
+        return 0, inference_time, f"Failed to produce a valid JSON output: {result}"
     answer = json.loads(code_blocks[0])
 
     correct = {
