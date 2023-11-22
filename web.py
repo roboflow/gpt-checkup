@@ -17,6 +17,13 @@ from autodistill.detection import CaptionOntology, DetectionBaseModel
 
 HOME = os.path.expanduser("~")
 
+# define @running decorator that prints the name of the function it is decorating
+def running(func):
+    def wrapper(*args, **kwargs):
+        print(f"Running {func.__name__} test...")
+        return func(*args, **kwargs)
+
+    return wrapper
 
 @dataclass
 class GPT4V(DetectionBaseModel):
@@ -80,6 +87,7 @@ class GPT4V(DetectionBaseModel):
         else:
             return response.choices[0].message.content, inference_time
 
+@running
 def zero_shot_classification():
     classes = ["Tesla Model 3", "Toyota Camry"]
 
@@ -98,6 +106,7 @@ def zero_shot_classification():
     )
 
 
+@running
 def count_fruit():
     base_model = GPT4V(
         ontology=CaptionOntology({"fruit": "fruit", "bowl": "bowl"}),
@@ -113,6 +122,7 @@ def count_fruit():
 
     return result == "10", inference_time, result
 
+@running
 def document_ocr():
     base_model = GPT4V(
         ontology=CaptionOntology({"none": "none"}),
@@ -129,6 +139,7 @@ def document_ocr():
     return result == "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times.", inference_time, result
 
 
+@running
 def handwriting_ocr():
     base_model = GPT4V(
         ontology=CaptionOntology({"none": "none"}),
@@ -144,6 +155,7 @@ def handwriting_ocr():
 
     return result == 'The words of songs on the album have been echoing in my head all week. "Fades into the grey of my day old tea."', inference_time, result
 
+@running
 def extraction_ocr():
     base_model = GPT4V(
         ontology=CaptionOntology({"none": "none"}),
@@ -175,6 +187,7 @@ def extraction_ocr():
     accuracy = ratio(str(answer_array).lower(), str(correct_array).lower())
     return accuracy, inference_time, str(answer_array)
 
+@running
 def math_ocr():
     base_model = GPT4V(
         ontology=CaptionOntology({"none": "none"}),
@@ -199,6 +212,7 @@ def math_ocr():
     accuracy = ratio(str(answer_equation).lower(), str(correct_equation).lower())
     return accuracy, inference_time, str(answer_equation)
 
+@running
 def object_detection():
     base_model = GPT4V(
         ontology=CaptionOntology({"none": "none"}),
@@ -233,6 +247,7 @@ def object_detection():
 
     return iou, inference_time, str(answer)
 
+@running
 def set_of_mark():
     base_model = GPT4V(
         ontology=CaptionOntology({"none": "none"}),
@@ -285,6 +300,7 @@ for i in tests:
     current_results[i] = {}
     current_results[i]["score"] = score
     current_results[i]["success"] = score == 1
+    current_results[i]["pass_fail"] = "Pass" if score == 1 else "Fail"
     current_results[i]["response_time"] = response_time
     current_results[i]["result"] = result
 
@@ -313,6 +329,7 @@ for file in os.listdir("results"):
 
         for key, value in data.items():
             print(key, value)
+            if historical_results.get(key) is None: continue
             historical_results[key]["scores"].append(value["score"])
             historical_results[key]["response_times"].append(value["response_time"])
             historical_results[key]["days"] = len(historical_results[key]["scores"])

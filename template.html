@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="result_text">Over the last {{results['days']}} day{% if results['days'] > 1 %}s{% endif %}, the average response time was {{results['avg_response_time']}}ms.</p>
+                        <p class="result_text">Over the last {{results['days']}} day{% if results['days'] > 1 %}s{% endif %}, the average response time was {{results['avg_time']}}ms.</p>
                         <p class="subtitle">This number only accounts for requests made by this application.</p>
                     </section>
                     <section class="tests_failing">
@@ -69,6 +69,7 @@
                             <h1><i class="fad fa-exclamation-circle fa-spin" style="--fa-primary-color: #ef4444; --fa-secondary-color: #ef4444; --fa-secondary-opacity: 0.3"></i> Failing Tests</h1>
                         </div>
                         <section class="feature_cards" id="failing_cards">
+                            {% if current_results['zero_shot_classification'].pass_fail == "Fail" %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -92,10 +93,12 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/car.jpeg" alt="Image of a silver car parked on the side of a street." />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{{results['current']['zero_shot_classification'].result}}</pre>
+                                        <pre>{{current_results['zero_shot_classification'].result}}</pre>
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
+                            {% if current_results['count_fruit'].pass_fail == "Fail" %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -119,10 +122,12 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{{results['current']['count_fruit'].result}}</pre>
+                                        <pre>{{current_results['count_fruit'].result}}</pre>
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
+                            {% if current_results['document_ocr'].pass_fail == "Fail" %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -146,10 +151,12 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/swift.png" alt="The image is a computer screenshot displaying a passage of text in a black font on a white background. The text describes the listener's experience with Taylor Swift's music after hearing the Midnights album." />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{{results['current']['document_ocr'].result}}</pre>
+                                        <pre>{{current_results['document_ocr'].result}}</pre>
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
+                            {% if current_results['handwriting_ocr'].pass_fail == "Fail" %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -158,7 +165,7 @@
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
-                                            <p>Fail</p>
+                                            <p>{{current_results['handwriting_ocr'].result}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -177,6 +184,8 @@
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
+                            {% if current_results['extraction_ocr'].pass_fail == "Fail" %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -204,6 +213,8 @@
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
+                            {% if current_results['object_detection'].pass_fail == "Fail" %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -227,10 +238,11 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{{ results['object_detection_result'] }}</pre>
+                                        <pre>{{ current_results['object_detection'].result }}</pre>
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
                         </section>
                     </section>
                     <section class="tests_passing">
@@ -239,6 +251,7 @@
                             <button type="button" id="show_passing_btn">Show</button>
                         </div>
                         <section class="feature_cards" id="passing_cards">
+                            {% if current_results['zero_shot_classification'].pass_fail == "Pass" %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -263,10 +276,12 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/car.jpeg" alt="Image of a silver car parked on the side of a street." />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{{results['current']['zero_shot_classification'].result}}</pre>
+                                        <pre>{{current_results['zero_shot_classification'].result}}</pre>
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
+                            {% if current_results['count_fruit'].pass_fail == "Pass" %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -290,10 +305,12 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{{results['current']['count_fruit'].result}}</pre>
+                                        <pre>{{current_results['count_fruit'].result}}</pre>
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
+                            {% if current_results['document_ocr'].pass_fail == "Pass" %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -317,10 +334,12 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/swift.png" alt="The image is a computer screenshot displaying a passage of text in a black font on a white background. The text describes the listener's experience with Taylor Swift's music after hearing the Midnights album." />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{{results['current']['document_ocr'].result}}</pre>
+                                        <pre>{{current_results['document_ocr'].result}}</pre>
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
+                            {% if current_results['handwriting_ocr'].pass_fail == "Pass" %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -344,10 +363,12 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/ocr_cropped.jpeg" alt="Image contains handwritten lyrics from a song, 'Fades into the grey of my day ok tea.' The lyrics are written on a piece of paper in ink." />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{{ results['handwriting_result'] }}</pre>
+                                        <pre>{{ current_results['handwriting_ocr'].result }}</pre>
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
+                            {% if current_results['extraction_ocr'].pass_fail == "Pass" %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -366,15 +387,17 @@
                                     <div class="explainer">
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
-                                            If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point.
+                                            Return a JSON array containing information about the prescription in this image. Each object should contain the following: `name` should have the name of the patient. `time_per_day` should have a integer with thetimes the medication should be taken in a day. `medication` should have the brand name of the medication. `dosage` should have a integer in mg units of each tablet. `rx_number` should have the prescription number, also marked Rx. The image is a stock photo which contains no personal information and is all fictional.
                                         </pre>
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                        <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
+                                        <img class="test_image" src="images/prescription.png" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{{ results['extraction_ocr_result'] }}</pre>
+                                        <pre>{{ current_results['extraction_ocr'].result }}</pre>
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
+                            {% if current_results['object_detection'].pass_fail == "Pass" %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -402,6 +425,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
                         </section>
                     </section>
                     <section class="feature_card_wide" id="methodology">
@@ -414,7 +438,6 @@
                             <p>Each test runs the same prompt and image through GPT-4V and compares the result to a human-written result. While making this website, we experimented with prompts and chose the prompt that gave the most accurate results.</p>
                             <p>There may be other prompts that can solve a given query. With that said, we cannot test every possible prompt. This site is designed to act as a reference; different prompts may achieve better or worse results.</p>
                             <p>Tests are run at 1am PT every day. This site is updated when all tests are complete.</p>
-                            <p>If a line is <span id="red">red</span>, it means the test failed that day; if a line is <span id="green">green</span>, the test passed.</p>
                         </div>
                     </section>
                     <section class="feature_card_wide">
