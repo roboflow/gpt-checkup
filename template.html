@@ -37,11 +37,9 @@
                 <div class="header_text">
                     <p>This website measures how <a href="https://platform.openai.com/docs/guides/vision">GPT-4 with Vision</a> performs across a range of experiments.</p>
                     <p>We test tasks we know GPT-4 with Vision performs well at (i.e. classification) to measure regressions, as well as tasks GPT-4 with Vision struggles with (i.e. odometer OCR) to measure performance improvements.</p>
-                    <!-- <p>Tests are run every day at 1am PT.</p> -->
                 </div>
-                <div class="subtitle_text subtitle">
+                <div class="header_subtitle">
                     <p>Tests are run every day at 1am PT. Last updated November 15, 2023.</p>
-                    <!-- <p>Tests are run every day at 1am PT.</p> -->
                     <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
                 </div>
                 <div class="header_cta">
@@ -50,379 +48,387 @@
                 </div>
             </header>
             <main>
-                <section class="feature_card_wide">
-                    <img src="./assets/lenny.svg" id="lenny" />
-                    <div class="feature_header">
-                        <div class="feature_header_text">
-                            <h2>Response Time</h2>
-                            <p class="subtitle">Over the last {{results['days']}} day{% if results['days'] > 1 %}s{% endif %}, the average response time was {{results['avg_response_time']}}ms.<br />This number only accounts for requests made by this application.</p>
-                        </div>
-                        <div class="chart">
-                            <div class="chart_box chart_box_green">
-                                <p>{{results['avg_time']}} s</p>
+                <div class="main_content">
+                    <section class="feature_card_wide" style="gap: 8px">
+                        <img src="./assets/lenny.svg" id="lenny" />
+                        <div class="feature_header" style="height: auto">
+                            <div class="feature_header_text">
+                                <h2>Response Time</h2>
+                            </div>
+                            <div class="chart">
+                                <div class="chart_box chart_box_green">
+                                    <p>{{results['avg_time']}} s</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-                <div class="tests_failing">
-                    <h1>
-                        <i class="fad fa-exclamation-circle" style="--fa-primary-color: #ef4444; --fa-secondary-color: #ef4444; --fa-secondary-opacity: 0.3"></i>
-                        Failing Tests
-                    </h1>
-                    <section class="feature_cards" id="failing_tests">
-                        <div class="feature_card">
-                            <div class="feature_header">
-                                <div class="feature_header_text">
-                                    <h2>Zero-Shot Classification</h2>
-                                    <p>Can GPT-4V classify an image without being trained on that particular use case?</p>
+                        <p class="result_text">Over the last {{results['days']}} day{% if results['days'] > 1 %}s{% endif %}, the average response time was {{results['avg_response_time']}}ms.</p>
+                        <p class="subtitle">This number only accounts for requests made by this application.</p>
+                    </section>
+                    <section class="tests_failing">
+                        <div class="test_group_header">
+                            <h1><i class="fad fa-exclamation-circle" style="--fa-primary-color: #ef4444; --fa-secondary-color: #ef4444; --fa-secondary-opacity: 0.3"></i> Failing Tests</h1>
+                        </div>
+                        <section class="feature_cards" id="failing_cards">
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Zero-Shot Classification</h2>
+                                        <p>Can GPT-4V classify an image without being trained on that particular use case?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>TODO</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="chart">
-                                    <div class="chart_box chart_box_green">
-                                        <p>TODO</p>
+                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['zero_shot_classification'].success_percent }}% of the time.</p>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            What is in the image? Return the class of the object in the image. Here are the classes: Toyota Camry, Tesla Model 3. You can only return one class from that list.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/car.jpeg" alt="Image of a silver car parked on the side of a street." />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>{{results['current']['zero_shot_classification'].result}}</pre>
                                     </div>
                                 </div>
                             </div>
-                            <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['zero_shot_classification'].success_percent }}% of the time.</p>
-                            <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                <div class="explainer">
-                                    <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                    <pre>
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Counting</h2>
+                                        <p>Can GPT-4V count the number of objects within an image?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>TODO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['count_fruit'].success_percent }}% of the time.</p>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            Count the fruit in the image. Return a single number.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>{{results['current']['count_fruit'].result}}</pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Document OCR</h2>
+                                        <p>Can GPT-4V read a document and return the exact characters in the text?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>TODO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['document_ocr'].success_percent }}% of the time.</p>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            Read the text in the image.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/swift.png" alt="The image is a computer screenshot displaying a passage of text in a black font on a white background. The text describes the listener's experience with Taylor Swift's music after hearing the Midnights album." />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>{{results['current']['document_ocr'].result}}</pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Handwriting OCR</h2>
+                                        <p>Can GPT-4V read handwriting?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>TODO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['handwriting_ocr'].success_percent }}% of the time.</p>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                        Read the text in the image.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/ocr_cropped.jpeg" alt="Image contains handwritten lyrics from a song, 'Fades into the grey of my day ok tea.' The lyrics are written on a piece of paper in ink." />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>{{ results['handwriting_result'] }}</pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Structured OCR Extraction</h2>
+                                        <p>Can GPT-4V extract data in a structured format from an image?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>TODO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['extraction_ocr'].success_percent }}% of the time.</p>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>{{ results['extraction_ocr_result'] }}</pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Object Detection</h2>
+                                        <p>Can GPT-4V detect a common object?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>TODO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['object_detection'].success_percent }}% of the time.</p>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>{{ results['object_detection_result'] }}</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="tests_passing">
+                        <div class="test_group_header">
+                            <h1><i class="fad fa-check-circle" style="--fa-primary-color: #10b981; --fa-secondary-color: #10b981; --fa-secondary-opacity: 0.3"></i> Passing Tests</h1>
+                            <button type="button" id="show_passing_btn">Show</button>
+                        </div>
+                        <section class="feature_cards" id="passing_cards">
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Zero-Shot Classification</h2>
+                                        <p>Can GPT-4V classify an image without being trained on that particular use case?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>TODO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['zero_shot_classification'].success_percent }}% of the time.</p>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
                                 What is in the image? Return the class of the object in the image. Here are the classes: Toyota Camry, Tesla Model 3. You can only return one class from that list.
-                                    </pre>
-                                    <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                    <img class="test_image" src="images/car.jpeg" alt="Image of a silver car parked on the side of a street." />
-                                    <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                    <pre>{{results['current']['zero_shot_classification'].result}}</pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="feature_card">
-                            <div class="feature_header">
-                                <div class="feature_header_text">
-                                    <h2>Counting</h2>
-                                    <p>Can GPT-4V count the number of objects within an image?</p>
-                                </div>
-                                <div class="chart">
-                                    <div class="chart_box chart_box_green">
-                                        <p>TODO</p>
+                                    </pre
+                                        >
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/car.jpeg" alt="Image of a silver car parked on the side of a street." />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>{{results['current']['zero_shot_classification'].result}}</pre>
                                     </div>
                                 </div>
                             </div>
-                            <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['count_fruit'].success_percent }}% of the time.</p>
-                            <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                <div class="explainer">
-                                    <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                    <pre>
-                                        Count the fruit in the image. Return a single number.
-                                    </pre>
-                                    <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                    <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
-                                    <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                    <pre>{{results['current']['count_fruit'].result}}</pre>
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Counting</h2>
+                                        <p>Can GPT-4V count the number of objects within an image?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>TODO</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="feature_card">
-                            <div class="feature_header">
-                                <div class="feature_header_text">
-                                    <h2>Document OCR</h2>
-                                    <p>Can GPT-4V read a document and return the exact characters in the text?</p>
-                                </div>
-                                <div class="chart">
-                                    <div class="chart_box chart_box_green">
-                                        <p>TODO</p>
+                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['count_fruit'].success_percent }}% of the time.</p>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            Count the fruit in the image. Return a single number.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>{{results['current']['count_fruit'].result}}</pre>
                                     </div>
                                 </div>
                             </div>
-                            <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['document_ocr'].success_percent }}% of the time.</p>
-                            <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                <div class="explainer">
-                                    <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                    <pre>
-                                        Read the text in the image.
-                                    </pre>
-                                    <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                    <img class="test_image" src="images/swift.png" alt="The image is a computer screenshot displaying a passage of text in a black font on a white background. The text describes the listener's experience with Taylor Swift's music after hearing the Midnights album." />
-                                    <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                    <pre>{{results['current']['document_ocr'].result}}</pre>
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Document OCR</h2>
+                                        <p>Can GPT-4V read a document and return the exact characters in the text?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>TODO</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="feature_card">
-                            <div class="feature_header">
-                                <div class="feature_header_text">
-                                    <h2>Handwriting OCR</h2>
-                                    <p>Can GPT-4V read handwriting?</p>
-                                </div>
-                                <div class="chart">
-                                    <div class="chart_box chart_box_green">
-                                        <p>TODO</p>
+                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['document_ocr'].success_percent }}% of the time.</p>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            Read the text in the image.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/swift.png" alt="The image is a computer screenshot displaying a passage of text in a black font on a white background. The text describes the listener's experience with Taylor Swift's music after hearing the Midnights album." />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>{{results['current']['document_ocr'].result}}</pre>
                                     </div>
                                 </div>
                             </div>
-                            <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['handwriting_ocr'].success_percent }}% of the time.</p>
-                            <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                <div class="explainer">
-                                    <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                    <pre>
-                                        Read the text in the image.
-                                    </pre>
-                                    <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                    <img class="test_image" src="images/ocr_cropped.jpeg" alt="Image contains handwritten lyrics from a song, 'Fades into the grey of my day ok tea.' The lyrics are written on a piece of paper in ink." />
-                                    <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                    <pre>{{ results['handwriting_result'] }}</pre>
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Handwriting OCR</h2>
+                                        <p>Can GPT-4V read handwriting?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>TODO</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="feature_card">
-                            <div class="feature_header">
-                                <div class="feature_header_text">
-                                    <h2>Structured OCR Extraction</h2>
-                                    <p>Can GPT-4V extract data in a structured format from an image?</p>
-                                </div>
-                                <div class="chart">
-                                    <div class="chart_box chart_box_green">
-                                        <p>TODO</p>
+                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['handwriting_ocr'].success_percent }}% of the time.</p>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            Read the text in the image.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/ocr_cropped.jpeg" alt="Image contains handwritten lyrics from a song, 'Fades into the grey of my day ok tea.' The lyrics are written on a piece of paper in ink." />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>{{ results['handwriting_result'] }}</pre>
                                     </div>
                                 </div>
                             </div>
-                            <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['extraction_ocr'].success_percent }}% of the time.</p>
-                            <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                <div class="explainer">
-                                    <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                    <pre>
-                                        If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point.
-                                    </pre>
-                                    <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                    <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
-                                    <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                    <pre>{{ results['extraction_ocr_result'] }}</pre>
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Structured OCR Extraction</h2>
+                                        <p>Can GPT-4V extract data in a structured format from an image?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>TODO</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="feature_card">
-                            <div class="feature_header">
-                                <div class="feature_header_text">
-                                    <h2>Object Detection</h2>
-                                    <p>Can GPT-4V detect a common object?</p>
-                                </div>
-                                <div class="chart">
-                                    <div class="chart_box chart_box_green">
-                                        <p>TODO</p>
+                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['extraction_ocr'].success_percent }}% of the time.</p>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>{{ results['extraction_ocr_result'] }}</pre>
                                     </div>
                                 </div>
                             </div>
-                            <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['object_detection'].success_percent }}% of the time.</p>
-                            <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                <div class="explainer">
-                                    <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                    <pre>
-                                        If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point.
-                                    </pre>
-                                    <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                    <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
-                                    <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                    <pre>{{ results['object_detection_result'] }}</pre>
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Object Detection</h2>
+                                        <p>Can GPT-4V detect a common object?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>TODO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['object_detection'].success_percent }}% of the time.</p>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>{{ results['object_detection_result'] }}</pre>
+                                    </div>
                                 </div>
                             </div>
+                        </section>
+                    </section>
+                    <section class="feature_card_wide" id="methodology">
+                        <div class="feature_header_text">
+                            <h2>Methodology</h2>
+                            <p>How we built this project</p>
+                        </div>
+                        <div class="methodology_text">
+                            <p>Every day, we run a set of tests to evaluate how GPT-4 Vision (GPT-4V) performs over time. These tests are designed to monitor core features of GPT-4V.</p>
+                            <p>Each test runs the same prompt and image through GPT-4V and compares the result to a human-written result. While making this website, we experimented with prompts and chose the prompt that gave the most accurate results.</p>
+                            <p>There may be other prompts that can solve a given query. With that said, we cannot test every possible prompt. This site is designed to act as a reference; different prompts may achieve better or worse results.</p>
+                            <p>Tests are run at 1am PT every day. This site is updated when all tests are complete.</p>
+                            <p>If a line is <span id="red">red</span>, it means the test failed that day; if a line is <span id="green">green</span>, the test passed.</p>
+                        </div>
+                    </section>
+                    <section class="feature_card_wide">
+                        <div class="feature_header_text">
+                            <h2>Related Links</h2>
+                            <p>Want to see more interesting projects using GPT-4V?</p>
+                        </div>
+                        <div class="methodology_text">
+                            <a href="">Link 1</a>
+                            <a href="">Link 2</a>
+                            <a href="">Link 3</a>
                         </div>
                     </section>
                 </div>
-                <div class="tests_passing">
-                    <div class="test_group_header">
-                        <h1><i class="fad fa-check-circle" style="--fa-primary-color: #10b981; --fa-secondary-color: #10b981; --fa-secondary-opacity: 0.3"></i> Passing Tests</h1>
-                        <button type="button" id="show_passing_btn">Show</button>
-                    </div>
-                    <section class="feature_cards" id="passing_cards">
-                        <div class="feature_card">
-                            <div class="feature_header">
-                                <div class="feature_header_text">
-                                    <h2>Zero-Shot Classification</h2>
-                                    <p>Can GPT-4V classify an image without being trained on that particular use case?</p>
-                                </div>
-                                <div class="chart">
-                                    <div class="chart_box chart_box_green">
-                                        <p>{{ results["averages"]['zero_shot_classification'].success_percent }}%</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                <div class="explainer">
-                                    <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                    <pre>
-                                        What is in the image? Return the class of the object in the image. Here are the classes: Toyota Camry, Tesla Model 3. You can only return one class from that list.
-                                    </pre>
-                                    <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                    <img class="test_image" src="images/car.jpeg" alt="Image of a silver car parked on the side of a street." />
-                                    <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                    <pre>{{results['current']['zero_shot_classification'].result}}</pre>
-                                </div>
-                                <!-- <button type="button" class="dropdown active active dropdown_collapse" id="zero_shot_dropdown">Learn!</button> -->
-                            </div>
-                        </div>
-                        <div class="feature_card">
-                            <div class="feature_header">
-                                <div class="feature_header_text">
-                                    <h2>Counting</h2>
-                                    <p>Can GPT-4V count the number of objects within an image?</p>
-                                </div>
-                                <div class="chart">
-                                    <div class="chart_box chart_box_green">
-                                        <p>0{{ results["averages"]['count_fruit'].success_percent }}%</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                <div class="explainer">
-                                    <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                    <pre>
-                                        Count the fruit in the image. Return a single number.
-                                    </pre>
-                                    <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                    <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
-                                    <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                    <pre>{{results['current']['count_fruit'].result}}</pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="feature_card">
-                            <div class="feature_header">
-                                <div class="feature_header_text">
-                                    <h2>Document OCR</h2>
-                                    <p>Can GPT-4V read a document and return the exact characters in the text?</p>
-                                </div>
-                                <div class="chart">
-                                    <div class="chart_box chart_box_green">
-                                        <p>{{ results["averages"]['document_ocr'].success_percent }}%</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                <div class="explainer">
-                                    <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                    <pre>
-                                        Read the text in the image.
-                                    </pre>
-                                    <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                    <img class="test_image" src="images/swift.png" alt="The image is a computer screenshot displaying a passage of text in a black font on a white background. The text describes the listener's experience with Taylor Swift's music after hearing the Midnights album." />
-                                    <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                    <pre>{{results['current']['document_ocr'].result}}</pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="feature_card">
-                            <div class="feature_header">
-                                <div class="feature_header_text">
-                                    <h2>Handwriting OCR</h2>
-                                    <p>Can GPT-4V read handwriting?</p>
-                                </div>
-                                <div class="chart">
-                                    <div class="chart_box chart_box_green">
-                                        <p>{{ results["averages"]['handwriting_ocr'].success_percent }}%</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                <div class="explainer">
-                                    <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                    <pre>
-                                        Read the text in the image.
-                                    </pre>
-                                    <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                    <img class="test_image" src="images/ocr_cropped.jpeg" alt="Image contains handwritten lyrics from a song, 'Fades into the grey of my day ok tea.' The lyrics are written on a piece of paper in ink." />
-                                    <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                    <pre>{{ results['handwriting_result'] }}</pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="feature_card">
-                            <div class="feature_header">
-                                <div class="feature_header_text">
-                                    <h2>Structured OCR Extraction</h2>
-                                    <p>Can GPT-4V extract data in a structured format from an image?</p>
-                                </div>
-                                <div class="chart">
-                                    <div class="chart_box chart_box_green">
-                                        <p>{{ results["averages"]['extraction_ocr'].success_percent }}%</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                <div class="explainer">
-                                    <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                    <pre>
-                                        If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point.
-                                    </pre>
-                                    <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                    <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
-                                    <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                    <pre>{{ results['extraction_ocr_result'] }}</pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="feature_card">
-                            <div class="feature_header">
-                                <div class="feature_header_text">
-                                    <h2>Object Detection</h2>
-                                    <p>Can GPT-4V detect a common object?</p>
-                                </div>
-                                <div class="chart">
-                                    <div class="chart_box chart_box_green">
-                                        <p>{{ results["averages"]['object_detection'].success_percent }}%</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="explainer_dropdown">
-                                <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                <div class="explainer">
-                                    <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                    <pre>
-                                        If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point.
-                                    </pre>
-                                    <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                    <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
-                                    <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                    <pre>{{ results['object_detection_result'] }}</pre>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <section class="feature_card_wide" id="methodology">
-                    <div class="feature_header_text">
-                        <h2>Methodology</h2>
-                        <p>How we built this project</p>
-                    </div>
-                    <div class="methodology_text">
-                        <p>Every day, we run a set of tests to evaluate how GPT-4 Vision (GPT-4V) performs over time. These tests are designed to monitor core features of GPT-4V.</p>
-                        <p>Each test runs the same prompt and image through GPT-4V and compares the result to a human-written result. While making this website, we experimented with prompts and chose the prompt that gave the most accurate results.</p>
-                        <p>There may be other prompts that can solve a given query. With that said, we cannot test every possible prompt. This site is designed to act as a reference; different prompts may achieve better or worse results.</p>
-                        <p>Tests are run at 1am PT every day. This site is updated when all tests are complete.</p>
-                        <p>If a line is <span id="red">red</span>, it means the test failed that day; if a line is <span id="green">green</span>, the test passed.</p>
-                    </div>
-                </section>
-                <section class="feature_card_wide">
-                    <div class="feature_header_text">
-                        <h2>Related Links</h2>
-                        <p>Want to see more interesting projects using GPT-4V?</p>
-                    </div>
-                    <div class="methodology_text">
-                        <a href="">Link 1</a>
-                        <a href="">Link 2</a>
-                        <a href="">Link 3</a>
-                    </div>
-                </section>
             </main>
             <footer>
                 <p>This project is not affiliated with OpenAI.</p>

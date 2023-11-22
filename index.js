@@ -50,6 +50,6 @@ show_passing_btn.addEventListener("click", function (event) {
     if (content.style.maxHeight) {
         content.style.maxHeight = null;
     } else {
-        content.style.maxHeight = "300vh";
+        content.style.maxHeight = "1000vh";
     }
 });
