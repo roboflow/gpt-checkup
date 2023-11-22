@@ -32,6 +32,9 @@
 * {
     font-family: Inter;
 }
+html {
+    scroll-behavior: smooth;
+}
 body,
 p,
 h2,
@@ -435,6 +438,9 @@ pre {
     .header_text {
         gap: var(--spacing-sizing-6);
     }
+    .tag_group {
+        gap: var(--spacing-sizing-2) !important;
+    }
 }
 .cost {
     color: var(--gray-500);
@@ -484,4 +490,22 @@ pre {
     width: 100px;
     margin: 0px auto;
     background-color: var(--primary-dark);
+}
+
+.tag_group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-sizing-2);
+    flex-wrap: wrap;
+}
+.tag {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sizing-1);
+    padding: var(--spacing-sizing-1) var(--spacing-sizing-2);
+    color: var(--colors-bg-primary);
+    background-color: #ede0fa;
+    font-weight: 500;
+    border-radius: var(--border-radius-rounded-lg);
 }
