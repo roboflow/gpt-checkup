@@ -454,6 +454,10 @@ pre {
 
     margin: 0;
 }
+pre,
+.methodology_text {
+    border: 1px solid var(--gray-100);
+}
 .methodology_text {
     background-color: var(--gray-50);
     border-radius: var(--border-radius-rounded-lg);
@@ -492,12 +496,44 @@ pre {
     background-color: var(--primary-dark);
 }
 
-.tag_group {
+.link_cards {
+    color: var(--gray-700);
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: var(--spacing-sizing-2);
-    flex-wrap: wrap;
+    gap: var(--spacing-sizing-4);
+    margin: 0px;
+}
+
+.link_card {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sizing-4);
+    padding: var(--spacing-sizing-4);
+    background-color: var(--white);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius-rounded-lg);
+    font-weight: 400;
+    box-shadow: none;
+    transition: all 400ms;
+}
+.link_card:hover {
+    /* background-color: var(--gray-50); */
+    background-color: #f9f2ff;
+    border: 1px solid var(--colors-bg-primary);
+    box-shadow: 0px 8px 8px -5px rgba(0, 0, 0, 0.1), 0px 4px 4px -6px rgba(0, 0, 0, 0.05);
+    transition: all 400ms;
+}
+
+.link_card h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+.link_card img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: var(--spacing-sizing-1);
 }
 .tag {
     display: flex;
