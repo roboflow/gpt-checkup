@@ -57,11 +57,11 @@
                             </div>
                             <div class="chart">
                                 <div class="chart_box chart_box_green">
-                                    <p>4.45 s</p>
+                                    <p>3.67 s</p>
                                 </div>
                             </div>
                         </div>
-                        <p class="result_text">Over the last 7 days, the average response time was 4.45ms.</p>
+                        <p class="result_text">Over the last 7 days, the average response time was 3.67ms.</p>
                         <p class="subtitle">This number only accounts for requests made by this application.</p>
                     </section>
                     <section class="tests_failing">
@@ -115,7 +115,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="result_text">Of the last 7 tests, conducted daily, this test has passed 0% of the time.</p>
+                                <p class="result_text">Of the last 7 tests, conducted daily, this test has passed 5.05% of the time.</p>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
@@ -126,7 +126,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>Failed to produce a valid JSON output</pre>
+                                        <pre>{'x': 0.28125, 'y': 0.2721354166666667, 'width': 0.196875, 'height': 0.2734375}</pre>
                                     </div>
                                 </div>
                             </div>
@@ -252,7 +252,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/prescription.png" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]</pre>
+                                        <pre>[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]</pre>
                                     </div>
                                 </div>
                             </div>
@@ -277,13 +277,23 @@
                             <h2>Related Links</h2>
                             <p>Want to see more interesting projects using GPT-4V?</p>
                         </div>
-                        <div class="methodology_text">
-                            <div class="tag_group">
-                                <div class="tag"><i class="fad fa-star fa-xs"></i>Recommended</div>
-                                <a href="https://blog.roboflow.com/gpt-4-vision/" target="_blank">GPT-4 with Vision: Complete Guide and Evaluation </a>
-                            </div>
-                            <a href="https://blog.roboflow.com/gpt-4v-object-detection/" target="_blank">Experiments with GPT-4V for Object Detection </a>
-                            <a href="https://blog.roboflow.com/clip-vs-gpt-4v/" target="_blank">https://blog.roboflow.com/clip-vs-gpt-4v/</a>
+                        <div class="link_cards">
+                            <a href="https://blog.roboflow.com/gpt-4-vision/" target="_blank" class="link_card">
+                                <img src="./images/GPT-4_with_Vision.jpeg" alt="GPT-4 with Vision: Complete Guide and Evaluation" />
+                                <h3>GPT-4 with Vision: Complete Guide and Evaluation</h3>
+                                <p class="subtitle">In this guide, we share our first impressions with the GPT-4 image input feature and vision API. We run through a series of experiments to test the functionality of GPT-4 with vision, showing where the model performs well and where it struggles.</p>
+                                <div class="tag"><i class="fad fa-star fa-xs"></i>Start Here</div>
+                            </a>
+                            <a href="https://blog.roboflow.com/gpt-4v-object-detection/" target="_blank" class="link_card">
+                                <img src="./images/GPT-4V Object Detection.jpg" alt="xperiments with GPT-4V for Object Detection" />
+                                <h3>Experiments with GPT-4V for Object Detection</h3>
+                                <p class="subtitle">In this guide, we show our results experimenting with GPT-4V for object detection. We also talk about why fine-tuned models are more appropriate for object detection, providing more context into the question “how will GPT impact object detection?”</p>
+                            </a>
+                            <a href="https://blog.roboflow.com/clip-vs-gpt-4v/" target="_blank" class="link_card">
+                                <img src="./images/CLIP vs GPT-4V Classification.jpg" alt="CLIP vs GPT-4V Classification" />
+                                <h3>How CLIP and GPT-4V Compare for Classification</h3>
+                                <p class="subtitle">In this guide, we run three tests, evaluating how CLIP and GPT-4V perform for: car brand classification, cup classification, pizza type classification</p>
+                            </a>
                         </div>
                     </section>
                 </div>
