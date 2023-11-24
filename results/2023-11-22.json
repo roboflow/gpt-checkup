@@ -1,0 +1,65 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "response_time": 1.9250218868255615,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "response_time": 1.6720609664916992,
+        "result": "9"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00859,
+        "response_time": 2.74833083152771,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008730000000000002,
+        "response_time": 4.467017889022827,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00719,
+        "response_time": 3.044373035430908,
+        "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.01528,
+        "response_time": 2.5605051517486572,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.2359778366486934,
+        "success": false,
+        "price": 0.009670000000000002,
+        "response_time": 18.011569261550903,
+        "result": "{'x': 0.31875, 'y': 0.3828125, 'width': 0.15625, 'height': 0.3140625}"
+    },
+    "set_of_mark": {
+        "score": 0,
+        "success": false,
+        "price": 0.00826,
+        "response_time": 2.947950839996338,
+        "result": "Failed to produce a valid JSON output: I'm sorry, I can't assist with that request."
+    },
+    "graph_understanding": {
+        "score": 0.7899999999999999,
+        "success": false,
+        "price": 0.01077,
+        "response_time": 2.947950839996338,
+        "result": "```json\n{\n  \"A\": {\n    \"quantity\": 7,\n    \"price\": 15\n  },\n  \"B\": {\n    \"quantity\": 17,\n    \"price\": 22\n  },\n  \"C\": {\n    \"quantity\": 27,\n    \"price\": 33\n  },\n  \"D\": {\n    \"quantity\": 37,\n    \"price\": 44\n  }\n}\n```"
+    }
+}
