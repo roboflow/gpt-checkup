@@ -150,8 +150,8 @@ a {
 }
 
 #passing_cards {
-    max-height: 0;
-    overflow: hidden;
+    max-height: 1000vh;
+    overflow: visible;
     transition: all 400ms ease-in-out;
 }
 
@@ -338,6 +338,7 @@ footer p {
     flex-direction: column;
     border-radius: var(--border-radius-rounded-lg);
     border: 1px solid var(--gray-200);
+    overflow: hidden;
 }
 .dropdown {
     cursor: pointer;
@@ -369,12 +370,12 @@ footer p {
     content: "\2796";
 }
 .explainer {
-    display: flex;
-    flex-direction: column;
     max-height: 100vh;
     overflow: hidden;
-    padding: 0 var(--spacing-sizing-6) var(--spacing-sizing-4) var(--spacing-sizing-6);
     transition: all 400ms;
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--spacing-sizing-6) var(--spacing-sizing-4) var(--spacing-sizing-6);
 }
 pre {
     color: var(--gray-500);
