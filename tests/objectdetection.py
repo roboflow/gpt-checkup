@@ -8,6 +8,10 @@ import re
 class ObjectDetectionTest:
     name = "Object Detection"
     id = "object_detection"
+    question = ""
+    prompt = ""
+    image = ""
+    method = ""
 
     @staticmethod
     def test():

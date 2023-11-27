@@ -9,6 +9,10 @@ from Levenshtein import ratio
 class MathOCRTest:
     name = "Math OCR"
     id = "math_ocr"
+    question = ""
+    prompt = ""
+    image = ""
+    method = ""
 
     @staticmethod
     def test():
