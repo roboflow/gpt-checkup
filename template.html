@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="result_text">Over the last {{results['days']}} day{% if results['days'] > 1 %}s{% endif %}, the average response time was {{results['avg_time']}}ms.</p>
+                        <p class="result_text">Over the last {{results['zero_shot_classification']['history']|length}} day{% if results['zero_shot_classification']['history']['scores']|length > 1 %}s{% endif %}, the average response time was {{results['avg_time']}}ms.</p>
                         <p class="subtitle">This number only accounts for requests made by this application.</p>
                     </section>
                     <section class="tests_failing">
@@ -69,7 +69,8 @@
                             <h1><i class="fad fa-exclamation-circle fa-spin" style="--fa-primary-color: #ef4444; --fa-secondary-color: #ef4444; --fa-secondary-opacity: 0.3"></i> Failing Tests</h1>
                         </div>
                         <section class="feature_cards" id="failing_cards">
-                            {% for test_id, test_data in result.items() %}
+                            {% for test_id, test_data in results.items() %}
+                            {% if current_results[test_id].success == False %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -97,6 +98,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
                             {% endfor %}
                         </section>
                     </section>
@@ -106,7 +108,8 @@
                             <button type="button" id="show_passing_btn">Hide</button>
                         </div>
                         <section class="feature_cards" id="passing_cards">
-                            {% for test_id, test_data in result.items() %}
+                            {% for test_id, test_data in results.items() %}
+                            {% if current_results[test_id].success == True %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -134,6 +137,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
                             {% endfor %}
                         </section>
                     </section>

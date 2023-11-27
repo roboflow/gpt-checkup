@@ -57,10 +57,10 @@ current_results = {}
 
 # print("current_results", current_results)
 
-# # save as today in 2023-01-01 format
-# # make results dir
-# if not os.path.exists("results"):
-#     os.mkdir("results")
+# save as today in 2023-01-01 format
+# make results dir
+if not os.path.exists("results"):
+    os.mkdir("results")
 
 today = datetime.datetime.now().strftime("%Y-%m-%d")
 
@@ -115,12 +115,14 @@ response_times = []
 for i in test_ids:
     response_times.append(results[i]["average"]["response_time"])
 
+print("response_times", response_times, test_ids)
 average_response_time = round(mean(response_times), 2)
 day_count = len(response_times)
 
 print("- - - - -")
 print(json.dumps(results, indent=4))
 print("- - - - -")
+print(json.dumps(current_results, indent=4))
 
 template = jinja2.Template(open("template.html").read())
 
