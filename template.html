@@ -57,11 +57,11 @@
                             </div>
                             <div class="chart">
                                 <div class="chart_box chart_box_green">
-                                    <p>{{results['avg_time']}} s</p>
+                                    <p>{{info["average_time"]}} s</p>
                                 </div>
                             </div>
                         </div>
-                        <p class="result_text">Over the last {{results['zero_shot_classification']['history']|length}} day{% if results['zero_shot_classification']['history']['scores']|length > 1 %}s{% endif %}, the average response time was {{results['avg_time']}}ms.</p>
+                        <p class="result_text">Over the last {{info["day_count"]}} day{% if info["day_count"] > 1 %}s{% endif %}, the average response time was {{results['avg_time']}}ms.</p>
                         <p class="subtitle">This number only accounts for requests made by this application.</p>
                     </section>
                     <section class="tests_failing">

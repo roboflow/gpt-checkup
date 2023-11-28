@@ -4,7 +4,7 @@
         "success": true,
         "price": 0.00481,
         "pass_fail": "Pass",
-        "response_time": 1.7793469429016113,
+        "response_time": 3.259276866912842,
         "result": "Toyota Camry"
     },
     "count_fruit": {
@@ -12,15 +12,15 @@
         "success": false,
         "price": 0.007870000000000002,
         "pass_fail": "Fail",
-        "response_time": 1.5416789054870605,
+        "response_time": 8.281737089157104,
         "result": "9"
     },
     "document_ocr": {
         "score": 1,
         "success": true,
-        "price": 0.00859,
+        "price": 0.00857,
         "pass_fail": "Pass",
-        "response_time": 2.329599142074585,
+        "response_time": 3.086120843887329,
         "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
     },
     "handwriting_ocr": {
@@ -28,7 +28,7 @@
         "success": true,
         "price": 0.008730000000000002,
         "pass_fail": "Pass",
-        "response_time": 5.788021087646484,
+        "response_time": 10.224713802337646,
         "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
     },
     "extraction_ocr": {
@@ -36,39 +36,39 @@
         "success": true,
         "price": 0.00725,
         "pass_fail": "Pass",
-        "response_time": 2.6388697624206543,
+        "response_time": 11.544448852539062,
         "result": "[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]"
     },
     "math_ocr": {
         "score": 1.0,
         "success": true,
-        "price": 0.01783,
+        "price": 0.01528,
         "pass_fail": "Pass",
-        "response_time": 7.167701959609985,
+        "response_time": 2.5499589443206787,
         "result": "3x^2-6x+2"
     },
     "object_detection": {
-        "score": 0,
+        "score": 0.2529668956901937,
         "success": false,
-        "price": 0.008860000000000002,
+        "price": 0.009490000000000002,
         "pass_fail": "Fail",
-        "response_time": 2.033269166946411,
-        "result": "Failed to produce a valid JSON output: I'm sorry, but I'm unable to provide assistance with identifying or making assumptions about elements in images."
+        "response_time": 4.179219007492065,
+        "result": "{'x': 0.4, 'y': 0.3, 'width': 0.15, 'height': 0.4}"
     },
     "set_of_mark": {
-        "score": 0.8695652173913043,
+        "score": 0.7391304347826086,
         "success": false,
-        "price": 0.010270000000000001,
+        "price": 0.01009,
         "pass_fail": "Fail",
-        "response_time": 6.22503924369812,
-        "result": "[2, 7, 8, 10, 11, 12, 13, 15, 16, 17, 21, 22, 23, 24, 25, 26, 27, 29, 35, 37, 38, 40, 41, 42, 43]"
+        "response_time": 4.490563154220581,
+        "result": "[2, 7, 10, 11, 12, 13, 15, 16, 17, 22, 23, 24, 25, 26, 27, 29, 35, 37, 38, 40, 41, 42]"
     },
     "graph_understanding": {
-        "score": 0.7400000000000001,
+        "score": 0.86,
         "success": false,
-        "price": 0.01017,
+        "price": 0.01161,
         "pass_fail": "Fail",
-        "response_time": 2.6691410541534424,
-        "result": "```json\n{\n    \"A\": {\"quantity\": 5, \"price\": 15},\n    \"B\": {\"quantity\": 20, \"price\": 25},\n    \"C\": {\"quantity\": 30, \"price\": 35},\n    \"D\": {\"quantity\": 45, \"price\": 45}\n}\n```"
+        "response_time": 15.346473932266235,
+        "result": "Here's the JSON representation of the positions for points A through D:\n\n```json\n{\n  \"A\": {\n    \"quantity\": 7,\n    \"price\": 15\n  },\n  \"B\": {\n    \"quantity\": 20,\n    \"price\": 20\n  },\n  \"C\": {\n    \"quantity\": 32,\n    \"price\": 30\n  },\n  \"D\": {\n    \"quantity\": 36,\n    \"price\": 40\n  }\n}\n```\n\nPlease note that the coordinates are approximate based on the graph provided."
     }
 }

@@ -9,10 +9,10 @@ from Levenshtein import ratio
 class MathOCRTest:
     name = "Math OCR"
     id = "math_ocr"
-    question = ""
-    prompt = ""
-    image = ""
-    method = ""
+    question = "Can GPT-4V recognize math equations?"
+    prompt = "Produce a JSON array with a LaTeX string of each equation in the image."
+    image = "images/math.jpeg"
+    method = "We provide a image of a math equation and ask it to provide a LaTeX string of the equation. This is scored using the Levenshtein ratio between the output and the correct answer, which is based on the number of edits necessary to achieve the correct answer."
 
     @staticmethod
     def test():

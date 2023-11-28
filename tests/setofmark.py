@@ -8,10 +8,10 @@ import re
 class SetOfMarkTest:
     name = "Set of Mark"
     id = "set_of_mark"
-    question = ""
-    prompt = ""
-    image = ""
-    method = ""
+    question = "Can GPT-4V select all the relevant sections of an image?"
+    prompt = "Find all the fruits in this image and return a JSON array of all the applicable numbers."
+    image = "images/fruits_som.png"
+    method = "We provide GPT-4V with an image with numbered opaque masks and ask it to select the fruits in the image. We score this test by providing GPT-4V with a 'point' for each correct selection and a total score calculated from a ratio of the points earned versus the total available points."
 
     @staticmethod
     def test():

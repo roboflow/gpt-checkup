@@ -25,30 +25,30 @@ test_ids = []
 current_results = {}
 
 # Run tests
-for i in test_list:
-    test_info = getattr(importlib.import_module(f"tests"),i)
-    print(f"Running {test_info.name} test...")
+# for i in test_list:
+#     test_info = getattr(importlib.import_module(f"tests"),i)
+#     print(f"Running {test_info.name} test...")
 
-    test_id = test_info.id
-    test_ids.append(test_id)
+#     test_id = test_info.id
+#     test_ids.append(test_id)
 
-    test_result = test_info.test()
-    score, response_time, result, tokens = test_result
+#     test_result = test_info.test()
+#     score, response_time, result, tokens = test_result
 
-    input_token_price = 0.01/1000
-    output_token_price = 0.03/1000
-    price = (input_token_price * tokens[0]) + (output_token_price * tokens[1])
-    score = (1 if score is True else (0 if score is False else score))
+#     input_token_price = 0.01/1000
+#     output_token_price = 0.03/1000
+#     price = (input_token_price * tokens[0]) + (output_token_price * tokens[1])
+#     score = (1 if score is True else (0 if score is False else score))
 
-    current_results[test_id] = {}
-    current_results[test_id]["score"] = score
-    current_results[test_id]["success"] = score == 1
-    current_results[test_id]["price"] = price
-    current_results[test_id]["pass_fail"] = "Pass" if score == 1 else "Fail"
-    current_results[test_id]["response_time"] = response_time
-    current_results[test_id]["result"] = result
+#     current_results[test_id] = {}
+#     current_results[test_id]["score"] = score
+#     current_results[test_id]["success"] = score == 1
+#     current_results[test_id]["price"] = price
+#     current_results[test_id]["pass_fail"] = "Pass" if score == 1 else "Fail"
+#     current_results[test_id]["response_time"] = response_time
+#     current_results[test_id]["result"] = result
 
-print("current_results", current_results)
+# print("current_results", current_results)
 
 # save as today in 2023-01-01 format
 # make results dir
@@ -57,8 +57,8 @@ if not os.path.exists("results"):
 
 today = datetime.datetime.now().strftime("%Y-%m-%d")
 
-with open(f"results/{today}.json", "w+") as file:
-    json.dump(current_results, file, indent=4)
+# with open(f"results/{today}.json", "w+") as file:
+#     json.dump(current_results, file, indent=4)
 
 
 # Results processing
@@ -110,8 +110,9 @@ for i in test_ids:
     response_times.append(results[i]["average"]["response_time"])
 
 print("response_times", response_times, test_ids)
-average_response_time = round(mean(response_times), 2)
-day_count = len(response_times)
+info = {}
+info["average_time"] = round(mean(response_times), 2)
+info["day_count"] = len(response_times)
 
 print("- - - - -")
 print(json.dumps(results, indent=4))
@@ -123,7 +124,7 @@ template = jinja2.Template(open("template.html").read())
 today = datetime.datetime.now().strftime("%B %d, %Y")
 
 # render template
-rendered = template.render(results=results, date=today, current_results=current_results)
+rendered = template.render(results=results, date=today, current_results=current_results, info=info)
 
 # save rendered template to index.html
 with open("index.html", "w+") as file:

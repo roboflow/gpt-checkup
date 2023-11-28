@@ -8,10 +8,10 @@ import re
 class CountingTest:
     name = "Counting"
     id = "count_fruit"
-    question = ""
-    prompt = ""
-    image = ""
-    method = ""
+    question = "Can GPT-4V count the number of objects within an image?"
+    prompt = "Count the fruit in the image. Return a single number."
+    image = "images/fruit.jpeg"
+    method = "We send a picture of a bowl of fruit. If it correctly counts the number of fruit, it gets a 100%. Otherwise, it gets a 0%."
 
     @staticmethod
     def test():

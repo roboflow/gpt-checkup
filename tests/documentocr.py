@@ -8,10 +8,10 @@ import re
 class DocumentOCRTest:
     name = "Document OCR"
     id = "document_ocr"
-    question = ""
-    prompt = ""
-    image = ""
-    method = ""
+    question = "Can GPT-4V read a document and return the exact characters in the text?"
+    prompt = "Read the text in the image. Return only the text, with punctuation."
+    image = "images/swift.png"
+    method = "We send a screenshot of a typed document to determine if it can correctly read the text. If it correctly gets the text, it gets a 100%. Otherwise, it gets a 0%."
 
     @staticmethod
     def test():
@@ -24,7 +24,7 @@ class DocumentOCRTest:
             "images/swift.png",
             classes=[],
             result_serialization="text",
-            prompt="Read the text in the image. Return only the text, with puncuation."
+            prompt="Read the text in the image. Return only the text, with punctuation."
         )
 
         return (
