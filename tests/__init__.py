@@ -7,3 +7,4 @@ from .mathocr import MathOCRTest
 from .objectdetection import ObjectDetectionTest
 from .setofmark import SetOfMarkTest
 from .graphunderstanding import GraphUnderstandingTest
+from .colorrecognition import ColorRecognitionTest

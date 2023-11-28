@@ -1,0 +1,82 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 1.7908220291137695,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 1.973679780960083,
+        "result": "9"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00857,
+        "pass_fail": "Pass",
+        "response_time": 5.400829792022705,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008730000000000002,
+        "pass_fail": "Pass",
+        "response_time": 4.79693078994751,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00725,
+        "pass_fail": "Pass",
+        "response_time": 2.950143814086914,
+        "result": "[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 0.9,
+        "success": false,
+        "price": 0.01585,
+        "pass_fail": "Fail",
+        "response_time": 3.3893508911132812,
+        "result": "3x^{2}-6x+2"
+    },
+    "object_detection": {
+        "score": 0.12435214508338002,
+        "success": false,
+        "price": 0.00961,
+        "pass_fail": "Fail",
+        "response_time": 3.0014710426330566,
+        "result": "{'x': 0.2625, 'y': 0.3114, 'width': 0.2052, 'height': 0.4343}"
+    },
+    "set_of_mark": {
+        "score": 0.9565217391304348,
+        "success": false,
+        "price": 0.01081,
+        "pass_fail": "Fail",
+        "response_time": 4.644049882888794,
+        "result": "[0, 2, 3, 4, 7, 8, 10, 11, 13, 15, 16, 17, 21, 22, 23, 24, 25, 26, 27, 29, 31, 32, 35, 37, 38, 39, 40, 41, 42, 43]"
+    },
+    "graph_understanding": {
+        "score": 0.74,
+        "success": false,
+        "price": 0.01236,
+        "pass_fail": "Fail",
+        "response_time": 4.054019927978516,
+        "result": "Based on the image provided, I will create a JSON object that describes the positions of points A through D:\n\n```json\n{\n  \"A\": { \"quantity\": 5, \"price\": 20 },\n  \"B\": { \"quantity\": 20, \"price\": 25 },\n  \"C\": { \"quantity\": 30, \"price\": 35 },\n  \"D\": { \"quantity\": 40, \"price\": 45 }\n}\n```\n\nKeep in mind that the exact positions are estimated from the graph, and there might be a small margin of error. The `quantity` is measured along the horizontal axis, while the `price` is measured along the vertical axis."
+    },
+    "color_recognition": {
+        "score": 0,
+        "success": false,
+        "price": 0.008620000000000001,
+        "pass_fail": "Fail",
+        "response_time": 1.9046740531921387,
+        "result": "Failed to produce a valid JSON output: I'm sorry, but I can't provide assistance with identifying or making assumptions about elements in images."
+    }
+}
