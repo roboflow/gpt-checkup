@@ -54,7 +54,7 @@
                         <div class="feature_header" style="min-height: auto">
                             <div class="feature_header_text" style="gap: var(--spacing-sizing-4)">
                                 <h2>Response Time</h2>
-                                <p style="font-size: 16px; color: var(--gray-700)">Over the last {{results['days']}} day{% if results['days'] > 1 %}s{% endif %}, the average response time was {{results['avg_time']}}ms.</p>
+                                <p style="font-size: 16px; color: var(--gray-700)">Over the last {{results['days']}} day{% if results['days'] > 1 %}s{% endif %}, the average response time was <b>{{results['avg_time']}}ms</b>.</p>
                                 <p class="subtitle">This number only accounts for requests made by this application.</p>
                             </div>
                             <div class="chart">

@@ -63,6 +63,9 @@ main {
     align-items: stretch;
     gap: var(--spacing-sizing-10);
 }
+b {
+    font-weight: 600;
+}
 h1 {
     color: var(--primary-dark);
     font-family: "Space Mono";
@@ -351,9 +354,6 @@ footer p {
     padding: var(--spacing-sizing-4);
     box-sizing: border-box;
     border: 1px solid var(--gray-100);
-}
-.result_text b {
-    font-weight: 600;
 }
 /* 
 .result_text_green {
