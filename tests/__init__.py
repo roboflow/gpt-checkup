@@ -8,3 +8,4 @@ from .objectdetection import ObjectDetectionTest
 from .setofmark import SetOfMarkTest
 from .graphunderstanding import GraphUnderstandingTest
 from .colorrecognition import ColorRecognitionTest
+from .annotationqa import AnnotationQATest

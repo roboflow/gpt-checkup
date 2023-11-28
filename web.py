@@ -18,7 +18,8 @@ test_list = [
     "ObjectDetectionTest",
     "SetOfMarkTest",
     "GraphUnderstandingTest",
-    "ColorRecognitionTest"
+    "ColorRecognitionTest",
+    "AnnotationQATest"
 ]
 
 test_ids = []
