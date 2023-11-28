@@ -51,9 +51,11 @@
                 <div class="main_content">
                     <section class="feature_card_wide">
                         <img src="./assets/lenny.svg" id="lenny" />
-                        <div class="feature_header" style="height: auto">
-                            <div class="feature_header_text">
+                        <div class="feature_header" style="min-height: auto">
+                            <div class="feature_header_text" style="gap: var(--spacing-sizing-4)">
                                 <h2>Response Time</h2>
+                                <p style="font-size: 16px; color: var(--gray-700)">Over the last {{results['days']}} day{% if results['days'] > 1 %}s{% endif %}, the average response time was {{results['avg_time']}}ms.</p>
+                                <p class="subtitle">This number only accounts for requests made by this application.</p>
                             </div>
                             <div class="chart">
                                 <div class="chart_box chart_box_green">
@@ -61,8 +63,6 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="result_text">Over the last {{results['days']}} day{% if results['days'] > 1 %}s{% endif %}, the average response time was {{results['avg_time']}}ms.</p>
-                        <p class="subtitle">This number only accounts for requests made by this application.</p>
                     </section>
                     <section class="tests_failing">
                         <div class="test_group_header">
@@ -82,7 +82,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['zero_shot_classification'].success_percent }}% of the time.</p>
+                                <div class="request_summary">
+                                    <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed <b>{{ results["averages"]['zero_shot_classification'].success_percent }}%</b> of the time.</p>
+                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_result[test_id].price}}</p>
+                                </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
@@ -110,7 +114,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['count_fruit'].success_percent }}% of the time.</p>
+                                <div class="request_summary">
+                                    <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed <b>{{ results["averages"]['count_fruit'].success_percent }}%</b> of the time.</p>
+                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_result[test_id].price}}</p>
+                                </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
@@ -138,7 +146,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['document_ocr'].success_percent }}% of the time.</p>
+                                <div class="request_summary">
+                                    <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed <b>{{ results["averages"]['document_ocr'].success_percent }}%</b> of the time.</p>
+                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_result[test_id].price}}</p>
+                                </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
@@ -166,7 +178,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['handwriting_ocr'].success_percent }}% of the time.</p>
+                                <div class="request_summary">
+                                    <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed <b>{{ results["averages"]['handwriting_ocr'].success_percent }}%</b> of the time.</p>
+                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_result[test_id].price}}</p>
+                                </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
@@ -194,7 +210,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['extraction_ocr'].success_percent }}% of the time.</p>
+                                <div class="request_summary">
+                                    <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed <b>{{ results["averages"]['extraction_ocr'].success_percent }}%</b> of the time.</p>
+                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_result[test_id].price}}</p>
+                                </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
@@ -222,7 +242,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['object_detection'].success_percent }}% of the time.</p>
+                                <div class="request_summary">
+                                    <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed <b>{{ results["averages"]['object_detection'].success_percent }}%</b> of the time.</p>
+                                    <!-- <p class="result_text">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_result[test_id].price}}</p>
+                                </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
@@ -259,7 +283,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['zero_shot_classification'].success_percent }}% of the time.</p>
+                                <div class="request_summary">
+                                    <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed <b>{{ results["averages"]['zero_shot_classification'].success_percent }}%</b> of the time.</p>
+                                    <!-- <p class="result_text">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_result[test_id].price}}</p>
+                                </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
@@ -288,7 +316,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['count_fruit'].success_percent }}% of the time.</p>
+                                <div class="request_summary">
+                                    <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed <b>{{ results["averages"]['count_fruit'].success_percent }}%</b> of the time.</p>
+                                    <!-- <p class="result_text">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_result[test_id].price}}</p>
+                                </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
@@ -316,7 +348,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['document_ocr'].success_percent }}% of the time.</p>
+                                <div class="request_summary">
+                                    <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed <b>{{ results["averages"]['document_ocr'].success_percent }}%</b> of the time.</p>
+                                    <!-- <p class="result_text">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_result[test_id].price}}</p>
+                                </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
@@ -344,7 +380,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['handwriting_ocr'].success_percent }}% of the time.</p>
+                                <div class="request_summary">
+                                    <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed <b>{{ results["averages"]['handwriting_ocr'].success_percent }}%</b> of the time.</p>
+                                    <!-- <p class="result_text">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_result[test_id].price}}</p>
+                                </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
@@ -372,7 +412,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['extraction_ocr'].success_percent }}% of the time.</p>
+                                <div class="request_summary">
+                                    <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed <b>{{ results["averages"]['extraction_ocr'].success_percent }}%</b> of the time.</p>
+                                    <!-- <p class="result_text">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_result[test_id].price}}</p>
+                                </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
@@ -400,7 +444,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed {{ results["averages"]['object_detection'].success_percent }}% of the time.</p>
+                                <div class="request_summary">
+                                    <p class="result_text">Of the last {{results['days']}} tests, conducted daily, this test has passed <b>{{ results["averages"]['object_detection'].success_percent }}%</b> of the time.</p>
+                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_result[test_id].price}}</p>
+                                </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
