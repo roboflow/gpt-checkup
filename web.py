@@ -107,6 +107,8 @@ for i in test_ids:
     results[i]["average"]["response_time"] = mean(results[i]["history"]["response_times"])
     results[i]["average"]["success_percent"] = round(results[i]["average"]["score"]*100,2)
 
+print(results["zero_shot_classification"])
+# exit()
 response_times = []
 for i in test_ids:
     response_times.append(results[i]["average"]["response_time"])
