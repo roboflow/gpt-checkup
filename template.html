@@ -59,22 +59,25 @@
                             </div>
                             <div class="chart">
                                 <div class="chart_box chart_box_green">
-                                    <p>{{results['avg_time']}} s</p>
+                                    <p>{{info["average_time"]}} s</p>
                                 </div>
                             </div>
                         </div>
+                        <p class="result_text">Over the last {{info["day_count"]}} day{% if info["day_count"] > 1 %}s{% endif %}, the average response time was {{results['avg_time']}}ms.</p>
+                        <p class="subtitle">This number only accounts for requests made by this application.</p>
                     </section>
                     <section class="tests_failing">
                         <div class="test_group_header">
                             <h1><i class="fad fa-exclamation-circle fa-spin" style="--fa-primary-color: #ef4444; --fa-secondary-color: #ef4444; --fa-secondary-opacity: 0.3"></i> Failing Tests</h1>
                         </div>
                         <section class="feature_cards" id="failing_cards">
-                            {% if current_results['zero_shot_classification'].pass_fail == "Fail" %}
+                            {% for test_id, test_data in results.items() %}
+                            {% if current_results[test_id].success == False %}
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
-                                        <h2>Zero-Shot Classification</h2>
-                                        <p>Can GPT-4V classify an image without being trained on that particular use case?</p>
+                                        <h2>{{ test_data.name }}</h2>
+                                        <p>{{ test_data.question }}</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
@@ -92,10 +95,10 @@
                                     <div class="explainer">
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
-                                            What is in the image? Return the class of the object in the image. Here are the classes: Toyota Camry, Tesla Model 3. You can only return one class from that list.
+                                            {{ test_data.prompt }}
                                         </pre>
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                        <img class="test_image" src="images/car.jpeg" alt="Image of a silver car parked on the side of a street." />
+                                        <img class="test_image" src="{{ test_data.image }}" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>{{current_results['zero_shot_classification'].result}}</pre>
                                     </div>
@@ -258,10 +261,12 @@
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>{{ current_results['object_detection'].result }}</pre>
+                                        <pre>{{ current_results[test_id].result }}</pre>
                                     </div>
                                 </div>
                             </div>
                             {% endif %}
+                            {% endfor %}
                         </section>
                     </section>
                     <section class="tests_passing">
@@ -435,8 +440,8 @@
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
-                                        <h2>Object Detection</h2>
-                                        <p>Can GPT-4V detect a common object?</p>
+                                        <h2>{{ test_data.name }}</h2>
+                                        <p>{{ test_data.question }}</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_green">
@@ -454,16 +459,17 @@
                                     <div class="explainer">
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
-                                            If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point.
+                                            {{ test_data.prompt }}
                                         </pre>
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                        <img class="test_image" src="images/fruit.jpeg" alt="Image of a bowl containing apples and bananas, placed on a table indoors." />
+                                        <img class="test_image" src="{{ test_data.image }}" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{{ results['object_detection_result'] }}</pre>
+                                        <pre>{{ current_results[test_id].result }}</pre>
                                     </div>
                                 </div>
                             </div>
                             {% endif %}
+                            {% endfor %}
                         </section>
                     </section>
                     <section class="feature_card_wide" id="methodology">
