@@ -9,7 +9,7 @@ class ColorRecognitionTest:
     name = "Color Recognition"
     id = "color_recognition"
     question = "Can GPT-4V identify colors accurately?"
-    prompt = "Guess the RGB color code of the rectangle in a JSON. The JSON should have three integer properties: 'R', 'G' and 'B'"
+    prompt = "Guess the RGB color code of the rectangle and return only the result in JSON. The JSON should have three integer properties: 'R', 'G' and 'B'"
     image = "images/color.png"
     method = "We provide GPT-4V with an image with multiple shapes with differing colors. We ask it to identify the color of a particular shape in RGB color codes."
 
@@ -24,7 +24,7 @@ class ColorRecognitionTest:
             "images/color.png",
             classes=[],
             result_serialization="text",
-            prompt="Guess the RGB color code of the rectangle in a JSON. The JSON should have three integer properties: 'R', 'G' and 'B'",
+            prompt="Guess the RGB color code of the rectangle and return only the result in JSON. The JSON should have three integer properties: 'R', 'G' and 'B'",
         )
 
         code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
