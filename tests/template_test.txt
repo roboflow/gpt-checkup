@@ -1,0 +1,14 @@
+from .gpt4v import GPT4V
+from autodistill.detection import CaptionOntology, DetectionBaseModel
+
+
+class TestClassName:
+    name = ""
+    id = ""
+    question = ""
+    prompt = ""
+    image = ""
+    method = ""
+
+    @staticmethod
+    def test():
