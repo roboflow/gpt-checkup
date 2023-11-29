@@ -1,8 +1,8 @@
 name: run web.py
 
-on:
-  schedule:
-    - cron: '0 1 * * *'
+on: push
+  # schedule:
+  #   - cron: '0 1 * * *'
 
 jobs:
   build:
@@ -23,3 +23,5 @@ jobs:
 
       - name: execute py script # run main.py
         run: python web.py
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
