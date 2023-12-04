@@ -5,3 +5,4 @@ autodistill
 openai
 roboflow
 levenshtein
+scikit-learn
