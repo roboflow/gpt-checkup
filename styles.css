@@ -415,7 +415,6 @@ footer p {
     content: "\2796";
 }
 .explainer {
-    max-height: 100vh;
     overflow: hidden;
     transition: all 400ms;
     display: flex;

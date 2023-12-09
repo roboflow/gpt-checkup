@@ -90,7 +90,6 @@
                                 </div>
                                 <div class="request_summary">
                                     <p class="result_text">Of the last {{info['day_count']}} tests, conducted daily, this test has passed <b>{{ results[test_id]["average"].success_percent }}%</b> of the time.</p>
-                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_results[test_id].price|round(3)}}</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -104,6 +103,8 @@
                                         <img class="test_image" src="{{ test_data.image }}" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>{{current_results[test_id].result}}</pre>
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">{{ test_data.method }}</pre>
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +134,6 @@
                                 </div>
                                 <div class="request_summary">
                                     <p class="result_text">Of the last {{info['day_count']}} tests, conducted daily, this test has passed <b>{{ results[test_id]["average"].success_percent }}%</b> of the time.</p>
-                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_results[test_id].price|round(3)}}</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -147,6 +147,8 @@
                                         <img class="test_image" src="{{ test_data.image }}" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>{{current_results[test_id].result}}</pre>
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">{{ test_data.method }}</pre>
                                     </div>
                                 </div>
                             </div>

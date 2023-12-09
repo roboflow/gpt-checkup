@@ -92,7 +92,6 @@
                                 </div>
                                 <div class="request_summary">
                                     <p class="result_text">Of the last 11 tests, conducted daily, this test has passed <b>12.5%</b> of the time.</p>
-                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.008</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -106,6 +105,8 @@
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>9</pre>
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We send a picture of a bowl of fruit. If it correctly counts the number of fruit, it gets a 100%. Otherwise, it gets a 0%.</pre>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +135,6 @@
                                 </div>
                                 <div class="request_summary">
                                     <p class="result_text">Of the last 11 tests, conducted daily, this test has passed <b>13.45%</b> of the time.</p>
-                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -148,6 +148,8 @@
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>{'x': 0.35, 'y': 0.325, 'width': 0.15, 'height': 0.4}</pre>
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We provide GPT-4V with an image with a known object. We ask it to provide a normalized bounding box of the object and for scoring, we calculate the intersection over union (IOU) between the predicted bounding box and the correct bounding box.</pre>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +170,6 @@
                                 </div>
                                 <div class="request_summary">
                                     <p class="result_text">Of the last 11 tests, conducted daily, this test has passed <b>80.2%</b> of the time.</p>
-                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.01</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -189,6 +190,8 @@
   "D": {"quantity": 43, "price": 41}
 }
 ```</pre>
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We send a picuture of a graph with four labeled points and ask GPT-4V to identify the points. This test is scored by the accuracy of each point. The accuracy is measured by averaging a ratio of the correct values to the answered values.</pre>
                                     </div>
                                 </div>
                             </div>
@@ -209,7 +212,6 @@
                                 </div>
                                 <div class="request_summary">
                                     <p class="result_text">Of the last 11 tests, conducted daily, this test has passed <b>82.35%</b> of the time.</p>
-                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -229,6 +231,8 @@
   "B": 128
 }
 ```</pre>
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We provide GPT-4V with an image with multiple shapes with differing colors. We ask it to identify the color of a particular shape in RGB color codes.</pre>
                                     </div>
                                 </div>
                             </div>
@@ -249,7 +253,6 @@
                                 </div>
                                 <div class="request_summary">
                                     <p class="result_text">Of the last 11 tests, conducted daily, this test has passed <b>33.33%</b> of the time.</p>
-                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.017</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -269,6 +272,8 @@
   "missing": 1
 }
 ```</pre>
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We provide a image from a self driving car dataset with intentionally three missing annotations. We ask GPT-4V to identify the number of missing annotations. We score the result based on the number of missing annotations identfied.</pre>
                                     </div>
                                 </div>
                             </div>
@@ -289,7 +294,6 @@
                                 </div>
                                 <div class="request_summary">
                                     <p class="result_text">Of the last 11 tests, conducted daily, this test has passed <b>71.43%</b> of the time.</p>
-                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -308,6 +312,8 @@
   "width": 2.5
 }
 ```</pre>
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">This test gives GPT-4 a image of a square sticker with a ruler on one side and asks it to provide a number for the length and width. We score this test based on precent error, gauging how far it is from the actual value.</pre>
                                     </div>
                                 </div>
                             </div>
@@ -337,7 +343,6 @@
                                 </div>
                                 <div class="request_summary">
                                     <p class="result_text">Of the last 11 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.005</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -351,6 +356,8 @@
                                         <img class="test_image" src="images/car.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>Toyota Camry</pre>
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We check to see if the model can correctly identify the vehicle. If it can, it recieves a 100%, if it is incorrect, it recieves a 0%.</pre>
                                     </div>
                                 </div>
                             </div>
@@ -373,7 +380,6 @@
                                 </div>
                                 <div class="request_summary">
                                     <p class="result_text">Of the last 11 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -387,6 +393,8 @@
                                         <img class="test_image" src="images/swift.png" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times.</pre>
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We send a screenshot of a typed document to determine if it can correctly read the text. If it correctly gets the text, it gets a 100%. Otherwise, it gets a 0%.</pre>
                                     </div>
                                 </div>
                             </div>
@@ -407,7 +415,6 @@
                                 </div>
                                 <div class="request_summary">
                                     <p class="result_text">Of the last 11 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -421,6 +428,8 @@
                                         <img class="test_image" src="images/ocr.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>The words of songs on the album have been echoing in my head all week. "Fades into the grey of my day old tea."</pre>
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We send a image of a handwritten note to determine if it can correctly read the text. If it correctly gets the text, it gets a 100%. Otherwise, it gets a 0%.</pre>
                                     </div>
                                 </div>
                             </div>
@@ -441,7 +450,6 @@
                                 </div>
                                 <div class="request_summary">
                                     <p class="result_text">Of the last 11 tests, conducted daily, this test has passed <b>100.0%</b> of the time.</p>
-                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.007</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -455,6 +463,8 @@
                                         <img class="test_image" src="images/prescription.png" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]</pre>
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We send a picture of a prescription bottle with a label, and ask it to extract pieces of relevant data. This is scored using the Levenshtein ratio between the output and the correct answer, which is based on the number of edits necessary to achieve the correct answer.</pre>
                                     </div>
                                 </div>
                             </div>
@@ -475,7 +485,6 @@
                                 </div>
                                 <div class="request_summary">
                                     <p class="result_text">Of the last 11 tests, conducted daily, this test has passed <b>98.75%</b> of the time.</p>
-                                    <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.015</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -489,6 +498,8 @@
                                         <img class="test_image" src="images/math.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>3x^2-6x+2</pre>
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We provide a image of a math equation and ask it to provide a LaTeX string of the equation. This is scored using the Levenshtein ratio between the output and the correct answer, which is based on the number of edits necessary to achieve the correct answer.</pre>
                                     </div>
                                 </div>
                             </div>
