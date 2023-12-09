@@ -91,7 +91,7 @@
                                 <div class="request_summary">
                                     <p class="result_text">Of the last {{info['day_count']}} tests, conducted daily, this test has passed <b>{{ results[test_id]["average"].success_percent }}%</b> of the time.</p>
                                     <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{test_data.price}}</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_results[test_id].price|round(3)}}</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -103,7 +103,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="{{ test_data.image }}" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{{test_data.result}}</pre>
+                                        <pre>{{current_results[test_id].result}}</pre>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                                 <div class="request_summary">
                                     <p class="result_text">Of the last {{info['day_count']}} tests, conducted daily, this test has passed <b>{{ results[test_id]["average"].success_percent }}%</b> of the time.</p>
                                     <!-- <p class="result_text result_text_red">Of the last 52 tests, conducted daily, this test has passed <b>30.54%</b> of the time.</p> -->
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{test_data.price}}</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_results[test_id].price|round(3)}}</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -146,7 +146,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="{{ test_data.image }}" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{{test_data.result}}</pre>
+                                        <pre>{{current_results[test_id].result}}</pre>
                                     </div>
                                 </div>
                             </div>
