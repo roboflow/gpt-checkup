@@ -89,7 +89,7 @@
                                     </div>
                                 </div>
                                 <div class="request_summary">
-                                    <p class="result_text">Of the last {{info['day_count']}} tests, conducted daily, this test has passed <b>{{ results[test_id]["average"].success_percent }}%</b> of the time.</p>
+                                    <p class="result_text">Of the last {{test_data["seven_day"]["score"]|length}} tests, conducted daily, this test has passed <b>{{ test_data["seven_day"]["success_percent"] }}%</b> of the time with an average score of <b>{{ test_data["seven_day"]["score_percent"] }}%</b>.</p>
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_results[test_id].price|round(3)}}</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -133,7 +133,7 @@
                                     </div>
                                 </div>
                                 <div class="request_summary">
-                                    <p class="result_text">Of the last {{info['day_count']}} tests, conducted daily, this test has passed <b>{{ results[test_id]["average"].success_percent }}%</b> of the time.</p>
+                                    <p class="result_text">Of the last {{test_data["seven_day"]["score"]|length}} tests, conducted daily, this test has passed <b>{{ test_data["seven_day"]["success_percent"] }}%</b> of the time with an average score of <b>{{ test_data["seven_day"]["score_percent"] }}%</b>.</p>
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_results[test_id].price|round(3)}}</p>
                                 </div>
                                 <div class="explainer_dropdown">
