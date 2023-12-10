@@ -84,7 +84,7 @@
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
-                                            <p>Fail</p>
+                                            <p>{{ (current_results[test_id].score*100)|round(0) }}%</p>
                                         </div>
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_green">
-                                            <p>True</p>
+                                            <p>{{ (current_results[test_id].score*100)|round(0) }}%</p>
                                         </div>
                                     </div>
                                 </div>
