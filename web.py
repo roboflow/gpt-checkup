@@ -115,10 +115,10 @@ for i in test_ids:
 
 for i in test_ids:
     results[i]["seven_day"] = {}
-    results[i]["seven_day"]["score"] = results[i]["history"]["scores"][:7]
+    results[i]["seven_day"]["score"] = results[i]["history"]["scores"][-7:]
     results[i]["seven_day"]["score_average"] = mean(results[i]["seven_day"]["score"])
     results[i]["seven_day"]["score_percent"] = round(results[i]["seven_day"]["score_average"]*100,0)
-    results[i]["seven_day"]["success"] = results[i]["history"]["success"][:7]
+    results[i]["seven_day"]["success"] = results[i]["history"]["success"][-7:]
     results[i]["seven_day"]["success_average"] = mean(results[i]["seven_day"]["success"])
     results[i]["seven_day"]["success_percent"] = round(results[i]["seven_day"]["success_average"]*100,0)
 
