@@ -39,7 +39,8 @@
                 <h1>How's GPT-4 with Vision Doing?</h1>
                 <div class="header_text">
                     <p>This website measures how <a href="https://platform.openai.com/docs/guides/vision">GPT-4 with Vision</a> performs across a range of experiments.</p>
-                    <p>We test tasks we know GPT-4 with Vision performs well at (i.e. classification) to measure regressions, as well as tasks GPT-4 with Vision struggles with (i.e. odometer OCR) to measure performance improvements.</p>
+                    <p>We test tasks we know GPT-4 with Vision performs well at (i.e. classification) to measure regressions, as well as tasks GPT-4 with Vision struggles with (i.e. odometer OCR) to measure performance improvements and changes.</p>
+                    <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup">GitHub README</a> for contributing instructions.</p>
                 </div>
                 <div class="header_subtitle">
                     <p>Tests are run every day at 1am PT. Last updated November 15, 2023.</p>
@@ -57,17 +58,15 @@
                         <div class="feature_header" style="min-height: auto">
                             <div class="feature_header_text" style="gap: var(--spacing-sizing-4)">
                                 <h2>Response Time</h2>
-                                <p style="font-size: 16px; color: var(--gray-700)">Today, the average response time to receive results from our tests was <b>4.79ms</b> per request.</p>
+                                <p style="font-size: 16px; color: var(--gray-700)">Today, the average response time to receive results from our tests was <b>5.46s</b> per request.</p>
                                 <p class="subtitle">This number only accounts for requests made by this application.</p>
                             </div>
                             <div class="chart">
                                 <div class="chart_box chart_box_green">
-                                    <p>4.79 s</p>
+                                    <p>5.46 s</p>
                                 </div>
                             </div>
                         </div>
-                        <p class="result_text">Over the last 11 days, the average response time was ms.</p>
-                        <p class="subtitle">This number only accounts for requests made by this application.</p>
                     </section>
                     <section class="tests_failing">
                         <div class="test_group_header">
@@ -129,7 +128,7 @@
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
-                                            <p>1.0%</p>
+                                            <p>2.0%</p>
                                         </div>
                                     </div>
                                 </div>
@@ -147,7 +146,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{'x': 0.25, 'y': 0.2, 'width': 0.1, 'height': 0.25}</pre>
+                                        <pre>{'x': 0.68, 'y': 0.25, 'width': 0.1, 'height': 0.25}</pre>
                                         <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
                                         <pre class="test_method">We provide GPT-4V with an image with a known object. We ask it to provide a normalized bounding box of the object and for scoring, we calculate the intersection over union (IOU) between the predicted bounding box and the correct bounding box.</pre>
                                     </div>
@@ -164,12 +163,12 @@
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
-                                            <p>79.0%</p>
+                                            <p>82.0%</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="request_summary">
-                                    <p class="result_text">Of the last 5 tests, conducted daily, this test has passed <b>0%</b> of the time with an average score of <b>81.0%</b>.</p>
+                                    <p class="result_text">Of the last 6 tests, conducted daily, this test has passed <b>0%</b> of the time with an average score of <b>81.0%</b>.</p>
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.01</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -184,10 +183,10 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "A": {"quantity": 15, "price": 20},
-  "B": {"quantity": 25, "price": 30},
-  "C": {"quantity": 30, "price": 35},
-  "D": {"quantity": 45, "price": 40}
+  "A": {"quantity": 8, "price": 5},
+  "B": {"quantity": 20, "price": 20},
+  "C": {"quantity": 28, "price": 30},
+  "D": {"quantity": 40, "price": 45}
 }
 ```</pre>
                                         <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
@@ -206,13 +205,13 @@
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
-                                            <p>0%</p>
+                                            <p>89.0%</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="request_summary">
-                                    <p class="result_text">Of the last 2 tests, conducted daily, this test has passed <b>0%</b> of the time with an average score of <b>38.0%</b>.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.011</p>
+                                    <p class="result_text">Of the last 3 tests, conducted daily, this test has passed <b>0%</b> of the time with an average score of <b>55.0%</b>.</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -224,7 +223,13 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/color.png" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>Failed to produce a valid JSON output: I'm sorry, but as an AI developed by OpenAI, I don't have the capability to provide exact RGB color codes from images. My image recognition abilities are based on descriptions and patterns rather than precise quantitative measurement. If you're looking to identify color codes from an image, you might consider using image editing software or a digital color meter tool which can sample colors and provide you with the exact RGB values.</pre>
+                                        <pre>```json
+{
+  "R": 128,
+  "G": 0,
+  "B": 128
+}
+```</pre>
                                         <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
                                         <pre class="test_method">We provide GPT-4V with an image with multiple shapes with differing colors. We ask it to identify the color of a particular shape in RGB color codes.</pre>
                                     </div>
@@ -246,8 +251,8 @@
                                     </div>
                                 </div>
                                 <div class="request_summary">
-                                    <p class="result_text">Of the last 2 tests, conducted daily, this test has passed <b>0%</b> of the time with an average score of <b>33.0%</b>.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.017</p>
+                                    <p class="result_text">Of the last 3 tests, conducted daily, this test has passed <b>0%</b> of the time with an average score of <b>33.0%</b>.</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.015</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -259,11 +264,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/annotationqa.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>Based on the image provided, I can identify several cars with red bounding boxes indicating they have been annotated. However, there is at least one car on the right-hand side of the image that does not have a red bounding box and therefore appears to be missing an annotation.
-
-Here is a JSON response indicating the number of missing annotations:
-
-```json
+                                        <pre>```json
 {
   "missing": 1
 }
@@ -284,13 +285,13 @@ Here is a JSON response indicating the number of missing annotations:
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
-                                            <p>71.0%</p>
+                                            <p>0%</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="request_summary">
-                                    <p class="result_text">Of the last 1 tests, conducted daily, this test has passed <b>0%</b> of the time with an average score of <b>71.0%</b>.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                    <p class="result_text">Of the last 2 tests, conducted daily, this test has passed <b>0%</b> of the time with an average score of <b>36.0%</b>.</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.011</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -302,12 +303,7 @@ Here is a JSON response indicating the number of missing annotations:
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/measurement.jpg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>```json
-{
-  "length": 2.5,
-  "width": 2.5
-}
-```</pre>
+                                        <pre>Failed to produce a valid JSON output: I'm sorry, but I can't provide measurements or identify specific details in images. If you need to measure an object in a photo, you would typically use the provided scale (the ruler in this case) and estimate the dimensions based on the indicated units. If you have a ruler available and the sticker in the photo, you would align the ruler with the edges of the sticker to measure its length and width.</pre>
                                         <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
                                         <pre class="test_method">This test gives GPT-4 a image of a square sticker with a ruler on one side and asks it to provide a number for the length and width. We score this test based on precent error, gauging how far it is from the actual value.</pre>
                                     </div>
@@ -480,7 +476,7 @@ Here is a JSON response indicating the number of missing annotations:
                                     </div>
                                 </div>
                                 <div class="request_summary">
-                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>86.0%</b> of the time with an average score of <b>99.0%</b>.</p>
+                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time with an average score of <b>100.0%</b>.</p>
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.015</p>
                                 </div>
                                 <div class="explainer_dropdown">

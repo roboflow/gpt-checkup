@@ -32,14 +32,12 @@
     </head>
     <body>
         <div class="graph_paper">
-            <a class="logo_link" href="https://roboflow.com/">
-                <img src="./assets/roboflow_full_logo_color.png" class="logo" alt="Roboflow Logo" />
-            </a>
             <header>
                 <h1>How's GPT-4 with Vision Doing?</h1>
                 <div class="header_text">
                     <p>This website measures how <a href="https://platform.openai.com/docs/guides/vision">GPT-4 with Vision</a> performs across a range of experiments.</p>
-                    <p>We test tasks we know GPT-4 with Vision performs well at (i.e. classification) to measure regressions, as well as tasks GPT-4 with Vision struggles with (i.e. odometer OCR) to measure performance improvements.</p>
+                    <p>We test tasks we know GPT-4 with Vision performs well at (i.e. classification) to measure regressions, as well as tasks GPT-4 with Vision struggles with (i.e. odometer OCR) to measure performance improvements and changes.</p>
+                    <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup">GitHub README</a> for contributing instructions.</p>
                 </div>
                 <div class="header_subtitle">
                     <p>Tests are run every day at 1am PT. Last updated November 15, 2023.</p>
@@ -57,7 +55,7 @@
                         <div class="feature_header" style="min-height: auto">
                             <div class="feature_header_text" style="gap: var(--spacing-sizing-4)">
                                 <h2>Response Time</h2>
-                                <p style="font-size: 16px; color: var(--gray-700)">Today, the average response time to receive results from our tests was <b>{{info['average_time']}}ms</b> per request.</p>
+                                <p style="font-size: 16px; color: var(--gray-700)">Today, the average response time to receive results from our tests was <b>{{info['average_time']}} seconds</b> per request.</p>
                                 <p class="subtitle">This number only accounts for requests made by this application.</p>
                             </div>
                             <div class="chart">
@@ -66,8 +64,6 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="result_text">Over the last {{info["day_count"]}} day{% if info["day_count"] > 1 %}s{% endif %}, the average response time was {{results['avg_time']}}ms.</p>
-                        <p class="subtitle">This number only accounts for requests made by this application.</p>
                     </section>
                     <section class="tests_failing">
                         <div class="test_group_header">
@@ -89,7 +85,7 @@
                                     </div>
                                 </div>
                                 <div class="request_summary">
-                                    <p class="result_text">Of the last {{test_data["seven_day"]["score"]|length}} tests, conducted daily, this test has passed <b>{{ test_data["seven_day"]["success_percent"] }}%</b> of the time with an average score of <b>{{ test_data["seven_day"]["score_percent"] }}%</b>.</p>
+                                    <p class="result_text">Of the last {{test_data["seven_day"]["score"]|length}} tests, conducted daily, this test has achieved 100% accuracy <b>{{ test_data["seven_day"]["success_percent"] }}%</b> of the time with an average score of <b>{{ test_data["seven_day"]["score_percent"] }}%</b>.</p>
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_results[test_id].price|round(3)}}</p>
                                 </div>
                                 <div class="explainer_dropdown">
