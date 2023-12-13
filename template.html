@@ -80,12 +80,12 @@
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
-                                            <p>{{ (current_results[test_id].score*100)|round(0) }}%</p>
+                                            <p>Fail</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="request_summary">
-                                    <p class="result_text">Of the last {{test_data["seven_day"]["score"]|length}} tests, conducted daily, this test has achieved 100% accuracy <b>{{ test_data["seven_day"]["success_percent"] }}%</b> of the time with an average score of <b>{{ test_data["seven_day"]["score_percent"] }}%</b>.</p>
+                                    <p class="result_text">Of the last {{test_data["seven_day"]["score"]|length}} tests, conducted daily, this test has passed <b>{{ test_data["seven_day"]["success_percent"] }}%</b> of the time.</p>
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_results[test_id].price|round(3)}}</p>
                                 </div>
                                 <div class="explainer_dropdown">
@@ -124,12 +124,12 @@
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_green">
-                                            <p>{{ (current_results[test_id].score*100)|round(0) }}%</p>
+                                            <p>Pass</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="request_summary">
-                                    <p class="result_text">Of the last {{test_data["seven_day"]["score"]|length}} tests, conducted daily, this test has passed <b>{{ test_data["seven_day"]["success_percent"] }}%</b> of the time with an average score of <b>{{ test_data["seven_day"]["score_percent"] }}%</b>.</p>
+                                    <p class="result_text">Of the last {{test_data["seven_day"]["score"]|length}} tests, conducted daily, this test has passed <b>{{ test_data["seven_day"]["success_percent"] }}%</b> of the time.</p>
                                     <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_results[test_id].price|round(3)}}</p>
                                 </div>
                                 <div class="explainer_dropdown">

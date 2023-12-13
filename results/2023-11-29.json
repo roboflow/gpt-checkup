@@ -1,0 +1,10 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 2.05232572555542,
+        "result": "Toyota Camry"
+    }
+}
