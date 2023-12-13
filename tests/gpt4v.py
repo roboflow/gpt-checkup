@@ -1,9 +1,13 @@
 from dataclasses import dataclass
 import supervision as sv
-from openai import OpenAI
 import base64
 import time
 import numpy as np
+
+import os
+import mimetypes
+from pathlib import Path
+import google.generativeai as genai
 
 from autodistill.detection import CaptionOntology, DetectionBaseModel
 
@@ -12,7 +16,8 @@ class GPT4V(DetectionBaseModel):
     ontology: CaptionOntology
 
     def __init__(self, ontology: CaptionOntology, api_key: str):
-        self.client = OpenAI(api_key=api_key)
+        genai.configure(api_key=api_key)
+        self.client = genai.GenerativeModel(model_name="gemini-pro-vision")
         self.ontology = ontology
         pass
 
@@ -26,41 +31,35 @@ class GPT4V(DetectionBaseModel):
         if prompt is None:
             prompt = f"What is in the image? Return the class of the object in the image. Here are the classes: {', '.join(classes)}. You can only return one class from that list."
 
+        image_path = input
+
+        mime_type, encoding = mimetypes.guess_type(image_path)
+        image = {
+            "mime_type": mime_type,
+            "data": Path(image_path).read_bytes()
+        }
+
         payload = [
-            {
-                "role": "user",
-                "content": [
-                    {"type": "text", "text": prompt},
-                    {
-                        "type": "image_url",
-                        "image_url": {
-                            "url": f"data:image/jpeg;base64,"
-                            + base64.b64encode(open(input, "rb").read()).decode(
-                                "utf-8"
-                            ),
-                        },
-                    },
-                ],
-            }
+            prompt,
+            image,
         ]
+
+        model = genai.GenerativeModel(model_name="gemini-pro-vision")
 
         start_time = time.time()
 
-        response = self.client.chat.completions.create(
-            model="gpt-4-vision-preview",
-            messages=payload,
-            max_tokens=300,
-        )
+        response = model.generate_content(payload)
+        response_text = response.text
 
         inference_time = time.time() - start_time
 
-        input_tokens = response.usage.prompt_tokens
-        output_tokens = response.usage.completion_tokens
+        input_tokens = 0
+        output_tokens = 0
         tokens = (input_tokens, output_tokens)
 
         if result_serialization == "Classifications":
             class_ids = self.ontology.prompts().index(
-                response.choices[0].message.content
+                response_text.strip()
             )
 
             return (
@@ -71,4 +70,4 @@ class GPT4V(DetectionBaseModel):
                 inference_time, tokens
             )
         else:
-            return response.choices[0].message.content, inference_time, tokens
+            return response_text, inference_time, tokens

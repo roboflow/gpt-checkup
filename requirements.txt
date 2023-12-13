@@ -6,3 +6,4 @@ openai
 roboflow
 levenshtein
 scikit-learn
+google-generativeai

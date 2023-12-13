@@ -1,0 +1,90 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.0,
+        "pass_fail": "Pass",
+        "response_time": 5.201883792877197,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.0,
+        "pass_fail": "Fail",
+        "response_time": 5.434900283813477,
+        "result": " 7"
+    },
+    "document_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.0,
+        "pass_fail": "Fail",
+        "response_time": 5.972073316574097,
+        "result": " I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.0,
+        "pass_fail": "Fail",
+        "response_time": 7.971741676330566,
+        "result": " The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day oh tea.\""
+    },
+    "extraction_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.0,
+        "pass_fail": "Fail",
+        "response_time": 7.442444324493408,
+        "result": "Failed to produce a valid JSON output:  ``` JSON\n[\n  {\n    \"name\": \"Mary Thomas\",\n    \"time_per_day\": 1,\n    \"medication\": \"Atenolol\",\n    \"dosage\": 100,\n    \"rx_number\": \"1234567-12345\"\n  }\n]\n```"
+    },
+    "math_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.0,
+        "pass_fail": "Fail",
+        "response_time": 5.377315044403076,
+        "result": "Failed to produce a valid JSON output:  [\n  \"3x^2 - 6x + 2\"\n]"
+    },
+    "object_detection": {
+        "score": 0,
+        "success": false,
+        "price": 0.0,
+        "pass_fail": "Fail",
+        "response_time": 5.675944805145264,
+        "result": "Failed to produce a valid JSON output:  There are no bananas in this image."
+    },
+    "graph_understanding": {
+        "score": 0.99,
+        "success": false,
+        "price": 0.0,
+        "pass_fail": "Fail",
+        "response_time": 6.891576766967773,
+        "result": " ```json\n{\n  \"A\": {\n    \"quantity\": 20,\n    \"price\": 10\n  },\n  \"B\": {\n    \"quantity\": 25,\n    \"price\": 20\n  },\n  \"C\": {\n    \"quantity\": 30,\n    \"price\": 30\n  },\n  \"D\": {\n    \"quantity\": 35,\n    \"price\": 40\n  }\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0.388235294117647,
+        "success": false,
+        "price": 0.0,
+        "pass_fail": "Fail",
+        "response_time": 5.495651721954346,
+        "result": " ```json\n{\n  \"R\": 255,\n  \"G\": 140,\n  \"B\": 0\n}\n```"
+    },
+    "annotation_qa": {
+        "score": 0.0,
+        "success": false,
+        "price": 0.0,
+        "pass_fail": "Fail",
+        "response_time": 6.10501503944397,
+        "result": " ```json\n{\n  \"missing\": 0\n}\n```"
+    },
+    "measurement": {
+        "score": 0.8571428571428572,
+        "success": false,
+        "price": 0.0,
+        "pass_fail": "Fail",
+        "response_time": 7.4993720054626465,
+        "result": " ```json\n{\n  \"length\": 3.0,\n  \"width\": 3.0\n}\n```"
+    }
+}
