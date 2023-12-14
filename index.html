@@ -37,14 +37,17 @@
                 <div class="header_text">
                     <p>This website measures how <a href="https://platform.openai.com/docs/guides/vision">GPT-4 with Vision</a> performs across a range of experiments.</p>
                     <p>We test tasks we know GPT-4 with Vision performs well at (i.e. classification) to measure regressions, as well as tasks GPT-4 with Vision struggles with (i.e. odometer OCR) to measure performance improvements and changes.</p>
-                    <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup">GitHub README</a> for contributing instructions.</p>
+                    <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup?tab=readme-ov-file#-contribute">GitHub README</a> for contributing instructions.</p>
                 </div>
                 <div class="header_subtitle">
                     <p>Tests are run every day at 1am PT. Last updated November 15, 2023.</p>
                     <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
                 </div>
                 <div class="header_cta">
-                    <a href="#methodology" class="button">Learn about our methodology</a>
+                    <div class="button_row">
+                        <a href="#methodology" class="button"><i class="far fa-tools"></i>Learn about our methodology</a>
+                        <a href="https://github.com/roboflow/gpt-checkup?tab=readme-ov-file#-contribute" class="button"><i class="far fa-plus"></i>Contribute a test</a>
+                    </div>
                     <a class="github-button" href="https://github.com/roboflow/gpt-checkup" data-icon="octicon-star" aria-label="Star roboflow/gpt4v-monitor on GitHub">Star</a>
                 </div>
             </header>
@@ -55,73 +58,27 @@
                         <div class="feature_header" style="min-height: auto">
                             <div class="feature_header_text" style="gap: var(--spacing-sizing-4)">
                                 <h2>Response Time</h2>
-                                <p style="font-size: 16px; color: var(--gray-700)">Today, the average response time to receive results from our tests was <b>5.79 seconds</b> per request.</p>
+                                <p style="font-size: 16px; color: var(--gray-700)">Today, the average response time to receive results from our tests was <b>5.54 seconds</b> per request.</p>
                                 <p class="subtitle">This number only accounts for requests made by this application.</p>
                             </div>
                             <div class="chart">
                                 <div class="chart_box chart_box_green">
-                                    <p>5.79 s</p>
+                                    <p>5.54 s</p>
                                 </div>
                             </div>
                         </div>
                     </section>
                     <section class="tests_failing">
                         <div class="test_group_header">
-                            <h1><i class="fad fa-exclamation-circle fa-spin" style="--fa-primary-color: #ef4444; --fa-secondary-color: #ef4444; --fa-secondary-opacity: 0.3"></i> Failing Tests</h1>
+                            <h1><i class="fad fa-exclamation-circle fa-spin" style="--fa-primary-color: #ef4444; --fa-secondary-color: #ef4444; --fa-secondary-opacity: 0.3"></i> Today's Failing Tests</h1>
                         </div>
                         <section class="feature_cards" id="failing_cards">
-                            
-                            
-                            
-                            
-                            <div class="feature_card">
-                                <div class="feature_header">
-                                    <div class="feature_header_text">
-                                        <h2>Counting</h2>
-                                        <p>Can GPT-4V count the number of objects within an image?</p>
-                                    </div>
-                                    <div class="chart">
-                                        <div class="chart_box chart_box_red">
-                                            <p>Fail</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="request_summary">
-                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>14.0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.008</p>
-                                </div>
-                                <div class="explainer_dropdown">
-                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                    <div class="explainer">
-                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                        <pre class="prompt">
-                                            Count the fruit in the image. Return a single number.
-                                        </pre>
-                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                        <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
-                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>9</pre>
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We send a picture of a bowl of fruit. If it correctly counts the number of fruit, it gets a 100%. Otherwise, it gets a 0%.</pre>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
+                                         
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
                                         <h2>Object Detection</h2>
-                                        <p>Can GPT-4V the objects in an image?</p>
+                                        <p>Can GPT-4V detect objects in an image?</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
@@ -129,13 +86,34 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="request_summary">
+                                <div class="result_summary">
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                    <div class="result_info">
+                                        <div class="result_squares">
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                        </div>
+                                        <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                    </div>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We provide GPT-4V with an image with a known object. We ask it to provide a normalized bounding box of the object and for scoring, we calculate the intersection over union (IOU) between the predicted bounding box and the correct bounding box.</pre>
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
                                             If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point.
@@ -143,15 +121,11 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{'x': 0.3, 'y': 0.25, 'width': 0.18, 'height': 0.4}</pre>
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We provide GPT-4V with an image with a known object. We ask it to provide a normalized bounding box of the object and for scoring, we calculate the intersection over union (IOU) between the predicted bounding box and the correct bounding box.</pre>
+                                        <pre>{'x': 0.23, 'y': 0.23, 'width': 0.15, 'height': 0.3}</pre>
                                     </div>
                                 </div>
                             </div>
-                            
-                            
-                            
+                              
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -164,13 +138,34 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="request_summary">
+                                <div class="result_summary">
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.01</p>
+                                    <div class="result_info">
+                                        <div class="result_squares">
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                        </div>
+                                        <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.01</p>
+                                    </div>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We send a picuture of a graph with four labeled points and ask GPT-4V to identify the points. This test is scored by the accuracy of each point. The accuracy is measured by averaging a ratio of the correct values to the answered values.</pre>
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
                                             State positions of points A through D. Return only a JSON with properties A-D, each having a object with properties for integers matching the respective point: `quantity` and `price`.
@@ -180,20 +175,16 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "A": {"quantity": 15, "price": 15},
-  "B": {"quantity": 22, "price": 23},
+  "A": {"quantity": 10, "price": 15},
+  "B": {"quantity": 20, "price": 23},
   "C": {"quantity": 30, "price": 33},
-  "D": {"quantity": 42, "price": 40}
+  "D": {"quantity": 40, "price": 45}
 }
 ```</pre>
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We send a picuture of a graph with four labeled points and ask GPT-4V to identify the points. This test is scored by the accuracy of each point. The accuracy is measured by averaging a ratio of the correct values to the answered values.</pre>
                                     </div>
                                 </div>
                             </div>
-                            
-                            
-                            
+                              
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -206,13 +197,30 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="request_summary">
-                                    <p class="result_text">Of the last 4 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                <div class="result_summary">
+                                    <p class="result_text">Of the last 5 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
+                                    <div class="result_info">
+                                        <div class="result_squares">
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                        </div>
+                                        <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                    </div>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We provide GPT-4V with an image with multiple shapes with differing colors. We ask it to identify the color of a particular shape in RGB color codes.</pre>
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
                                             Guess the RGB color code of the rectangle and return only the result in JSON. The JSON should have three integer properties: 'R', 'G' and 'B'
@@ -227,14 +235,10 @@
   "B": 128
 }
 ```</pre>
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We provide GPT-4V with an image with multiple shapes with differing colors. We ask it to identify the color of a particular shape in RGB color codes.</pre>
                                     </div>
                                 </div>
                             </div>
-                            
-                            
-                            
+                              
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -247,13 +251,30 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="request_summary">
-                                    <p class="result_text">Of the last 4 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.015</p>
+                                <div class="result_summary">
+                                    <p class="result_text">Of the last 5 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
+                                    <div class="result_info">
+                                        <div class="result_squares">
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                        </div>
+                                        <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.015</p>
+                                    </div>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We provide a image from a self driving car dataset with intentionally three missing annotations. We ask GPT-4V to identify the number of missing annotations. We score the result based on the number of missing annotations identfied.</pre>
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
                                             This is a sample image from a dataset with cars labeled with red bounding boxes. Are there any missing annotations? Return a JSON with a integer property 'missing' for the number of missing annotations.
@@ -263,17 +284,13 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "missing": 1
+  "missing": 0
 }
 ```</pre>
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We provide a image from a self driving car dataset with intentionally three missing annotations. We ask GPT-4V to identify the number of missing annotations. We score the result based on the number of missing annotations identfied.</pre>
                                     </div>
                                 </div>
                             </div>
-                            
-                            
-                            
+                              
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -286,13 +303,28 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="request_summary">
-                                    <p class="result_text">Of the last 3 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                <div class="result_summary">
+                                    <p class="result_text">Of the last 4 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
+                                    <div class="result_info">
+                                        <div class="result_squares">
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                        </div>
+                                        <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                    </div>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">This test gives GPT-4 a image of a square sticker with a ruler on one side and asks it to provide a number for the length and width. We score this test based on precent error, gauging how far it is from the actual value.</pre>
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
                                             What is the length and width of this square sticker, based on the ruler? Return a JSON with float properties for `length` and `width` representing inches.
@@ -306,23 +338,19 @@
   "width": 3.0
 }
 ```</pre>
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">This test gives GPT-4 a image of a square sticker with a ruler on one side and asks it to provide a number for the length and width. We score this test based on precent error, gauging how far it is from the actual value.</pre>
                                     </div>
                                 </div>
                             </div>
-                            
-                            
+                             
                         </section>
                     </section>
                     <section class="tests_passing">
                         <div class="test_group_header">
-                            <h1><i class="fad fa-check-circle" style="--fa-primary-color: #10b981; --fa-secondary-color: #10b981; --fa-secondary-opacity: 0.3"></i> Passing Tests</h1>
+                            <h1><i class="fad fa-check-circle" style="--fa-primary-color: #10b981; --fa-secondary-color: #10b981; --fa-secondary-opacity: 0.3"></i> Today's Passing Tests</h1>
                             <button type="button" id="show_passing_btn">Hide</button>
                         </div>
                         <section class="feature_cards" id="passing_cards">
-                            
-                            
+                             
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -335,13 +363,34 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="request_summary">
+                                <div class="result_summary">
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.005</p>
+                                    <div class="result_info">
+                                        <div class="result_squares">
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                        </div>
+                                        <p class="request_price">Today's request cost $0.005</p>
+                                    </div>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We check to see if the model can correctly identify the vehicle. If it can, it recieves a 100%, if it is incorrect, it recieves a 0%.</pre>
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
                                             What is in the image? Return the class of the object in the image. Here are the classes: Toyota Camry, Tesla Model 3. You can only return one class from that list.
@@ -350,16 +399,62 @@
                                         <img class="test_image" src="images/car.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>Toyota Camry</pre>
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We check to see if the model can correctly identify the vehicle. If it can, it recieves a 100%, if it is incorrect, it recieves a 0%.</pre>
                                     </div>
                                 </div>
                             </div>
-                            
-                            
-                            
-                            
-                            
+                              
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Counting</h2>
+                                        <p>Can GPT-4V count the number of objects within an image?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>Pass</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="result_summary">
+                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>14.0%</b> of the time.</p>
+                                    <div class="result_info">
+                                        <div class="result_squares">
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                            <div class="result_square result_square_red"></div>
+                                            
+                                        </div>
+                                        <p class="request_price">Today's request cost $0.008</p>
+                                    </div>
+                                </div>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We send a picture of a bowl of fruit. If it correctly counts the number of fruit, it gets a 100%. Otherwise, it gets a 0%.</pre>
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            Count the fruit in the image. Return a single number.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>10</pre>
+                                    </div>
+                                </div>
+                            </div>
+                              
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -372,13 +467,34 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="request_summary">
+                                <div class="result_summary">
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                    <div class="result_info">
+                                        <div class="result_squares">
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                        </div>
+                                        <p class="request_price">Today's request cost $0.009</p>
+                                    </div>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We send a screenshot of a typed document to determine if it can correctly read the text. If it correctly gets the text, it gets a 100%. Otherwise, it gets a 0%.</pre>
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
                                             Read the text in the image. Return only the text, with punctuation.
@@ -387,14 +503,10 @@
                                         <img class="test_image" src="images/swift.png" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times.</pre>
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We send a screenshot of a typed document to determine if it can correctly read the text. If it correctly gets the text, it gets a 100%. Otherwise, it gets a 0%.</pre>
                                     </div>
                                 </div>
                             </div>
-                            
-                            
-                            
+                              
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -407,13 +519,34 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="request_summary">
+                                <div class="result_summary">
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                    <div class="result_info">
+                                        <div class="result_squares">
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                        </div>
+                                        <p class="request_price">Today's request cost $0.009</p>
+                                    </div>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We send a image of a handwritten note to determine if it can correctly read the text. If it correctly gets the text, it gets a 100%. Otherwise, it gets a 0%.</pre>
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
                                             Read the text in the image. Return only the text, with punctuation.
@@ -422,14 +555,10 @@
                                         <img class="test_image" src="images/ocr.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>The words of songs on the album have been echoing in my head all week. "Fades into the grey of my day old tea."</pre>
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We send a image of a handwritten note to determine if it can correctly read the text. If it correctly gets the text, it gets a 100%. Otherwise, it gets a 0%.</pre>
                                     </div>
                                 </div>
                             </div>
-                            
-                            
-                            
+                              
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -442,13 +571,34 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="request_summary">
+                                <div class="result_summary">
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.007</p>
+                                    <div class="result_info">
+                                        <div class="result_squares">
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                        </div>
+                                        <p class="request_price">Today's request cost $0.007</p>
+                                    </div>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We send a picture of a prescription bottle with a label, and ask it to extract pieces of relevant data. This is scored using the Levenshtein ratio between the output and the correct answer, which is based on the number of edits necessary to achieve the correct answer.</pre>
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
                                             Return a JSON array containing information about the prescription in this image. Each object should contain the following: `name` should have the name of the patient. `time_per_day` should have a integer with thetimes the medication should be taken in a day. `medication` should have the brand name of the medication. `dosage` should have a integer in mg units of each tablet. `rx_number` should have the prescription number, also marked Rx. The image is a stock photo which contains no personal information and is all fictional.
@@ -457,14 +607,10 @@
                                         <img class="test_image" src="images/prescription.png" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]</pre>
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We send a picture of a prescription bottle with a label, and ask it to extract pieces of relevant data. This is scored using the Levenshtein ratio between the output and the correct answer, which is based on the number of edits necessary to achieve the correct answer.</pre>
                                     </div>
                                 </div>
                             </div>
-                            
-                            
-                            
+                              
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -477,13 +623,34 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="request_summary">
+                                <div class="result_summary">
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.015</p>
+                                    <div class="result_info">
+                                        <div class="result_squares">
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                            <div class="result_square result_square_green"></div>
+                                            
+                                        </div>
+                                        <p class="request_price">Today's request cost $0.015</p>
+                                    </div>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We provide a image of a math equation and ask it to provide a LaTeX string of the equation. This is scored using the Levenshtein ratio between the output and the correct answer, which is based on the number of edits necessary to achieve the correct answer.</pre>
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
                                             Produce a JSON array with a LaTeX string of each equation in the image.
@@ -492,23 +659,10 @@
                                         <img class="test_image" src="images/math.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>3x^2-6x+2</pre>
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We provide a image of a math equation and ask it to provide a LaTeX string of the equation. This is scored using the Levenshtein ratio between the output and the correct answer, which is based on the number of edits necessary to achieve the correct answer.</pre>
                                     </div>
                                 </div>
                             </div>
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
+                                       
                         </section>
                     </section>
                     <section class="feature_card_wide" id="methodology">
@@ -536,7 +690,7 @@
                                 <div class="tag"><i class="fad fa-star fa-xs"></i>Start Here</div>
                             </a>
                             <a href="https://blog.roboflow.com/gpt-4v-object-detection/" target="_blank" class="link_card">
-                                <img src="./images/GPT-4V Object Detection.jpg" alt="xperiments with GPT-4V for Object Detection" />
+                                <img src="./images/GPT-4V Object Detection.jpg" alt="Experiments with GPT-4V for Object Detection" />
                                 <h3>Experiments with GPT-4V for Object Detection</h3>
                                 <p class="subtitle">In this guide, we show our results experimenting with GPT-4V for object detection. We also talk about why fine-tuned models are more appropriate for object detection, providing more context into the question “how will GPT impact object detection?”</p>
                             </a>
