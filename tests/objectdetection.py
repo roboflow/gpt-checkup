@@ -8,7 +8,7 @@ import re
 class ObjectDetectionTest:
     name = "Object Detection"
     id = "object_detection"
-    question = "Can GPT-4V the objects in an image?"
+    question = "Can GPT-4V detect objects in an image?"
     prompt = "If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point."
     image = "images/fruit.jpeg"
     method = "We provide GPT-4V with an image with a known object. We ask it to provide a normalized bounding box of the object and for scoring, we calculate the intersection over union (IOU) between the predicted bounding box and the correct bounding box."
