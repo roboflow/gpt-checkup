@@ -356,6 +356,11 @@ footer p {
     border: 1px solid var(--gray-100);
 }
 
+.summary_title {
+    /* font-weight: 500; */
+    font-size: 14px;
+}
+
 .result_text {
     width: 100%;
     color: var(--gray-700);
