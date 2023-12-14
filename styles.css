@@ -373,10 +373,11 @@ footer p {
 
 .summary_squares {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-wrap: wrap;
     align-items: center;
     gap: 4px;
+    margin-bottom: 10px;
 }
 
 .summary_square {
@@ -387,9 +388,11 @@ footer p {
 }
 .summary_square_green {
     background-color: var(--green-400);
+    display: inline-block;
 }
 .summary_square_red {
     background-color: var(--red-400);
+    display: inline-block;
 }
 
 .request_price {
