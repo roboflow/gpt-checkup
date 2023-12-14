@@ -87,16 +87,16 @@
                                     </div>
                                 </div>
                                 <div class="result_summary">
-                                    <b class="summary_title">Last {{test_data["seven_day"]["score"]|length}}-Day Performance</b>
-                                    <p class="result_text">Of the last {{test_data["seven_day"]["score"]|length}} tests, conducted daily, this test has passed <b>{{ test_data["seven_day"]["success_percent"] }}%</b> of the time.</p>
-                                    <div class="result_info">
-                                        <div class="result_squares">
+                                    <div class="summary_row">
+                                        <b class="summary_title">Last {{test_data["seven_day"]["score"]|length}}-Day Performance</b>
+                                        <div class="summary_squares">
                                             {% for item in test_data["seven_day"]["success"] %}
-                                            <div class="result_square {% if item %}result_square_green{% else %}result_square_red{% endif %}"></div>
+                                            <div class="summary_square {% if item %}summary_square_green{% else %}summary_square_red{% endif %}"></div>
                                             {% endfor %}
                                         </div>
-                                        <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_results[test_id].price|round(3)}}</p>
                                     </div>
+                                    <p class="result_text">Of the last {{test_data["seven_day"]["score"]|length}} tests, conducted daily, this test has passed <b>{{ test_data["seven_day"]["success_percent"] }}%</b> of the time.</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_results[test_id].price|round(3)}}</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -138,16 +138,16 @@
                                     </div>
                                 </div>
                                 <div class="result_summary">
-                                    <b class="summary_title">Last {{test_data["seven_day"]["score"]|length}}-Day Performance</b>
-                                    <p class="result_text">Of the last {{test_data["seven_day"]["score"]|length}} tests, conducted daily, this test has passed <b>{{ test_data["seven_day"]["success_percent"] }}%</b> of the time.</p>
-                                    <div class="result_info">
-                                        <div class="result_squares">
+                                    <div class="summary_row">
+                                        <b class="summary_title">Last {{test_data["seven_day"]["score"]|length}}-Day Performance</b>
+                                        <div class="summary_squares">
                                             {% for item in test_data["seven_day"]["success"] %}
-                                            <div class="result_square {% if item %}result_square_green{% else %}result_square_red{% endif %}"></div>
+                                            <div class="summary_square {% if item %}summary_square_green{% else %}summary_square_red{% endif %}"></div>
                                             {% endfor %}
                                         </div>
-                                        <p class="request_price">Today's request cost ${{current_results[test_id].price|round(3)}}</p>
                                     </div>
+                                    <p class="result_text">Of the last {{test_data["seven_day"]["score"]|length}} tests, conducted daily, this test has passed <b>{{ test_data["seven_day"]["success_percent"] }}%</b> of the time.</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost ${{current_results[test_id].price|round(3)}}</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
