@@ -356,11 +356,6 @@ footer p {
     border: 1px solid var(--gray-100);
 }
 
-.result_text {
-    width: 100%;
-    color: var(--gray-700);
-}
-
 .summary_row {
     display: flex;
     gap: var(--spacing-sizing-2);
@@ -377,7 +372,6 @@ footer p {
     flex-wrap: wrap;
     align-items: center;
     gap: 4px;
-    margin-bottom: 10px;
 }
 
 .summary_square {
@@ -393,6 +387,10 @@ footer p {
 .summary_square_red {
     background-color: var(--red-400);
     display: inline-block;
+}
+.result_text {
+    width: 100%;
+    color: var(--gray-700);
 }
 
 .request_price {
