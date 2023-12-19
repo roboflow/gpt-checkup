@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content
@@ -25,16 +27,13 @@ jobs:
         run: python web.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      - uses: actions/checkout@v4
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
 
       # commit results to repository
       - name: Commit results
         run: |
           git config --local user.email "jamesg@jamesg.blog"
           git config --local user.name "capjamesg"
-          git add results/*
+          git add index.html
+          git add results/*.json
           git commit -m "Update results"
           git push
