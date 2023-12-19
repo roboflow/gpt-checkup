@@ -26,9 +26,6 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-
       # commit results to repository
       - name: Commit results
         run: |
