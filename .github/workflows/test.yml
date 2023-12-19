@@ -1,8 +1,8 @@
 name: run web.py
 
-on:
-  schedule:
-    - cron: '0 1 * * *'
+on: push
+  # schedule:
+  #   - cron: '0 1 * * *'
 
 jobs:
   build:
@@ -35,6 +35,7 @@ jobs:
         run: |
           git config --local user.email "jamesg@jamesg.blog"
           git config --local user.name "capjamesg"
-          git add results/*
+          git add index.html
+          git add results/*.json
           git commit -m "Update results"
           git push
