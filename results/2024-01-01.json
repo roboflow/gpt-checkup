@@ -1,0 +1,90 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 1.513235330581665,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 1.92329740524292,
+        "result": "9"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00857,
+        "pass_fail": "Pass",
+        "response_time": 5.524645805358887,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.008730000000000002,
+        "pass_fail": "Fail",
+        "response_time": 10.844539403915405,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day ok tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00725,
+        "pass_fail": "Pass",
+        "response_time": 2.916834831237793,
+        "result": "[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.02011,
+        "pass_fail": "Pass",
+        "response_time": 9.502241134643555,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.08382778031340332,
+        "success": false,
+        "price": 0.011470000000000001,
+        "pass_fail": "Fail",
+        "response_time": 7.686214447021484,
+        "result": "{'x': 0.35, 'y': 0.2, 'width': 0.15, 'height': 0.25}"
+    },
+    "graph_understanding": {
+        "score": 0.9,
+        "success": false,
+        "price": 0.01019,
+        "pass_fail": "Fail",
+        "response_time": 2.9376537799835205,
+        "result": "```json\n{\n  \"A\": {\"quantity\": 15, \"price\": 10},\n  \"B\": {\"quantity\": 20, \"price\": 20},\n  \"C\": {\"quantity\": 25, \"price\": 30},\n  \"D\": {\"quantity\": 30, \"price\": 40}\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0,
+        "success": false,
+        "price": 0.008390000000000002,
+        "pass_fail": "Fail",
+        "response_time": 1.5378179550170898,
+        "result": "Failed to produce a valid JSON output: Sorry, I can't provide assistance with that request."
+    },
+    "annotation_qa": {
+        "score": 0.0,
+        "success": false,
+        "price": 0.01659,
+        "pass_fail": "Fail",
+        "response_time": 4.422717809677124,
+        "result": "I see five cars in this image, each with a red bounding box around it, indicating that they have been annotated. Therefore, there are no missing annotations for cars labeled with red bounding boxes in this sample image.\n\n```json\n{\n  \"missing\": 0\n}\n```"
+    },
+    "measurement": {
+        "score": 0.8571428571428572,
+        "success": false,
+        "price": 0.00877,
+        "pass_fail": "Fail",
+        "response_time": 7.235796213150024,
+        "result": "```json\n{\n  \"length\": 3.0,\n  \"width\": 3.0\n}\n```"
+    }
+}
