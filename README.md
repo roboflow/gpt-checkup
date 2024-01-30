@@ -49,7 +49,8 @@ In your test, you will need to specify:
 
 Add the image(s) you want to use in your test(s) in the `images` directory.
 
-Add the name of the test class you created to the `test_list` list in the `web.py` file.
+Add the name of the test class you created to the `test_list` list in the `web.py` file
+and to the imports in the `tests/__init__.py` file.
 
 Before you run the tests locally, you will need to set up an OpenAI API key. Refer to the official OpenAI documentation for instructions on [how to retrieve your OpenAI API key](https://help.openai.com/en/articles/4936850-where-do-i-find-my-api-key).
 
