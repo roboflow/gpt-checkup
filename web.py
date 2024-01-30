@@ -84,6 +84,8 @@ for index, test_id in enumerate(test_ids):
     results[test_id]["prompt"] = test_info.prompt
     results[test_id]["image"] = test_info.image
     results[test_id]["method"] = test_info.method
+    results[test_id]["author_name"] = test_info.author_name if hasattr(test_info, "author_name") else "Roboflow"
+    results[test_id]["author_url"] = test_info.author_url if hasattr(test_info, "author_url") else "https://roboflow.com"
 
 for i in test_ids:
     results[i]["history"] = {}
