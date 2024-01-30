@@ -10,6 +10,8 @@ class EasyCaptchaTest:
     prompt = "Please provide the string required to pass this CAPTCHA. Do not respond with anything else. Do not include whitespace besides spaces between words."
     image = "images/easy_captcha.jpeg"
     method = "We provide a CAPTCHA image (created using Wolfram Alpha's CAPTCHA command) and ask it to provide the input required to pass the test. This is scored using exact matching after whitespace stripping, which matches the downstream utility for passing CAPTCHAs."
+    author_name = "Charles Frye"
+    author_url = "https://charlesfrye.github.io/"
 
     @staticmethod
     def test():
