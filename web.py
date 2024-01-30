@@ -20,7 +20,9 @@ test_list = [
     "GraphUnderstandingTest",
     "ColorRecognitionTest",
     "AnnotationQATest",
-    "MeasurementTest"
+    "MeasurementTest",
+    "EasyCaptchaTest",
+    "PersuasiveAttackEasyCaptchaTest",
 ]
 
 test_ids = []
