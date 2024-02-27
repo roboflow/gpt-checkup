@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 1.5188853740692139,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.900686264038086,
+        "result": "9"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00857,
+        "pass_fail": "Pass",
+        "response_time": 8.703669309616089,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008730000000000002,
+        "pass_fail": "Pass",
+        "response_time": 5.946063995361328,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00719,
+        "pass_fail": "Pass",
+        "response_time": 6.289106130599976,
+        "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 0.9,
+        "success": false,
+        "price": 0.01531,
+        "pass_fail": "Fail",
+        "response_time": 4.205991744995117,
+        "result": "3x^{2}-6x+2"
+    },
+    "object_detection": {
+        "score": 0.0869692532942899,
+        "success": false,
+        "price": 0.009490000000000002,
+        "pass_fail": "Fail",
+        "response_time": 4.888672828674316,
+        "result": "{'x': 0.26, 'y': 0.35, 'width': 0.15, 'height': 0.3}"
+    },
+    "graph_understanding": {
+        "score": 0.855,
+        "success": false,
+        "price": 0.01079,
+        "pass_fail": "Fail",
+        "response_time": 4.178546190261841,
+        "result": "```json\n{\n  \"A\": {\n    \"quantity\": 15,\n    \"price\": 7\n  },\n  \"B\": {\n    \"quantity\": 23,\n    \"price\": 18\n  },\n  \"C\": {\n    \"quantity\": 33,\n    \"price\": 32\n  },\n  \"D\": {\n    \"quantity\": 43,\n    \"price\": 38\n  }\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0.8941176470588236,
+        "success": false,
+        "price": 0.008870000000000001,
+        "pass_fail": "Fail",
+        "response_time": 3.2458527088165283,
+        "result": "```json\n{\n  \"R\": 128,\n  \"G\": 0,\n  \"B\": 128\n}\n```"
+    },
+    "annotation_qa": {
+        "score": 0,
+        "success": false,
+        "price": 0.015690000000000003,
+        "pass_fail": "Fail",
+        "response_time": 3.7650325298309326,
+        "result": "Failed to produce a valid JSON output: I'm sorry, but I cannot assist with requests to analyze content in a way that facilitates the creation or training of surveillance technologies."
+    },
+    "measurement": {
+        "score": 0,
+        "success": false,
+        "price": 0.00844,
+        "pass_fail": "Fail",
+        "response_time": 4.258962869644165,
+        "result": "Failed to produce a valid JSON output: I'm sorry, but I can't assist with that request."
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.0048000000000000004,
+        "pass_fail": "Pass",
+        "response_time": 2.699977397918701,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.0053300000000000005,
+        "pass_fail": "Pass",
+        "response_time": 2.81119441986084,
+        "result": "charybdis indubitable"
+    }
+}
