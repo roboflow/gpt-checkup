@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 2.564398765563965,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 1,
+        "success": true,
+        "price": 0.007870000000000002,
+        "pass_fail": "Pass",
+        "response_time": 2.2990262508392334,
+        "result": "10"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00857,
+        "pass_fail": "Pass",
+        "response_time": 3.538766860961914,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008730000000000002,
+        "pass_fail": "Pass",
+        "response_time": 4.948122978210449,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00719,
+        "pass_fail": "Pass",
+        "response_time": 5.534050941467285,
+        "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.01528,
+        "pass_fail": "Pass",
+        "response_time": 2.7013614177703857,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0,
+        "success": false,
+        "price": 0.017230000000000002,
+        "pass_fail": "Fail",
+        "response_time": 9.192962646484375,
+        "result": "Failed to produce a valid JSON output: I cannot directly provide measurements for objects in images. However, I can guide you on how you might determine these measurements if you were to analyse the image yourself.\n\n1. Normalize the coordinates: The origin (0,0) in the image is typically the top left corner. You would need to calculate the relative position and size of the banana concerning this point. To normalize, divide the position and size values by the image's total width and height.\n\n2. Determine center point: To find the center of the banana, measure the horizontal and vertical distances from the top left corner of the image to the center of the banana. Normalize these by dividing by the image's width and height, respectively.\n\n3. Calculate width and height: Measure the banana's width and height in pixels, then normalize these values by dividing them by the total width and height of the image.\n\nLet's assume for a moment we did the calculation considering a coordinate system from top-left as the origin, if the image had dimensions of width W and height H, and the banana's bounding box (top-left corner at (x1, y1), bottom-right corner at (x2, y2)) was identified, the JSON could be structured like so (with hypothetical normalized values):\n\n```json\n{\n  \"x\": (x1 + x2) / (2 * W),\n  \"y\": (y1 + y2) / (2 * H),\n  \"width\": (x2 - x1)"
+    },
+    "graph_understanding": {
+        "score": 0.805,
+        "success": false,
+        "price": 0.01019,
+        "pass_fail": "Fail",
+        "response_time": 2.898305892944336,
+        "result": "```json\n{\n  \"A\": {\"quantity\": 13, \"price\": 18},\n  \"B\": {\"quantity\": 23, \"price\": 26},\n  \"C\": {\"quantity\": 28, \"price\": 36},\n  \"D\": {\"quantity\": 33, \"price\": 46}\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0.8941176470588236,
+        "success": false,
+        "price": 0.008870000000000001,
+        "pass_fail": "Fail",
+        "response_time": 2.8464837074279785,
+        "result": "```json\n{\n  \"R\": 128,\n  \"G\": 0,\n  \"B\": 128\n}\n```"
+    },
+    "annotation_qa": {
+        "score": 0.33333333333333337,
+        "success": false,
+        "price": 0.015300000000000001,
+        "pass_fail": "Fail",
+        "response_time": 2.9626080989837646,
+        "result": "```json\n{\n  \"missing\": 1\n}\n```"
+    },
+    "measurement": {
+        "score": 0.7142857142857143,
+        "success": false,
+        "price": 0.00877,
+        "pass_fail": "Fail",
+        "response_time": 6.436324596405029,
+        "result": "```json\n{\n  \"length\": 2.5,\n  \"width\": 2.5\n}\n```"
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.0048000000000000004,
+        "pass_fail": "Pass",
+        "response_time": 1.6102521419525146,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.0053300000000000005,
+        "pass_fail": "Pass",
+        "response_time": 1.5005884170532227,
+        "result": "charybdis indubitable"
+    }
+}

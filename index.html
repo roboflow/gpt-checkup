@@ -40,7 +40,7 @@
                     <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup?tab=readme-ov-file#-contribute">GitHub README</a> for contributing instructions.</p>
                 </div>
                 <div class="header_subtitle">
-                    <p>Tests are run every day at 1am PT. Last updated March 23, 2024.</p>
+                    <p>Tests are run every day at 1am PT. Last updated March 24, 2024.</p>
                     <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
                 </div>
                 <div class="header_cta">
@@ -58,12 +58,12 @@
                         <div class="feature_header" style="min-height: auto">
                             <div class="feature_header_text" style="gap: var(--spacing-sizing-4)">
                                 <h2>Response Time</h2>
-                                <p style="font-size: 16px; color: var(--gray-700)">Today, the average response time to receive results from our tests was <b>4.63 seconds</b> per request.</p>
+                                <p style="font-size: 16px; color: var(--gray-700)">Today, the average response time to receive results from our tests was <b>4.62 seconds</b> per request.</p>
                                 <p class="subtitle">This number only accounts for requests made by this application.</p>
                             </div>
                             <div class="chart">
                                 <div class="chart_box chart_box_green">
-                                    <p>4.63 s</p>
+                                    <p>4.62 s</p>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.017</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -122,7 +122,21 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{'x': 0.674, 'y': 0.357, 'width': 0.175, 'height': 0.29}</pre>
+                                        <pre>Failed to produce a valid JSON output: I cannot directly provide measurements for objects in images. However, I can guide you on how you might determine these measurements if you were to analyse the image yourself.
+
+1. Normalize the coordinates: The origin (0,0) in the image is typically the top left corner. You would need to calculate the relative position and size of the banana concerning this point. To normalize, divide the position and size values by the image's total width and height.
+
+2. Determine center point: To find the center of the banana, measure the horizontal and vertical distances from the top left corner of the image to the center of the banana. Normalize these by dividing by the image's width and height, respectively.
+
+3. Calculate width and height: Measure the banana's width and height in pixels, then normalize these values by dividing them by the total width and height of the image.
+
+Let's assume for a moment we did the calculation considering a coordinate system from top-left as the origin, if the image had dimensions of width W and height H, and the banana's bounding box (top-left corner at (x1, y1), bottom-right corner at (x2, y2)) was identified, the JSON could be structured like so (with hypothetical normalized values):
+
+```json
+{
+  "x": (x1 + x2) / (2 * W),
+  "y": (y1 + y2) / (2 * H),
+  "width": (x2 - x1)</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -178,10 +192,10 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "A": {"quantity": 15, "price": 20},
-  "B": {"quantity": 20, "price": 25},
-  "C": {"quantity": 25, "price": 35},
-  "D": {"quantity": 30, "price": 45}
+  "A": {"quantity": 13, "price": 18},
+  "B": {"quantity": 23, "price": 26},
+  "C": {"quantity": 28, "price": 36},
+  "D": {"quantity": 33, "price": 46}
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -357,8 +371,8 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "length": 3.0,
-  "width": 3.0
+  "length": 2.5,
+  "width": 2.5
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -639,7 +653,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/prescription.png" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]</pre>
+                                        <pre>[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
