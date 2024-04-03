@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 2.283541202545166,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 1,
+        "success": true,
+        "price": 0.007870000000000002,
+        "pass_fail": "Pass",
+        "response_time": 2.178701877593994,
+        "result": "10"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00857,
+        "pass_fail": "Pass",
+        "response_time": 3.8016788959503174,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008730000000000002,
+        "pass_fail": "Pass",
+        "response_time": 6.203197240829468,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00719,
+        "pass_fail": "Pass",
+        "response_time": 3.928419589996338,
+        "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.01528,
+        "pass_fail": "Pass",
+        "response_time": 5.577883243560791,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.1154249737670514,
+        "success": false,
+        "price": 0.009490000000000002,
+        "pass_fail": "Fail",
+        "response_time": 4.345691204071045,
+        "result": "{'x': 0.29, 'y': 0.25, 'width': 0.18, 'height': 0.4}"
+    },
+    "graph_understanding": {
+        "score": 0.8400000000000001,
+        "success": false,
+        "price": 0.01079,
+        "pass_fail": "Fail",
+        "response_time": 14.907851934432983,
+        "result": "```json\n{\n  \"A\": {\n    \"quantity\": 15,\n    \"price\": 15\n  },\n  \"B\": {\n    \"quantity\": 20,\n    \"price\": 20\n  },\n  \"C\": {\n    \"quantity\": 30,\n    \"price\": 35\n  },\n  \"D\": {\n    \"quantity\": 40,\n    \"price\": 45\n  }\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0,
+        "success": false,
+        "price": 0.008600000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.7428290843963623,
+        "result": "Failed to produce a valid JSON output: {\"R\": 128, \"G\": 0, \"B\": 128}"
+    },
+    "annotation_qa": {
+        "score": 0.33333333333333337,
+        "success": false,
+        "price": 0.015300000000000001,
+        "pass_fail": "Fail",
+        "response_time": 3.3903675079345703,
+        "result": "```json\n{\n  \"missing\": 1\n}\n```"
+    },
+    "measurement": {
+        "score": 0,
+        "success": false,
+        "price": 0.00916,
+        "pass_fail": "Fail",
+        "response_time": 5.387771368026733,
+        "result": "Failed to produce a valid JSON output: I'm sorry, but I can't provide information on the content of the image. If you would like to know about stickers, rulers, or related topics, feel free to ask!"
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.0048000000000000004,
+        "pass_fail": "Pass",
+        "response_time": 1.648749828338623,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.0053300000000000005,
+        "pass_fail": "Pass",
+        "response_time": 5.17743992805481,
+        "result": "charybdis indubitable"
+    }
+}
