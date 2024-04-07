@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 3.6016435623168945,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.139270544052124,
+        "result": "9"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00857,
+        "pass_fail": "Pass",
+        "response_time": 5.485487222671509,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008730000000000002,
+        "pass_fail": "Pass",
+        "response_time": 9.598832130432129,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00719,
+        "pass_fail": "Pass",
+        "response_time": 5.870164155960083,
+        "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.01528,
+        "pass_fail": "Pass",
+        "response_time": 3.1794955730438232,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.18431041754533947,
+        "success": false,
+        "price": 0.009490000000000002,
+        "pass_fail": "Fail",
+        "response_time": 3.0565223693847656,
+        "result": "{'x': 0.275, 'y': 0.4, 'width': 0.2, 'height': 0.35}"
+    },
+    "graph_understanding": {
+        "score": 0.815,
+        "success": false,
+        "price": 0.01079,
+        "pass_fail": "Fail",
+        "response_time": 4.725524187088013,
+        "result": "```json\n{\n  \"A\": {\n    \"quantity\": 10,\n    \"price\": 15\n  },\n  \"B\": {\n    \"quantity\": 20,\n    \"price\": 20\n  },\n  \"C\": {\n    \"quantity\": 30,\n    \"price\": 35\n  },\n  \"D\": {\n    \"quantity\": 40,\n    \"price\": 45\n  }\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0.8941176470588236,
+        "success": false,
+        "price": 0.008870000000000001,
+        "pass_fail": "Fail",
+        "response_time": 3.1661245822906494,
+        "result": "```json\n{\n  \"R\": 128,\n  \"G\": 0,\n  \"B\": 128\n}\n```"
+    },
+    "annotation_qa": {
+        "score": 0.6666666666666667,
+        "success": false,
+        "price": 0.02193,
+        "pass_fail": "Fail",
+        "response_time": 9.118966817855835,
+        "result": "Based on the image provided, there are several cars with red bounding boxes indicating they have been annotated, but not every car visible in the image has been annotated. Considering standard practices in object detection datasets, each car that's distinct enough in the image should have its own annotation.\n\nTo give an accurate count, I will examine the image and identify cars without red bounding boxes:\n\n1. There's a car on the far left without a bounding box.\n2. There is one in the middle of the road, partially obscured by a car that is annotated.\n3. On the right edge of the image, there's a partial view of a car which may or may not be considered depending on annotation guidelines. Usually, if there's a significant portion of a car visible it should be marked, but if only a tiny portion is visible it might not be.\n\nGiven that the third car is only partially visible and not all guidelines would consider it necessary to annotate such instances, I will not include it in the count. So, there are two clearly missing annotations for two fully visible cars. Here is the requested JSON:\n\n```json\n{\n  \"missing\": 2\n}\n```"
+    },
+    "measurement": {
+        "score": 0,
+        "success": false,
+        "price": 0.008409999999999999,
+        "pass_fail": "Fail",
+        "response_time": 8.643980264663696,
+        "result": "Failed to produce a valid JSON output: I'm sorry, but I cannot assist with that request."
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.0048000000000000004,
+        "pass_fail": "Pass",
+        "response_time": 1.5256032943725586,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.0053300000000000005,
+        "pass_fail": "Pass",
+        "response_time": 1.8820209503173828,
+        "result": "charybdis indubitable"
+    }
+}
