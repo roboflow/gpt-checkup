@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 2.955165386199951,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 3.3025341033935547,
+        "result": "9"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00857,
+        "pass_fail": "Pass",
+        "response_time": 3.142521858215332,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008730000000000002,
+        "pass_fail": "Pass",
+        "response_time": 7.248919486999512,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00725,
+        "pass_fail": "Pass",
+        "response_time": 5.744725704193115,
+        "result": "[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.01528,
+        "pass_fail": "Pass",
+        "response_time": 4.519279479980469,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.39281174159251114,
+        "success": false,
+        "price": 0.009490000000000002,
+        "pass_fail": "Fail",
+        "response_time": 3.1020774841308594,
+        "result": "{'x': 0.365, 'y': 0.353, 'width': 0.27, 'height': 0.372}"
+    },
+    "graph_understanding": {
+        "score": 0.865,
+        "success": false,
+        "price": 0.01019,
+        "pass_fail": "Fail",
+        "response_time": 8.759539365768433,
+        "result": "```json\n{\n  \"A\": {\"quantity\": 20, \"price\": 15},\n  \"B\": {\"quantity\": 25, \"price\": 25},\n  \"C\": {\"quantity\": 30, \"price\": 35},\n  \"D\": {\"quantity\": 40, \"price\": 45}\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0.9607843137254902,
+        "success": false,
+        "price": 0.008870000000000001,
+        "pass_fail": "Fail",
+        "response_time": 2.328084707260132,
+        "result": "```json\n{\n  \"R\": 75,\n  \"G\": 0,\n  \"B\": 130\n}\n```"
+    },
+    "annotation_qa": {
+        "score": 0.33333333333333337,
+        "success": false,
+        "price": 0.015300000000000001,
+        "pass_fail": "Fail",
+        "response_time": 6.480139970779419,
+        "result": "```json\n{\n  \"missing\": 1\n}\n```"
+    },
+    "measurement": {
+        "score": 0,
+        "success": false,
+        "price": 0.009819999999999999,
+        "pass_fail": "Fail",
+        "response_time": 7.86053991317749,
+        "result": "Failed to produce a valid JSON output: I'm sorry, but I cannot assist with tasks involving measuring or providing exact dimensions of objects in images. My capabilities in interpreting images do not extend to precise measurements. If you need to know the size of a sticker, I would recommend using a ruler or measuring tape to manually measure the item."
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.0048000000000000004,
+        "pass_fail": "Pass",
+        "response_time": 2.4898109436035156,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.0053300000000000005,
+        "pass_fail": "Pass",
+        "response_time": 1.0975494384765625,
+        "result": "charybdis indubitable"
+    }
+}
