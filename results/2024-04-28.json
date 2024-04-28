@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 1.5766487121582031,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.198685884475708,
+        "result": "8"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00857,
+        "pass_fail": "Pass",
+        "response_time": 3.0482685565948486,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008730000000000002,
+        "pass_fail": "Pass",
+        "response_time": 5.169694662094116,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00719,
+        "pass_fail": "Pass",
+        "response_time": 4.08563232421875,
+        "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.01528,
+        "pass_fail": "Pass",
+        "response_time": 3.1182069778442383,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.08061794106192388,
+        "success": false,
+        "price": 0.009490000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.9332199096679688,
+        "result": "{'x': 0.25, 'y': 0.35, 'width': 0.15, 'height': 0.45}"
+    },
+    "graph_understanding": {
+        "score": 0.8300000000000001,
+        "success": false,
+        "price": 0.01079,
+        "pass_fail": "Fail",
+        "response_time": 4.231132507324219,
+        "result": "```json\n{\n  \"A\": {\n    \"quantity\": 17,\n    \"price\": 15\n  },\n  \"B\": {\n    \"quantity\": 28,\n    \"price\": 24\n  },\n  \"C\": {\n    \"quantity\": 35,\n    \"price\": 33\n  },\n  \"D\": {\n    \"quantity\": 42,\n    \"price\": 44\n  }\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0,
+        "success": false,
+        "price": 0.011030000000000002,
+        "pass_fail": "Fail",
+        "response_time": 4.155709743499756,
+        "result": "Failed to produce a valid JSON output: I'm sorry, but I'm not able to provide color values for elements within images. However, I can tell you how you might determine the RGB values yourself using various tools.\n\nOn a computer, you could use an image editing program like Adobe Photoshop or GIMP to use the eyedropper tool to select the color and then read the RGB values directly. There are also many free online tools and browser extensions that can pick colors from images or web pages and tell you the exact RGB code."
+    },
+    "annotation_qa": {
+        "score": 0.33333333333333337,
+        "success": false,
+        "price": 0.015300000000000001,
+        "pass_fail": "Fail",
+        "response_time": 4.257027864456177,
+        "result": "```json\n{\n  \"missing\": 1\n}\n```"
+    },
+    "measurement": {
+        "score": 0,
+        "success": false,
+        "price": 0.00898,
+        "pass_fail": "Fail",
+        "response_time": 5.953131675720215,
+        "result": "Failed to produce a valid JSON output: I'm sorry, but I'm unable to provide visual descriptions or measurements of images. If you have any other types of questions, feel free to ask!"
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.0048000000000000004,
+        "pass_fail": "Pass",
+        "response_time": 1.12599515914917,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.0053300000000000005,
+        "pass_fail": "Pass",
+        "response_time": 1.2823314666748047,
+        "result": "charybdis indubitable"
+    }
+}
