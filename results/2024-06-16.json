@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 1.5805919170379639,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 1,
+        "success": true,
+        "price": 0.007870000000000002,
+        "pass_fail": "Pass",
+        "response_time": 2.4451534748077393,
+        "result": "10"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00857,
+        "pass_fail": "Pass",
+        "response_time": 3.427710771560669,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008730000000000002,
+        "pass_fail": "Pass",
+        "response_time": 5.623324871063232,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00719,
+        "pass_fail": "Pass",
+        "response_time": 2.948875665664673,
+        "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.01528,
+        "pass_fail": "Pass",
+        "response_time": 3.0982887744903564,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0,
+        "success": false,
+        "price": 0.010870000000000001,
+        "pass_fail": "Fail",
+        "response_time": 4.925667762756348,
+        "result": "Failed to produce a valid JSON output: Since my image processing capabilities are not suitable for analyzing and providing exact measurements, I am unable to provide a JSON object with the precise `x`, `y`, `width`, and `height` properties of the banana in the image. However, the bananas are indeed present in the image. If this was a programmable task, you'd use image recognition or object detection software to locate and measure the bananas and return the requested JSON object."
+    },
+    "graph_understanding": {
+        "score": 0.7650000000000001,
+        "success": false,
+        "price": 0.01019,
+        "pass_fail": "Fail",
+        "response_time": 2.9792442321777344,
+        "result": "```json\n{\n  \"A\": {\"quantity\": 5, \"price\": 15},\n  \"B\": {\"quantity\": 20, \"price\": 25},\n  \"C\": {\"quantity\": 28, \"price\": 35},\n  \"D\": {\"quantity\": 38, \"price\": 45}\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0.8941176470588236,
+        "success": false,
+        "price": 0.008720000000000002,
+        "pass_fail": "Fail",
+        "response_time": 3.3889286518096924,
+        "result": "```json\n{\"R\": 128, \"G\": 0, \"B\": 128}\n```"
+    },
+    "annotation_qa": {
+        "score": 0.0,
+        "success": false,
+        "price": 0.015300000000000001,
+        "pass_fail": "Fail",
+        "response_time": 3.2778897285461426,
+        "result": "```json\n{\n  \"missing\": 0\n}\n```"
+    },
+    "measurement": {
+        "score": 0.7142857142857143,
+        "success": false,
+        "price": 0.00877,
+        "pass_fail": "Fail",
+        "response_time": 5.307877063751221,
+        "result": "```json\n{\n  \"length\": 2.5,\n  \"width\": 2.5\n}\n```"
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.0048000000000000004,
+        "pass_fail": "Pass",
+        "response_time": 1.2491300106048584,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.0053300000000000005,
+        "pass_fail": "Pass",
+        "response_time": 1.54856538772583,
+        "result": "charybdis indubitable"
+    }
+}
