@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 1.626469612121582,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.54617977142334,
+        "result": "9"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00857,
+        "pass_fail": "Pass",
+        "response_time": 6.403600692749023,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.008730000000000002,
+        "pass_fail": "Fail",
+        "response_time": 6.048239231109619,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the gray of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00725,
+        "pass_fail": "Pass",
+        "response_time": 3.4644405841827393,
+        "result": "[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.01528,
+        "pass_fail": "Pass",
+        "response_time": 6.16386342048645,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.2723800398936559,
+        "success": false,
+        "price": 0.0097,
+        "pass_fail": "Fail",
+        "response_time": 3.9912047386169434,
+        "result": "{'x': 0.33984375, 'y': 0.342447917, 'width': 0.171875, 'height': 0.3796875}"
+    },
+    "graph_understanding": {
+        "score": 0.8500000000000001,
+        "success": false,
+        "price": 0.01019,
+        "pass_fail": "Fail",
+        "response_time": 3.875128746032715,
+        "result": "```json\n{\n  \"A\": {\"quantity\": 20, \"price\": 5},\n  \"B\": {\"quantity\": 30, \"price\": 20},\n  \"C\": {\"quantity\": 40, \"price\": 30},\n  \"D\": {\"quantity\": 40, \"price\": 45}\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0,
+        "success": false,
+        "price": 0.01013,
+        "pass_fail": "Fail",
+        "response_time": 3.030486583709717,
+        "result": "Failed to produce a valid JSON output: I'm sorry, but I can't provide an exact RGB color code for the rectangle in the image as I'm not able to analyze image content to that level of detail. My capabilities are oriented towards image recognition and description, not pixel-level analysis. If you have any other questions or need descriptions of the image contents, feel free to ask!"
+    },
+    "annotation_qa": {
+        "score": 0.33333333333333337,
+        "success": false,
+        "price": 0.015300000000000001,
+        "pass_fail": "Fail",
+        "response_time": 3.5072686672210693,
+        "result": "```json\n{\n  \"missing\": 1\n}\n```"
+    },
+    "measurement": {
+        "score": 0.5714285714285714,
+        "success": false,
+        "price": 0.00877,
+        "pass_fail": "Fail",
+        "response_time": 6.00364875793457,
+        "result": "```json\n{\n  \"length\": 2.0,\n  \"width\": 2.0\n}\n```"
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.0048000000000000004,
+        "pass_fail": "Pass",
+        "response_time": 1.4178099632263184,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.0053300000000000005,
+        "pass_fail": "Pass",
+        "response_time": 1.302372694015503,
+        "result": "charybdis indubitable"
+    }
+}

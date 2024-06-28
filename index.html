@@ -40,7 +40,7 @@
                     <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup?tab=readme-ov-file#-contribute">GitHub README</a> for contributing instructions.</p>
                 </div>
                 <div class="header_subtitle">
-                    <p>Tests are run every day at 1am PT. Last updated June 27, 2024.</p>
+                    <p>Tests are run every day at 1am PT. Last updated June 28, 2024.</p>
                     <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
                 </div>
                 <div class="header_cta">
@@ -73,7 +73,115 @@
                             <h1><i class="fad fa-exclamation-circle fa-spin" style="--fa-primary-color: #ef4444; --fa-secondary-color: #ef4444; --fa-secondary-opacity: 0.3"></i> Today's Failing Tests</h1>
                         </div>
                         <section class="feature_cards" id="failing_cards">
-                                         
+                               
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Counting</h2>
+                                        <p>Can GPT-4V count the number of objects within an image?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_red">
+                                            <p>Fail</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="result_summary">
+                                    <div class="summary_row">
+                                        <b class="summary_title">Last 7-Day Performance</b>
+                                        <div class="summary_squares">
+                                            
+                                            <div class="summary_square summary_square_red"></div>
+                                            
+                                            <div class="summary_square summary_square_red"></div>
+                                            
+                                            <div class="summary_square summary_square_red"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_red"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_red"></div>
+                                            
+                                        </div>
+                                    </div>
+                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>29.0%</b> of the time.</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.008</p>
+                                </div>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We send a picture of a bowl of fruit. If it correctly counts the number of fruit, it gets a 100%. Otherwise, it gets a 0%.</pre>
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            Count the fruit in the image. Return a single number.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>9</pre>
+                                        <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                                
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Handwriting OCR</h2>
+                                        <p>Can GPT-4V read handwriting?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_red">
+                                            <p>Fail</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="result_summary">
+                                    <div class="summary_row">
+                                        <b class="summary_title">Last 7-Day Performance</b>
+                                        <div class="summary_squares">
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                        </div>
+                                    </div>
+                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                </div>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We send a image of a handwritten note to determine if it can correctly read the text. If it correctly gets the text, it gets a 100%. Otherwise, it gets a 0%.</pre>
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            Read the text in the image. Return only the text, with punctuation.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/ocr.jpeg" alt="Image of the input into GPT-4" />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>The words of songs on the album have been echoing in my head all week. "Fades into the gray of my day old tea."</pre>
+                                        <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                                  
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -108,7 +216,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.01</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -122,7 +230,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{'x': 0.25, 'y': 0.33, 'width': 0.22, 'height': 0.25}</pre>
+                                        <pre>{'x': 0.33984375, 'y': 0.342447917, 'width': 0.171875, 'height': 0.3796875}</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -162,7 +270,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.011</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.01</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -178,22 +286,10 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "A": {
-    "quantity": 18,
-    "price": 5
-  },
-  "B": {
-    "quantity": 26,
-    "price": 20
-  },
-  "C": {
-    "quantity": 33,
-    "price": 30
-  },
-  "D": {
-    "quantity": 40,
-    "price": 45
-  }
+  "A": {"quantity": 20, "price": 5},
+  "B": {"quantity": 30, "price": 20},
+  "C": {"quantity": 40, "price": 30},
+  "D": {"quantity": 40, "price": 45}
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -235,7 +331,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.01</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -249,13 +345,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/color.png" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>```json
-{
-  "R": 128,
-  "G": 0,
-  "B": 128
-}
-```</pre>
+                                        <pre>Failed to produce a valid JSON output: I'm sorry, but I can't provide an exact RGB color code for the rectangle in the image as I'm not able to analyze image content to that level of detail. My capabilities are oriented towards image recognition and description, not pixel-level analysis. If you have any other questions or need descriptions of the image contents, feel free to ask!</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -311,7 +401,7 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "missing": 0
+  "missing": 1
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -369,8 +459,8 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "length": 3.0,
-  "width": 3.0
+  "length": 2.0,
+  "width": 2.0
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -440,61 +530,7 @@
                                     </div>
                                 </div>
                             </div>
-                              
-                            <div class="feature_card">
-                                <div class="feature_header">
-                                    <div class="feature_header_text">
-                                        <h2>Counting</h2>
-                                        <p>Can GPT-4V count the number of objects within an image?</p>
-                                    </div>
-                                    <div class="chart">
-                                        <div class="chart_box chart_box_green">
-                                            <p>Pass</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="result_summary">
-                                    <div class="summary_row">
-                                        <b class="summary_title">Last 7-Day Performance</b>
-                                        <div class="summary_squares">
-                                            
-                                            <div class="summary_square summary_square_red"></div>
-                                            
-                                            <div class="summary_square summary_square_red"></div>
-                                            
-                                            <div class="summary_square summary_square_red"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_red"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_red"></div>
-                                            
-                                        </div>
-                                    </div>
-                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>29.0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.008</p>
-                                </div>
-                                <div class="explainer_dropdown">
-                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                    <div class="explainer">
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We send a picture of a bowl of fruit. If it correctly counts the number of fruit, it gets a 100%. Otherwise, it gets a 0%.</pre>
-                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                        <pre class="prompt">
-                                            Count the fruit in the image. Return a single number.
-                                        </pre>
-                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                        <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
-                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>10</pre>
-                                        <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                              
+                                
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -548,61 +584,7 @@
                                     </div>
                                 </div>
                             </div>
-                              
-                            <div class="feature_card">
-                                <div class="feature_header">
-                                    <div class="feature_header_text">
-                                        <h2>Handwriting OCR</h2>
-                                        <p>Can GPT-4V read handwriting?</p>
-                                    </div>
-                                    <div class="chart">
-                                        <div class="chart_box chart_box_green">
-                                            <p>Pass</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="result_summary">
-                                    <div class="summary_row">
-                                        <b class="summary_title">Last 7-Day Performance</b>
-                                        <div class="summary_squares">
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                        </div>
-                                    </div>
-                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
-                                </div>
-                                <div class="explainer_dropdown">
-                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                    <div class="explainer">
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We send a image of a handwritten note to determine if it can correctly read the text. If it correctly gets the text, it gets a 100%. Otherwise, it gets a 0%.</pre>
-                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                        <pre class="prompt">
-                                            Read the text in the image. Return only the text, with punctuation.
-                                        </pre>
-                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                        <img class="test_image" src="images/ocr.jpeg" alt="Image of the input into GPT-4" />
-                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>The words of songs on the album have been echoing in my head all week. "Fades into the grey of my day old tea."</pre>
-                                        <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                              
+                                
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -691,7 +673,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>86.0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.018</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.015</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
