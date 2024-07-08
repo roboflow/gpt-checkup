@@ -33,10 +33,10 @@
     <body>
         <div class="graph_paper">
             <header>
-                <h1>How's GPT-4 with Vision Doing?</h1>
+                <h1>How's GPT-4o Doing?</h1>
                 <div class="header_text">
-                    <p>This website measures how <a href="https://platform.openai.com/docs/guides/vision">GPT-4 with Vision</a> performs across a range of experiments.</p>
-                    <p>We test tasks we know GPT-4 with Vision performs well at (i.e. classification) to measure regressions, as well as tasks GPT-4 with Vision struggles with (i.e. odometer OCR) to measure performance improvements and changes.</p>
+                    <p>This website measures how <a href="https://platform.openai.com/docs/models/gpt-4o">GPT-4o</a> performs across a range of experiments.</p>
+                    <p>We test tasks we know GPT-4o performs well at (i.e. classification) to measure regressions, as well as tasks GPT-4o struggles with (i.e. odometer OCR) to measure performance improvements and changes.</p>
                     <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup?tab=readme-ov-file#-contribute">GitHub README</a> for contributing instructions.</p>
                 </div>
                 <div class="header_subtitle">
@@ -230,7 +230,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{'x': 0.45, 'y': 0.37, 'width': 0.23, 'height': 0.18}</pre>
+                                        <pre>{'x': 0.519, 'y': 0.373, 'width': 0.172, 'height': 0.282}</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -286,22 +286,22 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-    "A": {
-        "quantity": 20,
-        "price": 10
-    },
-    "B": {
-        "quantity": 25,
-        "price": 20
-    },
-    "C": {
-        "quantity": 30,
-        "price": 30
-    },
-    "D": {
-        "quantity": 35,
-        "price": 40
-    }
+  "A": {
+    "quantity": 15,
+    "price": 10
+  },
+  "B": {
+    "quantity": 20,
+    "price": 25
+  },
+  "C": {
+    "quantity": 28,
+    "price": 30
+  },
+  "D": {
+    "quantity": 30,
+    "price": 40
+  }
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -361,7 +361,7 @@
 {
   "R": 79,
   "G": 0,
-  "B": 133
+  "B": 128
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -403,7 +403,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.017</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.019</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -417,9 +417,20 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/annotationqa.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>Based on the provided image, the visible cars on the road are annotated with red bounding boxes. However, there is one car on the right side of the image which is not annotated.
+                                        <pre>To determine if there are any missing annotations, I will count the total number of cars visible in the image and compare this with the number of red bounding boxes. 
 
-Therefore, the JSON result for the number of missing annotations is:
+Visible cars in the image:
+1. White car on the right
+2. Black car on the left
+3. Multiple cars in the middle of the road (6)
+
+There are 8 cars visible in the image.
+
+Red bounding boxes in the image: There are 7 bounding boxes.
+
+Therefore, there is 1 missing annotation. 
+
+Here is the JSON:
 
 ```json
 {
@@ -430,70 +441,7 @@ Therefore, the JSON result for the number of missing annotations is:
                                     </div>
                                 </div>
                             </div>
-                              
-                            <div class="feature_card">
-                                <div class="feature_header">
-                                    <div class="feature_header_text">
-                                        <h2>Measurement Test</h2>
-                                        <p>Can GPT-4 Measure Items Using a Reference?</p>
-                                    </div>
-                                    <div class="chart">
-                                        <div class="chart_box chart_box_red">
-                                            <p>Fail</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="result_summary">
-                                    <div class="summary_row">
-                                        <b class="summary_title">Last 7-Day Performance</b>
-                                        <div class="summary_squares">
-                                            
-                                            <div class="summary_square summary_square_red"></div>
-                                            
-                                            <div class="summary_square summary_square_red"></div>
-                                            
-                                            <div class="summary_square summary_square_red"></div>
-                                            
-                                            <div class="summary_square summary_square_red"></div>
-                                            
-                                            <div class="summary_square summary_square_red"></div>
-                                            
-                                            <div class="summary_square summary_square_red"></div>
-                                            
-                                            <div class="summary_square summary_square_red"></div>
-                                            
-                                        </div>
-                                    </div>
-                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.01</p>
-                                </div>
-                                <div class="explainer_dropdown">
-                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                    <div class="explainer">
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">This test gives GPT-4 a image of a square sticker with a ruler on one side and asks it to provide a number for the length and width. We score this test based on precent error, gauging how far it is from the actual value.</pre>
-                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                        <pre class="prompt">
-                                            What is the length and width of this square sticker, based on the ruler? Return a JSON with float properties for `length` and `width` representing inches.
-                                        </pre>
-                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                        <img class="test_image" src="images/measurement.jpg" alt="Image of the input into GPT-4" />
-                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>Based on the ruler in the image, the square sticker appears to have a length and width of approximately 3 inches each.
-
-Here's the JSON representation:
-
-```json
-{
-  "length": 3.0,
-  "width": 3.0
-}
-```</pre>
-                                        <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                                 
+                                   
                         </section>
                     </section>
                     <section class="tests_passing">
@@ -659,7 +607,7 @@ Here's the JSON representation:
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/prescription.png" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]</pre>
+                                        <pre>[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -718,7 +666,66 @@ Here's the JSON representation:
                                     </div>
                                 </div>
                             </div>
-                                        
+                                      
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Measurement Test</h2>
+                                        <p>Can GPT-4 Measure Items Using a Reference?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>Pass</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="result_summary">
+                                    <div class="summary_row">
+                                        <b class="summary_title">Last 7-Day Performance</b>
+                                        <div class="summary_squares">
+                                            
+                                            <div class="summary_square summary_square_red"></div>
+                                            
+                                            <div class="summary_square summary_square_red"></div>
+                                            
+                                            <div class="summary_square summary_square_red"></div>
+                                            
+                                            <div class="summary_square summary_square_red"></div>
+                                            
+                                            <div class="summary_square summary_square_red"></div>
+                                            
+                                            <div class="summary_square summary_square_red"></div>
+                                            
+                                            <div class="summary_square summary_square_red"></div>
+                                            
+                                        </div>
+                                    </div>
+                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                </div>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">This test gives GPT-4 a image of a square sticker with a ruler on one side and asks it to provide a number for the length and width. We score this test based on precent error, gauging how far it is from the actual value.</pre>
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            What is the length and width of this square sticker, based on the ruler? Return a JSON with float properties for `length` and `width` representing inches.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/measurement.jpg" alt="Image of the input into GPT-4" />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>```json
+{
+    "length": 3.5,
+    "width": 3.5
+}
+```</pre>
+                                        <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                              
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -846,24 +853,24 @@ Here's the JSON representation:
                     <section class="feature_card_wide">
                         <div class="feature_header_text">
                             <h2>Related Links</h2>
-                            <p>Want to see more interesting projects using GPT-4o?</p>
+                            <p>Want to see more interesting projects using GPT-4o and its predecessor, GPT-4 with Vision?</p>
                         </div>
                         <div class="link_cards">
+                            <a href="https://blog.roboflow.com/gpt-4o-vision-use-cases/" target="_blank" class="link_card">
+                                <img src="https://blog.roboflow.com/content/images/size/w2000/2024/05/Blog-Image-Template--75-.jpg" alt="GPT-4o: The Comprehensive Guide and Explanation" />
+                                <h3>GPT-4o: The Comprehensive Guide and Explanation</h3>
+                                <p class="subtitle">Learn what GPT-4o is, how it differs from previous models, evaluate its performance, and use cases for GPT-4o.</p>
+                                <div class="tag"><i class="fad fa-star fa-xs"></i>Start Here</div>
+                            </a>
                             <a href="https://blog.roboflow.com/gpt-4-vision/" target="_blank" class="link_card">
                                 <img src="./images/GPT-4_with_Vision.jpeg" alt="GPT-4 with Vision: Complete Guide and Evaluation" />
                                 <h3>GPT-4 with Vision: Complete Guide and Evaluation</h3>
                                 <p class="subtitle">In this guide, we share our first impressions with the GPT-4 image input feature and vision API. We run through a series of experiments to test the functionality of GPT-4 with vision, showing where the model performs well and where it struggles.</p>
-                                <div class="tag"><i class="fad fa-star fa-xs"></i>Start Here</div>
                             </a>
                             <a href="https://blog.roboflow.com/GPT-4o-object-detection/" target="_blank" class="link_card">
-                                <img src="./images/GPT-4o Object Detection.jpg" alt="Experiments with GPT-4o for Object Detection" />
-                                <h3>Experiments with GPT-4o for Object Detection</h3>
+                                <img src="./images/GPT-4V Object Detection.jpg" alt="Experiments with GPT-4o for Object Detection" />
+                                <h3>Experiments with GPT-4 with Vision for Object Detection</h3>
                                 <p class="subtitle">In this guide, we show our results experimenting with GPT-4o for object detection. We also talk about why fine-tuned models are more appropriate for object detection, providing more context into the question “how will GPT impact object detection?”</p>
-                            </a>
-                            <a href="https://blog.roboflow.com/clip-vs-GPT-4o/" target="_blank" class="link_card">
-                                <img src="./images/CLIP vs GPT-4o Classification.jpg" alt="CLIP vs GPT-4o Classification" />
-                                <h3>How CLIP and GPT-4o Compare for Classification</h3>
-                                <p class="subtitle">In this guide, we run three tests, evaluating how CLIP and GPT-4o perform for: car brand classification, cup classification, pizza type classification</p>
                             </a>
                         </div>
                     </section>
