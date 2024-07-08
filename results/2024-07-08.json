@@ -4,103 +4,103 @@
         "success": true,
         "price": 0.00481,
         "pass_fail": "Pass",
-        "response_time": 2.6405889987945557,
+        "response_time": 2.3056368827819824,
         "result": "Toyota Camry"
     },
     "count_fruit": {
-        "score": 1,
-        "success": true,
+        "score": 0,
+        "success": false,
         "price": 0.007870000000000002,
-        "pass_fail": "Pass",
-        "response_time": 2.504678964614868,
-        "result": "10"
+        "pass_fail": "Fail",
+        "response_time": 3.501413583755493,
+        "result": "9"
     },
     "document_ocr": {
         "score": 1,
         "success": true,
-        "price": 0.00857,
+        "price": 0.008539999999999999,
         "pass_fail": "Pass",
-        "response_time": 2.7736892700195312,
+        "response_time": 4.073381662368774,
         "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
     },
     "handwriting_ocr": {
-        "score": 1,
-        "success": true,
-        "price": 0.008730000000000002,
-        "pass_fail": "Pass",
-        "response_time": 6.732862949371338,
-        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+        "score": 0,
+        "success": false,
+        "price": 0.00876,
+        "pass_fail": "Fail",
+        "response_time": 6.912508010864258,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day ok tea.\""
     },
     "extraction_ocr": {
         "score": 1.0,
         "success": true,
         "price": 0.00719,
         "pass_fail": "Pass",
-        "response_time": 3.315093994140625,
+        "response_time": 3.140754461288452,
         "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
     },
     "math_ocr": {
         "score": 1.0,
         "success": true,
-        "price": 0.01528,
+        "price": 0.015290000000000002,
         "pass_fail": "Pass",
-        "response_time": 3.467665672302246,
+        "response_time": 4.139834403991699,
         "result": "3x^2-6x+2"
     },
     "object_detection": {
-        "score": 0,
+        "score": 0.294452347083926,
         "success": false,
-        "price": 0.0088,
+        "price": 0.009490000000000002,
         "pass_fail": "Fail",
-        "response_time": 2.610352039337158,
-        "result": "Failed to produce a valid JSON output: I'm sorry, but I can't assist with identifying or making assumptions about elements within images."
+        "response_time": 3.619312047958374,
+        "result": "{'x': 0.45, 'y': 0.37, 'width': 0.23, 'height': 0.18}"
     },
     "graph_understanding": {
-        "score": 0.8899999999999999,
+        "score": 0.99,
         "success": false,
         "price": 0.01079,
         "pass_fail": "Fail",
-        "response_time": 3.3163681030273438,
-        "result": "```json\n{\n  \"A\": {\n    \"quantity\": 15,\n    \"price\": 10\n  },\n  \"B\": {\n    \"quantity\": 25,\n    \"price\": 20\n  },\n  \"C\": {\n    \"quantity\": 35,\n    \"price\": 30\n  },\n  \"D\": {\n    \"quantity\": 45,\n    \"price\": 40\n  }\n}\n```"
+        "response_time": 5.4320433139801025,
+        "result": "```json\n{\n    \"A\": {\n        \"quantity\": 20,\n        \"price\": 10\n    },\n    \"B\": {\n        \"quantity\": 25,\n        \"price\": 20\n    },\n    \"C\": {\n        \"quantity\": 30,\n        \"price\": 30\n    },\n    \"D\": {\n        \"quantity\": 35,\n        \"price\": 40\n    }\n}\n```"
     },
     "color_recognition": {
-        "score": 0.8941176470588236,
+        "score": 0.9647058823529412,
         "success": false,
         "price": 0.008870000000000001,
         "pass_fail": "Fail",
-        "response_time": 2.522502899169922,
-        "result": "```json\n{\n  \"R\": 128,\n  \"G\": 0,\n  \"B\": 128\n}\n```"
+        "response_time": 1.987215518951416,
+        "result": "```json\n{\n  \"R\": 79,\n  \"G\": 0,\n  \"B\": 133\n}\n```"
     },
     "annotation_qa": {
-        "score": 0.6666666666666667,
+        "score": 0.33333333333333337,
         "success": false,
-        "price": 0.015300000000000001,
+        "price": 0.016800000000000002,
         "pass_fail": "Fail",
-        "response_time": 3.0595922470092773,
-        "result": "```json\n{\n  \"missing\": 2\n}\n```"
+        "response_time": 4.583727121353149,
+        "result": "Based on the provided image, the visible cars on the road are annotated with red bounding boxes. However, there is one car on the right side of the image which is not annotated.\n\nTherefore, the JSON result for the number of missing annotations is:\n\n```json\n{\n  \"missing\": 1\n}\n```"
     },
     "measurement": {
-        "score": 0.5714285714285714,
+        "score": 0.8571428571428572,
         "success": false,
-        "price": 0.00877,
+        "price": 0.00967,
         "pass_fail": "Fail",
-        "response_time": 5.036813497543335,
-        "result": "```json\n{\n  \"length\": 2.0,\n  \"width\": 2.0\n}\n```"
+        "response_time": 5.809662103652954,
+        "result": "Based on the ruler in the image, the square sticker appears to have a length and width of approximately 3 inches each.\n\nHere's the JSON representation:\n\n```json\n{\n  \"length\": 3.0,\n  \"width\": 3.0\n}\n```"
     },
     "easy_captcha": {
         "score": 1,
         "success": true,
-        "price": 0.0048000000000000004,
+        "price": 0.004790000000000001,
         "pass_fail": "Pass",
-        "response_time": 1.2114126682281494,
+        "response_time": 1.6655821800231934,
         "result": "charybdis indubitable"
     },
     "easy_captcha_persuade": {
         "score": 1,
         "success": true,
-        "price": 0.0053300000000000005,
+        "price": 0.00529,
         "pass_fail": "Pass",
-        "response_time": 2.0057501792907715,
+        "response_time": 1.484668254852295,
         "result": "charybdis indubitable"
     }
 }
