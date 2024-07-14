@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 2.4461593627929688,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.2510714530944824,
+        "result": "8"
+    },
+    "document_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.0086,
+        "pass_fail": "Fail",
+        "response_time": 1.8562841415405273,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the *Midnights* album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.00876,
+        "pass_fail": "Fail",
+        "response_time": 5.737243175506592,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day oh tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00719,
+        "pass_fail": "Pass",
+        "response_time": 2.9712162017822266,
+        "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.015290000000000002,
+        "pass_fail": "Pass",
+        "response_time": 2.426845073699951,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.40896159317211944,
+        "success": false,
+        "price": 0.009490000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.974058151245117,
+        "result": "{'x': 0.52, 'y': 0.4, 'width': 0.25, 'height': 0.23}"
+    },
+    "graph_understanding": {
+        "score": 0.965,
+        "success": false,
+        "price": 0.01019,
+        "pass_fail": "Fail",
+        "response_time": 2.807821750640869,
+        "result": "```json\n{\n  \"A\": {\"quantity\": 15, \"price\": 10},\n  \"B\": {\"quantity\": 25, \"price\": 20},\n  \"C\": {\"quantity\": 30, \"price\": 30},\n  \"D\": {\"quantity\": 35, \"price\": 40}\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0.9581699346405229,
+        "success": false,
+        "price": 0.008870000000000001,
+        "pass_fail": "Fail",
+        "response_time": 2.4395499229431152,
+        "result": "```json\n{\n    \"R\": 79,\n    \"G\": 0,\n    \"B\": 128\n}\n```"
+    },
+    "annotation_qa": {
+        "score": 0.33333333333333337,
+        "success": false,
+        "price": 0.016800000000000002,
+        "pass_fail": "Fail",
+        "response_time": 4.733026504516602,
+        "result": "Based on the image provided, there are 6 red bounding boxes around cars. However, there is at least one obvious omission: the white car on the right which is not annotated. \n\nHere is the JSON object showing the number of missing annotations:\n\n```json\n{\n    \"missing\": 1\n}\n```"
+    },
+    "measurement": {
+        "score": 0.8571428571428572,
+        "success": false,
+        "price": 0.00877,
+        "pass_fail": "Fail",
+        "response_time": 4.226163387298584,
+        "result": "```json\n{\n  \"length\": 3.0,\n  \"width\": 3.0\n}\n```"
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.004790000000000001,
+        "pass_fail": "Pass",
+        "response_time": 1.3830084800720215,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.00529,
+        "pass_fail": "Pass",
+        "response_time": 1.066455364227295,
+        "result": "charybdis indubitable"
+    }
+}
