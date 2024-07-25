@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 2.2267208099365234,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.008110000000000001,
+        "pass_fail": "Fail",
+        "response_time": 2.5667624473571777,
+        "result": "There are 9 fruits in the image."
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008539999999999999,
+        "pass_fail": "Pass",
+        "response_time": 2.9433958530426025,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.00876,
+        "pass_fail": "Fail",
+        "response_time": 5.723664999008179,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day oh tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.007220000000000001,
+        "pass_fail": "Pass",
+        "response_time": 2.7308144569396973,
+        "result": "[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.015290000000000002,
+        "pass_fail": "Pass",
+        "response_time": 3.1611526012420654,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.3923151436874394,
+        "success": false,
+        "price": 0.009490000000000002,
+        "pass_fail": "Fail",
+        "response_time": 3.0697290897369385,
+        "result": "{'x': 0.55, 'y': 0.35, 'width': 0.25, 'height': 0.3}"
+    },
+    "graph_understanding": {
+        "score": 0.9400000000000001,
+        "success": false,
+        "price": 0.01079,
+        "pass_fail": "Fail",
+        "response_time": 3.039222478866577,
+        "result": "```json\n{\n  \"A\": {\n    \"quantity\": 15,\n    \"price\": 10\n  },\n  \"B\": {\n    \"quantity\": 25,\n    \"price\": 25\n  },\n  \"C\": {\n    \"quantity\": 30,\n    \"price\": 30\n  },\n  \"D\": {\n    \"quantity\": 35,\n    \"price\": 40\n  }\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0.9699346405228758,
+        "success": false,
+        "price": 0.008870000000000001,
+        "pass_fail": "Fail",
+        "response_time": 1.8409183025360107,
+        "result": "```json\n{\n  \"R\": 79,\n  \"G\": 0,\n  \"B\": 137\n}\n```"
+    },
+    "annotation_qa": {
+        "score": 0.6666666666666667,
+        "success": false,
+        "price": 0.015300000000000001,
+        "pass_fail": "Fail",
+        "response_time": 3.965773344039917,
+        "result": "```json\n{\n  \"missing\": 2\n}\n```"
+    },
+    "measurement": {
+        "score": 0.8571428571428572,
+        "success": false,
+        "price": 0.00967,
+        "pass_fail": "Fail",
+        "response_time": 6.909680128097534,
+        "result": "Based on the ruler in the image, the square sticker measures approximately 3 inches by 3 inches. Here is the JSON representation of its dimensions:\n\n```json\n{\n  \"length\": 3.0,\n  \"width\": 3.0\n}\n```"
+    },
+    "easy_captcha": {
+        "score": 0,
+        "success": false,
+        "price": 0.0048200000000000005,
+        "pass_fail": "Fail",
+        "response_time": 1.5661189556121826,
+        "result": "charybdis in- dubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.00529,
+        "pass_fail": "Pass",
+        "response_time": 1.5104024410247803,
+        "result": "charybdis indubitable"
+    }
+}
