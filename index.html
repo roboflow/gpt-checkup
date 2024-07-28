@@ -40,7 +40,7 @@
                     <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup?tab=readme-ov-file#-contribute">GitHub README</a> for contributing instructions.</p>
                 </div>
                 <div class="header_subtitle">
-                    <p>Tests are run every day at 1am PT. Last updated July 27, 2024.</p>
+                    <p>Tests are run every day at 1am PT. Last updated July 28, 2024.</p>
                     <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
                 </div>
                 <div class="header_cta">
@@ -122,7 +122,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>7</pre>
+                                        <pre>8</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -181,7 +181,61 @@
                                     </div>
                                 </div>
                             </div>
-                                  
+                                
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Math OCR</h2>
+                                        <p>Can GPT-4V recognize math equations?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_red">
+                                            <p>Fail</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="result_summary">
+                                    <div class="summary_row">
+                                        <b class="summary_title">Last 7-Day Performance</b>
+                                        <div class="summary_squares">
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_red"></div>
+                                            
+                                        </div>
+                                    </div>
+                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>86.0%</b> of the time.</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.015</p>
+                                </div>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We provide a image of a math equation and ask it to provide a LaTeX string of the equation. This is scored using the Levenshtein ratio between the output and the correct answer, which is based on the number of edits necessary to achieve the correct answer.</pre>
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            Produce a JSON array with a LaTeX string of each equation in the image.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/math.jpeg" alt="Image of the input into GPT-4" />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>$3x^2-6x+2$</pre>
+                                        <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                              
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -230,7 +284,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{'x': 0.52, 'y': 0.34, 'width': 0.28, 'height': 0.34}</pre>
+                                        <pre>{'x': 0.48, 'y': 0.34, 'width': 0.26, 'height': 0.37}</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -287,19 +341,19 @@
                                         <pre>```json
 {
   "A": {
-    "quantity": 20,
+    "quantity": 15,
     "price": 10
   },
   "B": {
-    "quantity": 25,
+    "quantity": 20,
     "price": 20
   },
   "C": {
-    "quantity": 30,
+    "quantity": 25,
     "price": 30
   },
   "D": {
-    "quantity": 35,
+    "quantity": 30,
     "price": 40
   }
 }
@@ -359,9 +413,9 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "R": 82,
+  "R": 85,
   "G": 0,
-  "B": 106
+  "B": 130
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -419,7 +473,7 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "missing": 1
+    "missing": 1
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -475,7 +529,9 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/measurement.jpg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>Based on the ruler visible in the image, the square sticker appears to be approximately 3 inches in both length and width. Here's the JSON representation:
+                                        <pre>Based on the ruler in the image, the square sticker appears to have dimensions of approximately 3 inches by 3 inches.
+
+Here is the JSON representation:
 
 ```json
 {
@@ -487,61 +543,7 @@
                                     </div>
                                 </div>
                             </div>
-                              
-                            <div class="feature_card">
-                                <div class="feature_header">
-                                    <div class="feature_header_text">
-                                        <h2>Easy Captcha</h2>
-                                        <p>Can GPT-4V break an easy CAPTCHA?</p>
-                                    </div>
-                                    <div class="chart">
-                                        <div class="chart_box chart_box_red">
-                                            <p>Fail</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="result_summary">
-                                    <div class="summary_row">
-                                        <b class="summary_title">Last 7-Day Performance</b>
-                                        <div class="summary_squares">
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                        </div>
-                                    </div>
-                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.005</p>
-                                </div>
-                                <div class="explainer_dropdown">
-                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                    <div class="explainer">
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We provide a CAPTCHA image (created using Wolfram Alpha's CAPTCHA command) and ask it to provide the input required to pass the test. This is scored using exact matching after whitespace stripping, which matches the downstream utility for passing CAPTCHAs.</pre>
-                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                        <pre class="prompt">
-                                            Please provide the string required to pass this CAPTCHA. Do not respond with anything else. Do not include whitespace besides spaces between words.
-                                        </pre>
-                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                        <img class="test_image" src="images/easy_captcha.jpeg" alt="Image of the input into GPT-4" />
-                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>charybdis in- dubitable</pre>
-                                        <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://charlesfrye.github.io/" target="_blank">Charles Frye</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                               
+                                 
                         </section>
                     </section>
                     <section class="tests_passing">
@@ -712,12 +714,12 @@
                                     </div>
                                 </div>
                             </div>
-                              
+                                          
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
-                                        <h2>Math OCR</h2>
-                                        <p>Can GPT-4V recognize math equations?</p>
+                                        <h2>Easy Captcha</h2>
+                                        <p>Can GPT-4V break an easy CAPTCHA?</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_green">
@@ -742,31 +744,31 @@
                                             
                                             <div class="summary_square summary_square_green"></div>
                                             
-                                            <div class="summary_square summary_square_red"></div>
+                                            <div class="summary_square summary_square_green"></div>
                                             
                                         </div>
                                     </div>
-                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>86.0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.015</p>
+                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.005</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
                                         <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We provide a image of a math equation and ask it to provide a LaTeX string of the equation. This is scored using the Levenshtein ratio between the output and the correct answer, which is based on the number of edits necessary to achieve the correct answer.</pre>
+                                        <pre class="test_method">We provide a CAPTCHA image (created using Wolfram Alpha's CAPTCHA command) and ask it to provide the input required to pass the test. This is scored using exact matching after whitespace stripping, which matches the downstream utility for passing CAPTCHAs.</pre>
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
-                                            Produce a JSON array with a LaTeX string of each equation in the image.
+                                            Please provide the string required to pass this CAPTCHA. Do not respond with anything else. Do not include whitespace besides spaces between words.
                                         </pre>
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                        <img class="test_image" src="images/math.jpeg" alt="Image of the input into GPT-4" />
+                                        <img class="test_image" src="images/easy_captcha.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>3x^2-6x+2</pre>
-                                        <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
+                                        <pre>charybdis indubitable</pre>
+                                        <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://charlesfrye.github.io/" target="_blank">Charles Frye</a></p>
                                     </div>
                                 </div>
                             </div>
-                                          
+                              
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
