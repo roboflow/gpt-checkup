@@ -40,7 +40,7 @@
                     <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup?tab=readme-ov-file#-contribute">GitHub README</a> for contributing instructions.</p>
                 </div>
                 <div class="header_subtitle">
-                    <p>Tests are run every day at 1am PT. Last updated July 30, 2024.</p>
+                    <p>Tests are run every day at 1am PT. Last updated July 31, 2024.</p>
                     <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
                 </div>
                 <div class="header_cta">
@@ -176,7 +176,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/ocr.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>The words of songs on the album have been echoing in my head all week. "Fades into the grey of my day oh tea."</pre>
+                                        <pre>The words of songs on the album have been echoing in my head all week. "Fades into the grey of my day ok tea."</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -230,7 +230,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{'x': 0.45, 'y': 0.35, 'width': 0.24, 'height': 0.3}</pre>
+                                        <pre>{'x': 0.48, 'y': 0.4, 'width': 0.24, 'height': 0.32}</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -359,9 +359,9 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "R": 82,
+  "R": 79,
   "G": 0,
-  "B": 123
+  "B": 128
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -403,7 +403,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.017</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.019</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -417,10 +417,18 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/annotationqa.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>Based on the image provided, it seems that there is one car that is not annotated with a red bounding box. The car on the far right side of the image (the white car) is not labeled with a bounding box. 
+                                        <pre>To evaluate the number of missing annotations, I need to compare the visible cars in the image with the red bounding boxes. 
 
-Here is the JSON response indicating the number of missing annotations:
+Here is what I observed:
+- There are 7 visible cars in the image:
+  - 1 white car in the right foreground
+  - 6 cars further down the road, including the black one on the left.
 
+- There are 6 red bounding boxes present in the image:
+
+It appears there is 1 car in the image that lacks a bounding box annotation.
+
+Therefore, the JSON response indicating the number of missing annotations is:
 ```json
 {
   "missing": 1
@@ -479,9 +487,9 @@ Here is the JSON response indicating the number of missing annotations:
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/measurement.jpg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>Based on the ruler, the sticker appears to be a square with both length and width roughly equal to 3 inches.
+                                        <pre>Based on the ruler in the image, the square sticker appears to measure approximately 3 inches on each side.
 
-Here is the JSON output with the properties for length and width:
+Here is the JSON representation:
 
 ```json
 {
@@ -659,7 +667,7 @@ Here is the JSON output with the properties for length and width:
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/prescription.png" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]</pre>
+                                        <pre>[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
