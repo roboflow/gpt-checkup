@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 1.872744083404541,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 3.2203755378723145,
+        "result": "8"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008539999999999999,
+        "pass_fail": "Pass",
+        "response_time": 3.425847053527832,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00876,
+        "pass_fail": "Pass",
+        "response_time": 5.5869879722595215,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00719,
+        "pass_fail": "Pass",
+        "response_time": 3.0273895263671875,
+        "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.015290000000000002,
+        "pass_fail": "Pass",
+        "response_time": 2.972666025161743,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.700922266139658,
+        "success": false,
+        "price": 0.009490000000000002,
+        "pass_fail": "Fail",
+        "response_time": 3.71329927444458,
+        "result": "{'x': 0.45, 'y': 0.43, 'width': 0.28, 'height': 0.42}"
+    },
+    "graph_understanding": {
+        "score": 0.905,
+        "success": false,
+        "price": 0.01019,
+        "pass_fail": "Fail",
+        "response_time": 2.601107358932495,
+        "result": "```json\n{\n  \"A\": {\"quantity\": 20, \"price\": 15},\n  \"B\": {\"quantity\": 25, \"price\": 27},\n  \"C\": {\"quantity\": 30, \"price\": 35},\n  \"D\": {\"quantity\": 33, \"price\": 40}\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0,
+        "success": false,
+        "price": 0.00875,
+        "pass_fail": "Fail",
+        "response_time": 1.995676040649414,
+        "result": "Failed to produce a valid JSON output: {\n  \"R\": 79,\n  \"G\": 0,\n  \"B\": 132\n}"
+    },
+    "annotation_qa": {
+        "score": 0.33333333333333337,
+        "success": false,
+        "price": 0.01641,
+        "pass_fail": "Fail",
+        "response_time": 6.796298980712891,
+        "result": "Upon inspection of the image, there is one missing annotation. The white car in the right lane closest to the camera is not annotated.\n\nHere's the JSON with the number of missing annotations:\n\n```json\n{\n  \"missing\": 1\n}\n```"
+    },
+    "measurement": {
+        "score": 0.7857142857142857,
+        "success": false,
+        "price": 0.00877,
+        "pass_fail": "Fail",
+        "response_time": 5.766342401504517,
+        "result": "```json\n{\n  \"length\": 2.75,\n  \"width\": 2.75\n}\n```"
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.004790000000000001,
+        "pass_fail": "Pass",
+        "response_time": 1.646939754486084,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.00529,
+        "pass_fail": "Pass",
+        "response_time": 1.285482406616211,
+        "result": "charybdis indubitable"
+    }
+}
