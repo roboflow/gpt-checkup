@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 1.2535202503204346,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.218148708343506,
+        "result": "8"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008539999999999999,
+        "pass_fail": "Pass",
+        "response_time": 1.8644471168518066,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00876,
+        "pass_fail": "Pass",
+        "response_time": 5.1784679889678955,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00719,
+        "pass_fail": "Pass",
+        "response_time": 1.9458932876586914,
+        "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.015290000000000002,
+        "pass_fail": "Pass",
+        "response_time": 2.368374824523926,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.4640251758594789,
+        "success": false,
+        "price": 0.00961,
+        "pass_fail": "Fail",
+        "response_time": 2.2461185455322266,
+        "result": "{'x': 0.4044, 'y': 0.4555, 'width': 0.2105, 'height': 0.3125}"
+    },
+    "graph_understanding": {
+        "score": 0.9199999999999999,
+        "success": false,
+        "price": 0.01079,
+        "pass_fail": "Fail",
+        "response_time": 1.969635009765625,
+        "result": "```json\n{\n  \"A\": {\n    \"quantity\": 15,\n    \"price\": 10\n  },\n  \"B\": {\n    \"quantity\": 22,\n    \"price\": 20\n  },\n  \"C\": {\n    \"quantity\": 27,\n    \"price\": 30\n  },\n  \"D\": {\n    \"quantity\": 30,\n    \"price\": 40\n  }\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0,
+        "success": false,
+        "price": 0.00875,
+        "pass_fail": "Fail",
+        "response_time": 1.5616505146026611,
+        "result": "Failed to produce a valid JSON output: {\n  \"R\": 85,\n  \"G\": 0,\n  \"B\": 130\n}"
+    },
+    "annotation_qa": {
+        "score": 0.0,
+        "success": false,
+        "price": 0.01635,
+        "pass_fail": "Fail",
+        "response_time": 3.346517324447632,
+        "result": "Based on the provided image, it seems that all the visible cars have been annotated with red bounding boxes. Therefore, there are no missing annotations.\n\nHere is the JSON response:\n\n```json\n{\n  \"missing\": 0\n}\n```"
+    },
+    "measurement": {
+        "score": 0.8571428571428572,
+        "success": false,
+        "price": 0.00877,
+        "pass_fail": "Fail",
+        "response_time": 4.112704515457153,
+        "result": "```json\n{\n  \"length\": 3.0,\n  \"width\": 3.0\n}\n```"
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.004790000000000001,
+        "pass_fail": "Pass",
+        "response_time": 0.969172477722168,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.00529,
+        "pass_fail": "Pass",
+        "response_time": 1.119185447692871,
+        "result": "charybdis indubitable"
+    }
+}
