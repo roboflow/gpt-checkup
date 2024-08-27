@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 1.7054903507232666,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 1.944843053817749,
+        "result": "7"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008539999999999999,
+        "pass_fail": "Pass",
+        "response_time": 2.3203225135803223,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00876,
+        "pass_fail": "Pass",
+        "response_time": 4.952793836593628,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00719,
+        "pass_fail": "Pass",
+        "response_time": 2.2666022777557373,
+        "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.015290000000000002,
+        "pass_fail": "Pass",
+        "response_time": 3.797666072845459,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.3798427184976722,
+        "success": false,
+        "price": 0.009490000000000002,
+        "pass_fail": "Fail",
+        "response_time": 3.0434672832489014,
+        "result": "{'x': 0.488, 'y': 0.477, 'width': 0.174, 'height': 0.398}"
+    },
+    "graph_understanding": {
+        "score": 0.9,
+        "success": false,
+        "price": 0.01079,
+        "pass_fail": "Fail",
+        "response_time": 2.8397397994995117,
+        "result": "```json\n{\n  \"A\": {\n    \"quantity\": 15,\n    \"price\": 10\n  },\n  \"B\": {\n    \"quantity\": 20,\n    \"price\": 20\n  },\n  \"C\": {\n    \"quantity\": 25,\n    \"price\": 30\n  },\n  \"D\": {\n    \"quantity\": 30,\n    \"price\": 40\n  }\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0.930718954248366,
+        "success": false,
+        "price": 0.008870000000000001,
+        "pass_fail": "Fail",
+        "response_time": 2.166393518447876,
+        "result": "```json\n{\n  \"R\": 80,\n  \"G\": 0,\n  \"B\": 200\n}\n```"
+    },
+    "annotation_qa": {
+        "score": 0.33333333333333337,
+        "success": false,
+        "price": 0.017070000000000002,
+        "pass_fail": "Fail",
+        "response_time": 3.696272373199463,
+        "result": "Based on the provided image, there are seven cars visible. Six of these cars have red bounding boxes around them, indicating they are annotated. One car, the white car on the right side of the image, is not annotated.\n\nTherefore, the JSON output with the number of missing annotations is:\n\n```json\n{\n  \"missing\": 1\n}\n```"
+    },
+    "measurement": {
+        "score": 0.8571428571428572,
+        "success": false,
+        "price": 0.00943,
+        "pass_fail": "Fail",
+        "response_time": 5.772922515869141,
+        "result": "Based on the ruler in the image, the square sticker appears to measure approximately 3 inches on each side.\n\n```json\n{\n  \"length\": 3.0,\n  \"width\": 3.0\n}\n```"
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.0048200000000000005,
+        "pass_fail": "Pass",
+        "response_time": 1.0406336784362793,
+        "result": "charybdis in-dubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.00529,
+        "pass_fail": "Pass",
+        "response_time": 3.966993570327759,
+        "result": "charybdis indubitable"
+    }
+}
