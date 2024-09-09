@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 2.3330798149108887,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.623680353164673,
+        "result": "7"
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008539999999999999,
+        "pass_fail": "Pass",
+        "response_time": 2.3524367809295654,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.00876,
+        "pass_fail": "Fail",
+        "response_time": 5.883969306945801,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day ole tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.007220000000000001,
+        "pass_fail": "Pass",
+        "response_time": 2.915389060974121,
+        "result": "[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.015290000000000002,
+        "pass_fail": "Pass",
+        "response_time": 3.5243773460388184,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.6748071979434448,
+        "success": false,
+        "price": 0.009490000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.5645644664764404,
+        "result": "{'x': 0.45, 'y': 0.38, 'width': 0.3, 'height': 0.4}"
+    },
+    "graph_understanding": {
+        "score": 0.9099999999999999,
+        "success": false,
+        "price": 0.01079,
+        "pass_fail": "Fail",
+        "response_time": 2.2845563888549805,
+        "result": "```json\n{\n  \"A\": {\n    \"quantity\": 15,\n    \"price\": 9\n  },\n  \"B\": {\n    \"quantity\": 24,\n    \"price\": 24\n  },\n  \"C\": {\n    \"quantity\": 28,\n    \"price\": 30\n  },\n  \"D\": {\n    \"quantity\": 32,\n    \"price\": 38\n  }\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0.9647058823529412,
+        "success": false,
+        "price": 0.008870000000000001,
+        "pass_fail": "Fail",
+        "response_time": 2.0181381702423096,
+        "result": "```json\n{\n  \"R\": 96,\n  \"G\": 2,\n  \"B\": 148\n}\n```"
+    },
+    "annotation_qa": {
+        "score": 0.33333333333333337,
+        "success": false,
+        "price": 0.02037,
+        "pass_fail": "Fail",
+        "response_time": 4.743301868438721,
+        "result": "To determine the number of missing annotations, I will compare the visible cars in the image with the cars that are annotated with red bounding boxes.\n\nHere, I count the following cars:\n\n1. A car on the left side of the road, partially visible behind a truck.\n2. A truck on the left side of the road, completely visible.\n3. A car further down the center-left of the road.\n4. Two more cars in the middle of the road, quite distant.\n5. Another car toward the right lane, still distant.\n6. A large white car driving on the right lane without any bounding box annotations.\n\nThere are 6 cars visible in the image, and only 5 cars are annotated with bounding boxes.\n\nThus, the number of missing annotations is 1.\n\nHere is the JSON with the missing annotation count included:\n```json\n{\n  \"missing\": 1\n}\n```"
+    },
+    "measurement": {
+        "score": 0.8571428571428572,
+        "success": false,
+        "price": 0.009819999999999999,
+        "pass_fail": "Fail",
+        "response_time": 5.64569354057312,
+        "result": "The sticker appears to be square, and using the ruler in the image, the length and width of the sticker are approximately 3 inches each.\n\nHere is the JSON representation:\n\n```json\n{\n  \"length\": 3.0,\n  \"width\": 3.0\n}\n```"
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.004790000000000001,
+        "pass_fail": "Pass",
+        "response_time": 1.2201168537139893,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.00529,
+        "pass_fail": "Pass",
+        "response_time": 0.9349045753479004,
+        "result": "charybdis indubitable"
+    }
+}
