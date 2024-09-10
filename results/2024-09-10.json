@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 1.2960209846496582,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 1.9659311771392822,
+        "result": "9"
+    },
+    "document_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.0086,
+        "pass_fail": "Fail",
+        "response_time": 2.1540112495422363,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the *Midnights* album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00876,
+        "pass_fail": "Pass",
+        "response_time": 4.184523820877075,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.007220000000000001,
+        "pass_fail": "Pass",
+        "response_time": 2.0861740112304688,
+        "result": "[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.015290000000000002,
+        "pass_fail": "Pass",
+        "response_time": 2.110809087753296,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.6374704091985116,
+        "success": false,
+        "price": 0.009490000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.17569899559021,
+        "result": "{'x': 0.43, 'y': 0.43, 'width': 0.35, 'height': 0.29}"
+    },
+    "graph_understanding": {
+        "score": 0.875,
+        "success": false,
+        "price": 0.01079,
+        "pass_fail": "Fail",
+        "response_time": 3.8824429512023926,
+        "result": "```json\n{\n    \"A\": {\n        \"quantity\": 15,\n        \"price\": 10\n    },\n    \"B\": {\n        \"quantity\": 20,\n        \"price\": 25\n    },\n    \"C\": {\n        \"quantity\": 25,\n        \"price\": 30\n    },\n    \"D\": {\n        \"quantity\": 30,\n        \"price\": 40\n    }\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0.9660130718954248,
+        "success": false,
+        "price": 0.008870000000000001,
+        "pass_fail": "Fail",
+        "response_time": 2.100630283355713,
+        "result": "```json\n{\n  \"R\": 80,\n  \"G\": 0,\n  \"B\": 135\n}\n```"
+    },
+    "annotation_qa": {
+        "score": 0.6666666666666667,
+        "success": false,
+        "price": 0.016470000000000002,
+        "pass_fail": "Fail",
+        "response_time": 3.547192335128784,
+        "result": "Based on the image, there are 8 cars visible, but only 6 cars are labeled with red bounding boxes. Therefore, 2 cars are missing annotations.\n\nHere is the JSON output:\n\n```json\n{\n  \"missing\": 2\n}\n```"
+    },
+    "measurement": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00877,
+        "pass_fail": "Pass",
+        "response_time": 4.453649520874023,
+        "result": "```json\n{\n  \"length\": 3.5,\n  \"width\": 3.5\n}\n```"
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.004790000000000001,
+        "pass_fail": "Pass",
+        "response_time": 0.9296023845672607,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.00529,
+        "pass_fail": "Pass",
+        "response_time": 1.222564697265625,
+        "result": "charybdis indubitable"
+    }
+}
