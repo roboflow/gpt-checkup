@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 1.1689612865447998,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.008110000000000001,
+        "pass_fail": "Fail",
+        "response_time": 4.127854824066162,
+        "result": "There are 10 fruits in the image."
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.008539999999999999,
+        "pass_fail": "Pass",
+        "response_time": 3.2462494373321533,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00876,
+        "pass_fail": "Pass",
+        "response_time": 4.6669676303863525,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.007220000000000001,
+        "pass_fail": "Pass",
+        "response_time": 2.0012362003326416,
+        "result": "[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.015290000000000002,
+        "pass_fail": "Pass",
+        "response_time": 2.3425076007843018,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.4146341463414636,
+        "success": false,
+        "price": 0.009490000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.490412473678589,
+        "result": "{'x': 0.455, 'y': 0.36, 'width': 0.19, 'height': 0.42}"
+    },
+    "graph_understanding": {
+        "score": 0,
+        "success": false,
+        "price": 0.010669999999999999,
+        "pass_fail": "Fail",
+        "response_time": 3.005054235458374,
+        "result": "Failed to produce a valid JSON output: {\n  \"A\": {\n    \"quantity\": 10,\n    \"price\": 10\n  },\n  \"B\": {\n    \"quantity\": 20,\n    \"price\": 20\n  },\n  \"C\": {\n    \"quantity\": 25,\n    \"price\": 30\n  },\n  \"D\": {\n    \"quantity\": 30,\n    \"price\": 40\n  }\n}"
+    },
+    "color_recognition": {
+        "score": 0.9660130718954248,
+        "success": false,
+        "price": 0.008870000000000001,
+        "pass_fail": "Fail",
+        "response_time": 2.433725357055664,
+        "result": "```json\n{\n  \"R\": 82,\n  \"G\": 0,\n  \"B\": 137\n}\n```"
+    },
+    "annotation_qa": {
+        "score": 0.33333333333333337,
+        "success": false,
+        "price": 0.01872,
+        "pass_fail": "Fail",
+        "response_time": 4.064783811569214,
+        "result": "To determine if there are missing annotations for cars in this image, I'll identify the cars and check if they are all labeled with a red bounding box. \n\nFrom the image:\n1. There are a total of 6 cars visible in the image: \n    - Two on the left lane (partially hidden, distant)\n    - Four on the right lane, counting the near white car\n2. There is one visible white car on the right side closer to the camera that is not annotated with a bounding box.\n\nHere is the JSON response indicating the missing annotations:\n\n```json\n{\n  \"missing\": 1\n}\n```"
+    },
+    "measurement": {
+        "score": 0.8571428571428572,
+        "success": false,
+        "price": 0.00964,
+        "pass_fail": "Fail",
+        "response_time": 7.138220548629761,
+        "result": "Based on the image and the ruler, the square sticker's length and width are roughly 3.0 inches. Here is the JSON representation:\n\n```json\n{\n  \"length\": 3.0,\n  \"width\": 3.0\n}\n```"
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.004790000000000001,
+        "pass_fail": "Pass",
+        "response_time": 1.022355079650879,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.00529,
+        "pass_fail": "Pass",
+        "response_time": 0.8737120628356934,
+        "result": "charybdis indubitable"
+    }
+}
