@@ -40,7 +40,7 @@
                     <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup?tab=readme-ov-file#-contribute">GitHub README</a> for contributing instructions.</p>
                 </div>
                 <div class="header_subtitle">
-                    <p>Tests are run every day at 1am PT. Last updated September 24, 2024.</p>
+                    <p>Tests are run every day at 1am PT. Last updated September 26, 2024.</p>
                     <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
                 </div>
                 <div class="header_cta">
@@ -122,7 +122,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>7</pre>
+                                        <pre>8</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -176,7 +176,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{'x': 0.47, 'y': 0.32, 'width': 0.4, 'height': 0.5}</pre>
+                                        <pre>{'x': 0.42, 'y': 0.42, 'width': 0.22, 'height': 0.18}</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -232,22 +232,22 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "A": {
-    "quantity": 15,
-    "price": 10
-  },
-  "B": {
-    "quantity": 25,
-    "price": 20
-  },
-  "C": {
-    "quantity": 28,
-    "price": 30
-  },
-  "D": {
-    "quantity": 33,
-    "price": 40
-  }
+    "A": {
+        "quantity": 15,
+        "price": 10
+    },
+    "B": {
+        "quantity": 20,
+        "price": 20
+    },
+    "C": {
+        "quantity": 25,
+        "price": 30
+    },
+    "D": {
+        "quantity": 30,
+        "price": 40
+    }
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -305,9 +305,9 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "R": 80,
-  "G": 0,
-  "B": 128
+  "R": 82,
+  "G": 1,
+  "B": 154
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -349,7 +349,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.016</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.017</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -363,13 +363,15 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/annotationqa.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>Based on the provided image, there are no obvious missing annotations for the visible cars. Each car is enclosed within a red bounding box. 
+                                        <pre>The image contains eight cars: seven in the left lane and one white car in the right lane. However, only six of the cars in the left lane are labeled with bounding boxes. The white car in the right lane also is not labeled.
 
-Here is the JSON output indicating zero missing annotations:
+Therefore, there are two missing annotations.
+
+Here is the JSON indicating the number of missing annotations:
 
 ```json
 {
-    "missing": 0
+  "missing": 2
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -411,7 +413,7 @@ Here is the JSON output indicating zero missing annotations:
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.01</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -425,7 +427,11 @@ Here is the JSON output indicating zero missing annotations:
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/measurement.jpg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>```json
+                                        <pre>Based on the ruler provided in the image, the square sticker appears to be approximately 3 inches by 3 inches.
+
+Here is the JSON object with the dimensions:
+
+```json
 {
   "length": 3.0,
   "width": 3.0
