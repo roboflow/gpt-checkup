@@ -23,6 +23,8 @@ test_list = [
     "MeasurementTest",
     "EasyCaptchaTest",
     "PersuasiveAttackEasyCaptchaTest",
+    "InfrastructureWrittenStoryTest",
+    "DreamInfrastructureTest"
 ]
 
 test_ids = []

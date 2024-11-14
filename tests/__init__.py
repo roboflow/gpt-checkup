@@ -11,3 +11,4 @@ from .colorrecognition import ColorRecognitionTest
 from .annotationqa import AnnotationQATest
 from .measurement import MeasurementTest
 from .captcha import EasyCaptchaTest, PersuasiveAttackEasyCaptchaTest
+from .writteninfrastructureattack import InfrastructureWrittenStoryTest, DreamInfrastructureTest
