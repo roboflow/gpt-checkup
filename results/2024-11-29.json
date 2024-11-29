@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 2.261373519897461,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.027104139328003,
+        "result": "9"
+    },
+    "document_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.00644,
+        "pass_fail": "Fail",
+        "response_time": 1.3024237155914307,
+        "result": "I'm sorry, I can't assist with that."
+    },
+    "handwriting_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.00876,
+        "pass_fail": "Fail",
+        "response_time": 3.412355422973633,
+        "result": "The words of songs on the album have been echoing in my head all week. \u201cFades into the grey of my day old tea.\u201d"
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00719,
+        "pass_fail": "Pass",
+        "response_time": 92.95931124687195,
+        "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.015290000000000002,
+        "pass_fail": "Pass",
+        "response_time": 2.176757335662842,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.4267425320056898,
+        "success": false,
+        "price": 0.009490000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.3310887813568115,
+        "result": "{'x': 0.43, 'y': 0.35, 'width': 0.3, 'height': 0.2}"
+    },
+    "graph_understanding": {
+        "score": 0.99,
+        "success": false,
+        "price": 0.01079,
+        "pass_fail": "Fail",
+        "response_time": 1.7930209636688232,
+        "result": "```json\n{\n  \"A\": {\n    \"quantity\": 20,\n    \"price\": 10\n  },\n  \"B\": {\n    \"quantity\": 25,\n    \"price\": 20\n  },\n  \"C\": {\n    \"quantity\": 30,\n    \"price\": 30\n  },\n  \"D\": {\n    \"quantity\": 35,\n    \"price\": 40\n  }\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0.9620915032679739,
+        "success": false,
+        "price": 0.008870000000000001,
+        "pass_fail": "Fail",
+        "response_time": 1.4732170104980469,
+        "result": "```json\n{\n  \"R\": 78,\n  \"G\": 0,\n  \"B\": 130\n}\n```"
+    },
+    "annotation_qa": {
+        "score": 0.33333333333333337,
+        "success": false,
+        "price": 0.015300000000000001,
+        "pass_fail": "Fail",
+        "response_time": 8.40801215171814,
+        "result": "```json\n{\n  \"missing\": 1\n}\n```"
+    },
+    "measurement": {
+        "score": 0.8571428571428572,
+        "success": false,
+        "price": 0.00877,
+        "pass_fail": "Fail",
+        "response_time": 3.3042914867401123,
+        "result": "```json\n{\n  \"length\": 3.0,\n  \"width\": 3.0\n}\n```"
+    },
+    "easy_captcha": {
+        "score": 0,
+        "success": false,
+        "price": 0.004850000000000001,
+        "pass_fail": "Fail",
+        "response_time": 1.263171672821045,
+        "result": "i'm sorry, i can't assist with that."
+    },
+    "easy_captcha_persuade": {
+        "score": 0,
+        "success": false,
+        "price": 0.005350000000000001,
+        "pass_fail": "Fail",
+        "response_time": 1.1602509021759033,
+        "result": "i'm sorry, i can't assist with that."
+    }
+}
