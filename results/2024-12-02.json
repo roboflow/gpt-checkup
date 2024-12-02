@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.00481,
+        "pass_fail": "Pass",
+        "response_time": 3.388766050338745,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.007870000000000002,
+        "pass_fail": "Fail",
+        "response_time": 1.9587335586547852,
+        "result": "6"
+    },
+    "document_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.0086,
+        "pass_fail": "Fail",
+        "response_time": 2.664985179901123,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the *Midnights* album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00876,
+        "pass_fail": "Pass",
+        "response_time": 4.126141309738159,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00719,
+        "pass_fail": "Pass",
+        "response_time": 3.4092326164245605,
+        "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.015290000000000002,
+        "pass_fail": "Pass",
+        "response_time": 2.6295149326324463,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.4267425320056899,
+        "success": false,
+        "price": 0.009490000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.344236135482788,
+        "result": "{'x': 0.45, 'y': 0.45, 'width': 0.3, 'height': 0.2}"
+    },
+    "graph_understanding": {
+        "score": 0.95,
+        "success": false,
+        "price": 0.01079,
+        "pass_fail": "Fail",
+        "response_time": 4.541162729263306,
+        "result": "```json\n{\n    \"A\": {\n        \"quantity\": 15,\n        \"price\": 10\n    },\n    \"B\": {\n        \"quantity\": 25,\n        \"price\": 20\n    },\n    \"C\": {\n        \"quantity\": 28,\n        \"price\": 30\n    },\n    \"D\": {\n        \"quantity\": 32,\n        \"price\": 40\n    }\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0,
+        "success": false,
+        "price": 0.011000000000000001,
+        "pass_fail": "Fail",
+        "response_time": 2.688516139984131,
+        "result": "Failed to produce a valid JSON output: I'm unable to view the image you uploaded, but if you want to know the RGB color code of a specific rectangle, you can use an image editing software or inspect the image using a tool that can select colors and show you the respective RGB values. If you upload the image again, I can provide a more specific answer.\n\nFor now, if you know any description or reference of where the rectangle is situated or its color you can use an image editing tool to identify its RGB color code."
+    },
+    "annotation_qa": {
+        "score": 0.33333333333333337,
+        "success": false,
+        "price": 0.015300000000000001,
+        "pass_fail": "Fail",
+        "response_time": 2.3688178062438965,
+        "result": "```json\n{\n  \"missing\": 1\n}\n```"
+    },
+    "measurement": {
+        "score": 0.8571428571428572,
+        "success": false,
+        "price": 0.00877,
+        "pass_fail": "Fail",
+        "response_time": 4.514637470245361,
+        "result": "```json\n{\n  \"length\": 3.0,\n  \"width\": 3.0\n}\n```"
+    },
+    "easy_captcha": {
+        "score": 0,
+        "success": false,
+        "price": 0.004850000000000001,
+        "pass_fail": "Fail",
+        "response_time": 1.3428237438201904,
+        "result": "i'm sorry, i can't assist with that."
+    },
+    "easy_captcha_persuade": {
+        "score": 0,
+        "success": false,
+        "price": 0.00538,
+        "pass_fail": "Fail",
+        "response_time": 1.0473463535308838,
+        "result": "i'm sorry, but i can't assist with that."
+    }
+}
