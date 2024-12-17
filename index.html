@@ -40,7 +40,7 @@
                     <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup?tab=readme-ov-file#-contribute">GitHub README</a> for contributing instructions.</p>
                 </div>
                 <div class="header_subtitle">
-                    <p>Tests are run every day at 1am PT. Last updated December 16, 2024.</p>
+                    <p>Tests are run every day at 1am PT. Last updated December 17, 2024.</p>
                     <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
                 </div>
                 <div class="header_cta">
@@ -181,61 +181,7 @@
                                     </div>
                                 </div>
                             </div>
-                                  
-                            <div class="feature_card">
-                                <div class="feature_header">
-                                    <div class="feature_header_text">
-                                        <h2>Math OCR</h2>
-                                        <p>Can GPT-4V recognize math equations?</p>
-                                    </div>
-                                    <div class="chart">
-                                        <div class="chart_box chart_box_red">
-                                            <p>Fail</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="result_summary">
-                                    <div class="summary_row">
-                                        <b class="summary_title">Last 7-Day Performance</b>
-                                        <div class="summary_squares">
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                            <div class="summary_square summary_square_green"></div>
-                                            
-                                        </div>
-                                    </div>
-                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.015</p>
-                                </div>
-                                <div class="explainer_dropdown">
-                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
-                                    <div class="explainer">
-                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We provide a image of a math equation and ask it to provide a LaTeX string of the equation. This is scored using the Levenshtein ratio between the output and the correct answer, which is based on the number of edits necessary to achieve the correct answer.</pre>
-                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
-                                        <pre class="prompt">
-                                            Produce a JSON array with a LaTeX string of each equation in the image.
-                                        </pre>
-                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
-                                        <img class="test_image" src="images/math.jpeg" alt="Image of the input into GPT-4" />
-                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>3x^{2}-6x+2</pre>
-                                        <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                              
+                                    
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
@@ -284,7 +230,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{'x': 0.4, 'y': 0.35, 'width': 0.3, 'height': 0.5}</pre>
+                                        <pre>{'x': 0.5, 'y': 0.4, 'width': 0.25, 'height': 0.4}</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -401,7 +347,7 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "R": 80,
+  "R": 82,
   "G": 0,
   "B": 128
 }
@@ -445,7 +391,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.017</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.018</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -459,16 +405,19 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/annotationqa.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>Looking at the image:
+                                        <pre>To determine if there are missing annotations, let's review the annotated cars in the image.
 
-- There appear to be cars present that are **not labeled with red bounding boxes** (e.g., a car to the far right and possibly some further down in the lane).
-- A thorough analysis suggests **some missing annotations** for the cars.
+Cars visible in the scene:
+1. Directly in the foreground on the right (white car) - **not annotated**.
+2. Several cars on the road ahead - annotated with red bounding boxes.
 
-Here’s the JSON to represent the missing annotations:
+There is **one missing annotation** for the car on the right.
+
+Here is the JSON response:
 
 ```json
 {
-  "missing": 2
+  "missing": 1
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -524,7 +473,7 @@ Here’s the JSON to represent the missing annotations:
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/measurement.jpg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>Based on the ruler in the image, the sticker appears to have a length and width of approximately 3 inches.
+                                        <pre>Based on the ruler and the grid alignment, the square sticker's approximate dimensions are:
 
 ```json
 {
@@ -702,12 +651,66 @@ Here’s the JSON to represent the missing annotations:
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/prescription.png" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]</pre>
+                                        <pre>[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
                             </div>
-                                          
+                              
+                            <div class="feature_card">
+                                <div class="feature_header">
+                                    <div class="feature_header_text">
+                                        <h2>Math OCR</h2>
+                                        <p>Can GPT-4V recognize math equations?</p>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="chart_box chart_box_green">
+                                            <p>Pass</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="result_summary">
+                                    <div class="summary_row">
+                                        <b class="summary_title">Last 7-Day Performance</b>
+                                        <div class="summary_squares">
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                            <div class="summary_square summary_square_green"></div>
+                                            
+                                        </div>
+                                    </div>
+                                    <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.015</p>
+                                </div>
+                                <div class="explainer_dropdown">
+                                    <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
+                                    <div class="explainer">
+                                        <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
+                                        <pre class="test_method">We provide a image of a math equation and ask it to provide a LaTeX string of the equation. This is scored using the Levenshtein ratio between the output and the correct answer, which is based on the number of edits necessary to achieve the correct answer.</pre>
+                                        <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
+                                        <pre class="prompt">
+                                            Produce a JSON array with a LaTeX string of each equation in the image.
+                                        </pre>
+                                        <h3><span class="explainer_icon far fa-image"></span>Image</h3>
+                                        <img class="test_image" src="images/math.jpeg" alt="Image of the input into GPT-4" />
+                                        <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
+                                        <pre>3x^2-6x+2</pre>
+                                        <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                                        
                             <div class="feature_card">
                                 <div class="feature_header">
                                     <div class="feature_header_text">
