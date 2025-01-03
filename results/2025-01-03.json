@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.006400000000000001,
+        "pass_fail": "Pass",
+        "response_time": 1.4460384845733643,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.00882,
+        "pass_fail": "Fail",
+        "response_time": 2.235980749130249,
+        "result": "9"
+    },
+    "document_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.00988,
+        "pass_fail": "Fail",
+        "response_time": 2.853693962097168,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the *Midnights* album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.00974,
+        "pass_fail": "Pass",
+        "response_time": 6.7848286628723145,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day old tea.\""
+    },
+    "extraction_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.00876,
+        "pass_fail": "Pass",
+        "response_time": 2.899994134902954,
+        "result": "[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]"
+    },
+    "math_ocr": {
+        "score": 1.0,
+        "success": true,
+        "price": 0.015070000000000002,
+        "pass_fail": "Pass",
+        "response_time": 3.1404573917388916,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": 0.5832320777642773,
+        "success": false,
+        "price": 0.01044,
+        "pass_fail": "Fail",
+        "response_time": 2.9876410961151123,
+        "result": "{'x': 0.5, 'y': 0.35, 'width': 0.3, 'height': 0.4}"
+    },
+    "graph_understanding": {
+        "score": 0.99,
+        "success": false,
+        "price": 0.01174,
+        "pass_fail": "Fail",
+        "response_time": 2.453197956085205,
+        "result": "```json\n{\n  \"A\": {\n    \"quantity\": 20,\n    \"price\": 10\n  },\n  \"B\": {\n    \"quantity\": 25,\n    \"price\": 20\n  },\n  \"C\": {\n    \"quantity\": 30,\n    \"price\": 30\n  },\n  \"D\": {\n    \"quantity\": 35,\n    \"price\": 40\n  }\n}\n```"
+    },
+    "color_recognition": {
+        "score": 0.9568627450980393,
+        "success": false,
+        "price": 0.009850000000000001,
+        "pass_fail": "Fail",
+        "response_time": 2.9519052505493164,
+        "result": "```json\n{\n  \"R\": 80,\n  \"G\": 0,\n  \"B\": 128\n}\n```"
+    },
+    "annotation_qa": {
+        "score": 0.0,
+        "success": false,
+        "price": 0.016220000000000002,
+        "pass_fail": "Fail",
+        "response_time": 2.827929735183716,
+        "result": "Based on this image, all cars visible have been annotated with red bounding boxes, and no cars outside the bounding boxes appear to be unannotated. Thus, there are no missing annotations.\n\n```json\n{\n  \"missing\": 0\n}\n```"
+    },
+    "measurement": {
+        "score": 0.8571428571428572,
+        "success": false,
+        "price": 0.01026,
+        "pass_fail": "Fail",
+        "response_time": 3.4438982009887695,
+        "result": "Based on the ruler, the square sticker measures approximately 3 inches by 3 inches.\n\n```json\n{\n  \"length\": 3.0,\n  \"width\": 3.0\n}\n```"
+    },
+    "easy_captcha": {
+        "score": 1,
+        "success": true,
+        "price": 0.00636,
+        "pass_fail": "Pass",
+        "response_time": 1.3707726001739502,
+        "result": "charybdis indubitable"
+    },
+    "easy_captcha_persuade": {
+        "score": 1,
+        "success": true,
+        "price": 0.006860000000000001,
+        "pass_fail": "Pass",
+        "response_time": 1.3486614227294922,
+        "result": "charybdis indubitable"
+    }
+}
