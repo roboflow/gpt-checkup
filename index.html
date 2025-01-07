@@ -40,7 +40,7 @@
                     <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup?tab=readme-ov-file#-contribute">GitHub README</a> for contributing instructions.</p>
                 </div>
                 <div class="header_subtitle">
-                    <p>Tests are run every day at 1am PT. Last updated January 06, 2025.</p>
+                    <p>Tests are run every day at 1am PT. Last updated January 07, 2025.</p>
                     <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
                 </div>
                 <div class="header_cta">
@@ -162,7 +162,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>86.0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.01</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -216,7 +216,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.011</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -230,7 +230,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{'x': 0.5, 'y': 0.4, 'width': 0.25, 'height': 0.3}</pre>
+                                        <pre>{'x': 0.5, 'y': 0.35, 'width': 0.4, 'height': 0.25}</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -287,19 +287,19 @@
                                         <pre>```json
 {
   "A": {
-    "quantity": 20,
+    "quantity": 15,
     "price": 10
   },
   "B": {
-    "quantity": 25,
+    "quantity": 20,
     "price": 20
   },
   "C": {
-    "quantity": 30,
+    "quantity": 25,
     "price": 30
   },
   "D": {
-    "quantity": 35,
+    "quantity": 30,
     "price": 40
   }
 }
@@ -359,8 +359,8 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "R": 80,
-  "G": 0,
+  "R": 82,
+  "G": 4,
   "B": 128
 }
 ```</pre>
@@ -417,11 +417,13 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/annotationqa.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>There appears to be one car, on the far right side of the image (white car) that is unannotated. Therefore, the number of missing annotations is 1.
+                                        <pre>Based on the image provided, all visible cars appear to be annotated with red bounding boxes. There don't seem to be any missing annotations for cars in this particular image. 
+
+Here is the JSON response:
 
 ```json
 {
-  "missing": 1
+  "missing": 0
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -477,7 +479,9 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/measurement.jpg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>Based on the ruler in the image, the square sticker's dimensions appear to be approximately **3 inches by 3 inches**. Here's the JSON representation:
+                                        <pre>Based on the ruler in the image, the sticker's dimensions are approximately 3 inches in both length and width.
+
+Here is the JSON:
 
 ```json
 {
@@ -655,7 +659,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/prescription.png" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>[{'name': 'Mary Thomas', 'time_per_day': 1, 'medication': 'Atenolol', 'dosage': 100, 'rx_number': '1234567-12345'}]</pre>
+                                        <pre>[{'name': 'MARY THOMAS', 'time_per_day': 1, 'medication': 'ATENOLOL', 'dosage': 100, 'rx_number': '1234567-12345'}]</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
