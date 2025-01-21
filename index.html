@@ -40,7 +40,7 @@
                     <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup?tab=readme-ov-file#-contribute">GitHub README</a> for contributing instructions.</p>
                 </div>
                 <div class="header_subtitle">
-                    <p>Tests are run every day at 1am PT. Last updated January 20, 2025.</p>
+                    <p>Tests are run every day at 1am PT. Last updated January 21, 2025.</p>
                     <p>Made with ❤️ by the team at <a href="https://roboflow.com">Roboflow</a>.</p>
                 </div>
                 <div class="header_cta">
@@ -58,12 +58,12 @@
                         <div class="feature_header" style="min-height: auto">
                             <div class="feature_header_text" style="gap: var(--spacing-sizing-4)">
                                 <h2>Response Time</h2>
-                                <p style="font-size: 16px; color: var(--gray-700)">Today, the average response time to receive results from our tests was <b>3.75 seconds</b> per request.</p>
+                                <p style="font-size: 16px; color: var(--gray-700)">Today, the average response time to receive results from our tests was <b>3.74 seconds</b> per request.</p>
                                 <p class="subtitle">This number only accounts for requests made by this application.</p>
                             </div>
                             <div class="chart">
                                 <div class="chart_box chart_box_green">
-                                    <p>3.75 s</p>
+                                    <p>3.74 s</p>
                                 </div>
                             </div>
                         </div>
@@ -230,7 +230,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/fruit.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>{'x': 0.3, 'y': 0.4, 'width': 0.2, 'height': 0.3}</pre>
+                                        <pre>{'x': 0.5, 'y': 0.4, 'width': 0.3, 'height': 0.2}</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -359,9 +359,9 @@
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
                                         <pre>```json
 {
-  "R": 76,
+  "R": 82,
   "G": 0,
-  "B": 153
+  "B": 144
 }
 ```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
@@ -417,13 +417,15 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/annotationqa.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>```json
-{
-  "missing": 0
-}
-``` 
+                                        <pre>Based on the given image, there is one car visible in the foreground on the right side which is not annotated with a red bounding box. All other visible cars in the image appear to be labeled correctly.
 
-Based on the visible cars in the image, there are appropriate bounding box annotations for each. No missing annotations are identified.</pre>
+Here's the JSON response:
+
+```json
+{
+  "missing": 1
+}
+```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -536,7 +538,7 @@ Based on the visible cars in the image, there are appropriate bounding box annot
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/easy_captcha.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>```charybdis indubitable```</pre>
+                                        <pre>```charybdis in-dubitable```</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://charlesfrye.github.io/" target="_blank">Charles Frye</a></p>
                                     </div>
                                 </div>
@@ -639,7 +641,7 @@ Based on the visible cars in the image, there are appropriate bounding box annot
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>57.0%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.009</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.01</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
