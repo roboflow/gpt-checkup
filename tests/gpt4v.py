@@ -47,7 +47,7 @@ class GPT4V(DetectionBaseModel):
         start_time = time.time()
 
         response = self.client.chat.completions.create(
-            model="o1",
+            model="o3-mini",
             messages=payload,
             max_tokens=300,
         )
