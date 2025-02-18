@@ -8,7 +8,7 @@ import re
 class HandwritingOCRTest:
     name = "Handwriting OCR"
     id = "handwriting_ocr"
-    question = "Can GPT-4V read handwriting?"
+    question = "Can GPT read handwriting?"
     prompt = "Read the text in the image. Return only the text, with punctuation."
     image = "images/ocr.jpeg"
     method = "We send a image of a handwritten note to determine if it can correctly read the text. If it correctly gets the text, it gets a 100%. Otherwise, it gets a 0%."
