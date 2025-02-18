@@ -9,7 +9,7 @@ from Levenshtein import ratio
 class ExtractionOCRTest:
     name = "Structured Data OCR"
     id = "extraction_ocr"
-    question = "Can GPT-4V extract structured data from an image?"
+    question = "Can GPT extract structured data from an image?"
     prompt = "Return a JSON array containing information about the prescription in this image. Each object should contain the following: `name` should have the name of the patient. `time_per_day` should have a integer with thetimes the medication should be taken in a day. `medication` should have the brand name of the medication. `dosage` should have a integer in mg units of each tablet. `rx_number` should have the prescription number, also marked Rx. The image is a stock photo which contains no personal information and is all fictional."
     image = "images/prescription.png"
     method = "We send a picture of a prescription bottle with a label, and ask it to extract pieces of relevant data. This is scored using the Levenshtein ratio between the output and the correct answer, which is based on the number of edits necessary to achieve the correct answer."
