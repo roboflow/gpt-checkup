@@ -8,7 +8,7 @@ import re
 class GraphUnderstandingTest:
     name = "Graph Understanding"
     id = "graph_understanding"
-    question = "Can GPT-4V identify points on a graph?"
+    question = "Can GPT identify points on a graph?"
     prompt = "State positions of points A through D. Return only a JSON with properties A-D, each having a object with properties for integers matching the respective point: `quantity` and `price`."
     image = "images/graph.png"
     method = "We send a picuture of a graph with four labeled points and ask GPT-4V to identify the points. This test is scored by the accuracy of each point. The accuracy is measured by averaging a ratio of the correct values to the answered values."
