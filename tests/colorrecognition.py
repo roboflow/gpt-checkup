@@ -8,10 +8,10 @@ import re
 class ColorRecognitionTest:
     name = "Color Recognition"
     id = "color_recognition"
-    question = "Can GPT-4V identify colors accurately?"
+    question = "Can GPT identify colors accurately?"
     prompt = "Guess the RGB color code of the rectangle and return only the result in JSON. The JSON should have three integer properties: 'R', 'G' and 'B'"
     image = "images/color.png"
-    method = "We provide GPT-4V with an image with multiple shapes with differing colors. We ask it to identify the color of a particular shape in RGB color codes."
+    method = "We provide GPT with an image with multiple shapes with differing colors. We ask it to identify the color of a particular shape in RGB color codes."
 
     @staticmethod
     def test():
