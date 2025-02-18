@@ -10,7 +10,7 @@ import numpy as np
 class ZeroShotClassificationTest:
     name = "Zero Shot Classification"
     id = "zero_shot_classification"
-    question = "Can GPT-4V classify an image without being trained on that particular use case?"
+    question = "Can GPT classify an image without being trained on that particular use case?"
     prompt = "What is in the image? Return the class of the object in the image. Here are the classes: Toyota Camry, Tesla Model 3. You can only return one class from that list."
     image = "images/car.jpeg"
     method = "We check to see if the model can correctly identify the vehicle. If it can, it recieves a 100%, if it is incorrect, it recieves a 0%."
