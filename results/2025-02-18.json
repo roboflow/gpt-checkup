@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.01012,
+        "pass_fail": "Pass",
+        "response_time": 7.91301417350769,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.01545,
+        "pass_fail": "Fail",
+        "response_time": 7.513458013534546,
+        "result": ""
+    },
+    "document_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.014110000000000001,
+        "pass_fail": "Fail",
+        "response_time": 7.892536878585815,
+        "result": ""
+    },
+    "handwriting_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.015529999999999999,
+        "pass_fail": "Fail",
+        "response_time": 14.240297794342041,
+        "result": ""
+    },
+    "extraction_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.013649999999999999,
+        "pass_fail": "Fail",
+        "response_time": 8.748279809951782,
+        "result": "Failed to produce a valid JSON output: "
+    },
+    "math_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.02113,
+        "pass_fail": "Fail",
+        "response_time": 10.790403842926025,
+        "result": "Failed to produce a valid JSON output: "
+    },
+    "object_detection": {
+        "score": 0,
+        "success": false,
+        "price": 0.01584,
+        "pass_fail": "Fail",
+        "response_time": 8.856217861175537,
+        "result": "Failed to produce a valid JSON output: "
+    },
+    "graph_understanding": {
+        "score": 0,
+        "success": false,
+        "price": 0.0157,
+        "pass_fail": "Fail",
+        "response_time": 7.818918943405151,
+        "result": "Failed to produce a valid JSON output: "
+    },
+    "color_recognition": {
+        "score": 0,
+        "success": false,
+        "price": 0.0157,
+        "pass_fail": "Fail",
+        "response_time": 7.746157884597778,
+        "result": "Failed to produce a valid JSON output: "
+    },
+    "annotation_qa": {
+        "score": 0,
+        "success": false,
+        "price": 0.02135,
+        "pass_fail": "Fail",
+        "response_time": 10.068699598312378,
+        "result": "Failed to produce a valid JSON output: "
+    },
+    "measurement": {
+        "score": 0,
+        "success": false,
+        "price": 0.01566,
+        "pass_fail": "Fail",
+        "response_time": 12.310278415679932,
+        "result": "Failed to produce a valid JSON output: "
+    },
+    "easy_captcha": {
+        "score": 0,
+        "success": false,
+        "price": 0.01281,
+        "pass_fail": "Fail",
+        "response_time": 9.946568250656128,
+        "result": ""
+    },
+    "easy_captcha_persuade": {
+        "score": 0,
+        "success": false,
+        "price": 0.013309999999999999,
+        "pass_fail": "Fail",
+        "response_time": 6.465410947799683,
+        "result": ""
+    }
+}
