@@ -2,9 +2,9 @@
     "zero_shot_classification": {
         "score": 1,
         "success": true,
-        "price": 0.01012,
+        "price": 0.006280000000000001,
         "pass_fail": "Pass",
-        "response_time": 7.91301417350769,
+        "response_time": 5.425879001617432,
         "result": "Toyota Camry"
     },
     "count_fruit": {
@@ -12,7 +12,7 @@
         "success": false,
         "price": 0.01545,
         "pass_fail": "Fail",
-        "response_time": 7.513458013534546,
+        "response_time": 6.601654291152954,
         "result": ""
     },
     "document_ocr": {
@@ -20,7 +20,7 @@
         "success": false,
         "price": 0.014110000000000001,
         "pass_fail": "Fail",
-        "response_time": 7.892536878585815,
+        "response_time": 6.898264408111572,
         "result": ""
     },
     "handwriting_ocr": {
@@ -28,23 +28,23 @@
         "success": false,
         "price": 0.015529999999999999,
         "pass_fail": "Fail",
-        "response_time": 14.240297794342041,
+        "response_time": 12.941861629486084,
         "result": ""
     },
     "extraction_ocr": {
         "score": 0,
         "success": false,
-        "price": 0.013649999999999999,
+        "price": 0.01239,
         "pass_fail": "Fail",
-        "response_time": 8.748279809951782,
-        "result": "Failed to produce a valid JSON output: "
+        "response_time": 8.915974855422974,
+        "result": "Failed to produce a valid JSON output: [\n  {\n    \"name\": \"Mary Thomas\",\n    \"time_per_day\": 1,\n    \"medication\": \"Atenolol\",\n    \"dosage\": 100,\n    \"rx_number\": \"1234567-12345\"\n  }\n]"
     },
     "math_ocr": {
         "score": 0,
         "success": false,
         "price": 0.02113,
         "pass_fail": "Fail",
-        "response_time": 10.790403842926025,
+        "response_time": 8.772263765335083,
         "result": "Failed to produce a valid JSON output: "
     },
     "object_detection": {
@@ -52,7 +52,7 @@
         "success": false,
         "price": 0.01584,
         "pass_fail": "Fail",
-        "response_time": 8.856217861175537,
+        "response_time": 14.87077260017395,
         "result": "Failed to produce a valid JSON output: "
     },
     "graph_understanding": {
@@ -60,7 +60,7 @@
         "success": false,
         "price": 0.0157,
         "pass_fail": "Fail",
-        "response_time": 7.818918943405151,
+        "response_time": 9.811071157455444,
         "result": "Failed to produce a valid JSON output: "
     },
     "color_recognition": {
@@ -68,7 +68,7 @@
         "success": false,
         "price": 0.0157,
         "pass_fail": "Fail",
-        "response_time": 7.746157884597778,
+        "response_time": 6.974358081817627,
         "result": "Failed to produce a valid JSON output: "
     },
     "annotation_qa": {
@@ -76,7 +76,7 @@
         "success": false,
         "price": 0.02135,
         "pass_fail": "Fail",
-        "response_time": 10.068699598312378,
+        "response_time": 11.686425685882568,
         "result": "Failed to produce a valid JSON output: "
     },
     "measurement": {
@@ -84,7 +84,7 @@
         "success": false,
         "price": 0.01566,
         "pass_fail": "Fail",
-        "response_time": 12.310278415679932,
+        "response_time": 9.014999389648438,
         "result": "Failed to produce a valid JSON output: "
     },
     "easy_captcha": {
@@ -92,15 +92,15 @@
         "success": false,
         "price": 0.01281,
         "pass_fail": "Fail",
-        "response_time": 9.946568250656128,
+        "response_time": 7.116928815841675,
         "result": ""
     },
     "easy_captcha_persuade": {
         "score": 0,
         "success": false,
-        "price": 0.013309999999999999,
+        "price": 0.012709999999999999,
         "pass_fail": "Fail",
-        "response_time": 6.465410947799683,
-        "result": ""
+        "response_time": 6.382972478866577,
+        "result": "i\u2019m sorry, but i can\u2019t comply with that."
     }
 }

@@ -3,15 +3,15 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>GPT-4o Checkup</title>
+        <title>GPT O1 Checkup</title>
 
         <link rel="icon" href="./assets/logomark.png" />
         <link rel="stylesheet" type="text/css" href="./styles.css" media="screen" />
         <link href="https://fonts.googleapis.com/css2?family=Space+Mono" rel="stylesheet" type="text/css" />
 
-        <meta name="description" content="A collection of experiments measuring the performance of GPT-4o on vision tasks over time." />
-        <meta name="og:title" content="GPT-4o Checkup" />
-        <meta name="og:description" content="A collection of experiments measuring the performance of GPT-4o on vision tasks over time." />
+        <meta name="description" content="A collection of experiments measuring the performance of GPT O1 on vision tasks over time." />
+        <meta name="og:title" content="GPT O1 Checkup" />
+        <meta name="og:description" content="A collection of experiments measuring the performance of GPT O1 on vision tasks over time." />
         <meta name="og:image" content="https://gptcheckup.com/banner.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -33,10 +33,10 @@
     <body>
         <div class="graph_paper">
             <header>
-                <h1>How's GPT-4o Doing?</h1>
+                <h1>How's GPT O1 Doing?</h1>
                 <div class="header_text">
-                    <p>This website measures how <a href="https://platform.openai.com/docs/models/gpt-4o">GPT-4o</a> performs across a range of experiments.</p>
-                    <p>We test tasks we know GPT-4o performs well at (i.e. classification) to measure regressions, as well as tasks GPT-4o struggles with (i.e. odometer OCR) to measure performance improvements and changes.</p>
+                    <p>This website measures how <a href="https://platform.openai.com/docs/models/GPT O1">GPT O1</a> performs across a range of experiments.</p>
+                    <p>We test tasks we know GPT O1 performs well at (i.e. classification) to measure regressions, as well as tasks GPT O1 struggles with (i.e. odometer OCR) to measure performance improvements and changes.</p>
                     <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup?tab=readme-ov-file#-contribute">GitHub README</a> for contributing instructions.</p>
                 </div>
                 <div class="header_subtitle">
@@ -270,7 +270,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.014</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.012</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -284,7 +284,15 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/prescription.png" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>Failed to produce a valid JSON output: </pre>
+                                        <pre>Failed to produce a valid JSON output: [
+  {
+    "name": "Mary Thomas",
+    "time_per_day": 1,
+    "medication": "Atenolol",
+    "dosage": 100,
+    "rx_number": "1234567-12345"
+  }
+]</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -716,7 +724,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/easy_captcha.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre></pre>
+                                        <pre>i’m sorry, but i can’t comply with that.</pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://charlesfrye.github.io/" target="_blank">Charles Frye</a></p>
                                     </div>
                                 </div>
@@ -765,7 +773,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.01</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.006</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -793,23 +801,23 @@
                             <p>How we built this project</p>
                         </div>
                         <div class="methodology_text">
-                            <p>Every day, we run a set of tests to evaluate how GPT-4o, a multimodal model with vision capabilities, performs over time at vision tasks. These tests are designed to monitor core features of GPT-4o.</p>
-                            <p>Each test runs the same prompt and image through GPT-4o and compares the result to a human-written result. While making this website, we experimented with prompts and chose the prompt that gave the most accurate results.</p>
+                            <p>Every day, we run a set of tests to evaluate how GPT O1, a multimodal model with vision capabilities, performs over time at vision tasks. These tests are designed to monitor core features of GPT O1.</p>
+                            <p>Each test runs the same prompt and image through GPT O1 and compares the result to a human-written result. While making this website, we experimented with prompts and chose the prompt that gave the most accurate results.</p>
                             <p>There may be other prompts that can solve a given query. With that said, we cannot test every possible prompt. This site is designed to act as a reference; different prompts may achieve better or worse results.</p>
                             <p>Tests are run at 1am PT every day. This site is updated when all tests are complete.</p>
                             <h3>Model Changes</h3>
-                            <p>From December 2023 to July 8th, 2024, this project tracked GPT-4 with Vision (GPT-4V). On July 8th, 2024, we transitioned to tracking GPT-4o, so we can track the latest multimodal model from OpenAI.</p>
+                            <p>From December 2023 to July 8th, 2024, this project tracked GPT-4 with Vision (GPT-4V). On July 8th, 2024, we transitioned to tracking GPT O1, so we can track the latest multimodal model from OpenAI.</p>
                         </div>
                     </section>
                     <section class="feature_card_wide">
                         <div class="feature_header_text">
                             <h2>Related Links</h2>
-                            <p>Want to see more interesting projects using GPT-4o and its predecessor, GPT-4 with Vision?</p>
+                            <p>Want to see more interesting projects using GPT O1 and its predecessor, GPT-4 with Vision?</p>
                         </div>
                         <div class="link_cards">
                             <a href="https://blog.roboflow.com/gpt-4o-vision-use-cases/" target="_blank" class="link_card">
-                                <img src="https://blog.roboflow.com/content/images/size/w2000/2024/05/Blog-Image-Template--75-.jpg" alt="GPT-4o: The Comprehensive Guide and Explanation" />
-                                <h3>GPT-4o: The Comprehensive Guide and Explanation</h3>
+                                <img src="https://blog.roboflow.com/content/images/size/w2000/2024/05/Blog-Image-Template--75-.jpg" alt="GPT O1: The Comprehensive Guide and Explanation" />
+                                <h3>GPT-4o Vision: The Comprehensive Guide and Explanation</h3>
                                 <p class="subtitle">Learn what GPT-4o is, how it differs from previous models, evaluate its performance, and use cases for GPT-4o.</p>
                                 <div class="tag"><i class="fad fa-star fa-xs"></i>Start Here</div>
                             </a>
@@ -818,10 +826,10 @@
                                 <h3>GPT-4 with Vision: Complete Guide and Evaluation</h3>
                                 <p class="subtitle">In this guide, we share our first impressions with the GPT-4 image input feature and vision API. We run through a series of experiments to test the functionality of GPT-4 with vision, showing where the model performs well and where it struggles.</p>
                             </a>
-                            <a href="https://blog.roboflow.com/GPT-4o-object-detection/" target="_blank" class="link_card">
-                                <img src="./images/GPT-4V Object Detection.jpg" alt="Experiments with GPT-4o for Object Detection" />
-                                <h3>Experiments with GPT-4 with Vision for Object Detection</h3>
-                                <p class="subtitle">In this guide, we show our results experimenting with GPT-4o for object detection. We also talk about why fine-tuned models are more appropriate for object detection, providing more context into the question “how will GPT impact object detection?”</p>
+                            <a href="https://blog.roboflow.com/content/images/size/w1200/format/webp/2024/10/blog-how-to-fine-tune-gpt-4o-object-detection-v3.png" target="_blank" class="link_card">
+                                <img src="./images/GPT-4V Object Detection.jpg" alt="How to Fine-Tune GPT-4o for Object Detection" />
+                                <h3>How to Fine-Tune GPT-4o for Object Detection</h3>
+                                <p class="subtitle">In this guide, we show how to fine-tune GPT-4o for object detection tasks.</p>
                             </a>
                         </div>
                     </section>
