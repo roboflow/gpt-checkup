@@ -8,10 +8,10 @@ import re
 class AnnotationQATest:
     name = "Annotation Quality Assurance"
     id = "annotation_qa"
-    question = "Can GPT-4V identify image labeling mistakes?"
+    question = "Can GPT identify image labeling mistakes?"
     prompt = "This is a sample image from a dataset with cars labeled with red bounding boxes. Are there any missing annotations? Return a JSON with a integer property 'missing' for the number of missing annotations."
     image = "images/annotationqa.jpeg"
-    method = "We provide a image from a self driving car dataset with intentionally three missing annotations. We ask GPT-4V to identify the number of missing annotations. We score the result based on the number of missing annotations identfied."
+    method = "We provide a image from a self driving car dataset with intentionally three missing annotations. We ask GPT to identify the number of missing annotations. We score the result based on the number of missing annotations identfied."
 
     @staticmethod
     def test():
