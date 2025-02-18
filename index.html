@@ -35,7 +35,7 @@
             <header>
                 <h1>How's GPT O1 Doing?</h1>
                 <div class="header_text">
-                    <p>This website measures how <a href="https://platform.openai.com/docs/models/GPT O1">GPT O1</a> performs across a range of experiments.</p>
+                    <p>This website measures how <a href="https://openai.com/o1/">GPT O1</a> performs across a range of experiments.</p>
                     <p>We test tasks we know GPT O1 performs well at (i.e. classification) to measure regressions, as well as tasks GPT O1 struggles with (i.e. odometer OCR) to measure performance improvements and changes.</p>
                     <p>You can contribute your own tests, too! See the <a href="https://github.com/roboflow/gpt-checkup?tab=readme-ov-file#-contribute">GitHub README</a> for contributing instructions.</p>
                 </div>
@@ -78,7 +78,7 @@
                                 <div class="feature_header">
                                     <div class="feature_header_text">
                                         <h2>Counting</h2>
-                                        <p>Can GPT-4V count the number of objects within an image?</p>
+                                        <p>Can GPT count the number of objects within an image?</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
@@ -132,7 +132,7 @@
                                 <div class="feature_header">
                                     <div class="feature_header_text">
                                         <h2>Document OCR</h2>
-                                        <p>Can GPT-4V read a document and return the exact characters in the text?</p>
+                                        <p>Can GPT read a document and return the exact characters in the text?</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
@@ -186,7 +186,7 @@
                                 <div class="feature_header">
                                     <div class="feature_header_text">
                                         <h2>Handwriting OCR</h2>
-                                        <p>Can GPT-4V read handwriting?</p>
+                                        <p>Can GPT read handwriting?</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
@@ -240,7 +240,7 @@
                                 <div class="feature_header">
                                     <div class="feature_header_text">
                                         <h2>Structured Data OCR</h2>
-                                        <p>Can GPT-4V extract structured data from an image?</p>
+                                        <p>Can GPT extract structured data from an image?</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
@@ -270,7 +270,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.012</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.014</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
@@ -284,15 +284,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/prescription.png" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>Failed to produce a valid JSON output: [
-  {
-    "name": "Mary Thomas",
-    "time_per_day": 1,
-    "medication": "Atenolol",
-    "dosage": 100,
-    "rx_number": "1234567-12345"
-  }
-]</pre>
+                                        <pre>Failed to produce a valid JSON output: </pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://roboflow.com" target="_blank">Roboflow</a></p>
                                     </div>
                                 </div>
@@ -302,7 +294,7 @@
                                 <div class="feature_header">
                                     <div class="feature_header_text">
                                         <h2>Math OCR</h2>
-                                        <p>Can GPT-4V recognize math equations?</p>
+                                        <p>Can GPT recognize math equations?</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
@@ -356,7 +348,7 @@
                                 <div class="feature_header">
                                     <div class="feature_header_text">
                                         <h2>Object Detection</h2>
-                                        <p>Can GPT-4V detect objects in an image?</p>
+                                        <p>Can GPT detect objects in an image?</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
@@ -392,7 +384,7 @@
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
                                         <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We provide GPT-4V with an image with a known object. We ask it to provide a normalized bounding box of the object and for scoring, we calculate the intersection over union (IOU) between the predicted bounding box and the correct bounding box.</pre>
+                                        <pre class="test_method">We provide GPT with an image with a known object. We ask it to provide a normalized bounding box of the object and for scoring, we calculate the intersection over union (IOU) between the predicted bounding box and the correct bounding box.</pre>
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
                                             If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point.
@@ -410,7 +402,7 @@
                                 <div class="feature_header">
                                     <div class="feature_header_text">
                                         <h2>Graph Understanding</h2>
-                                        <p>Can GPT-4V identify points on a graph?</p>
+                                        <p>Can GPT identify points on a graph?</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
@@ -464,7 +456,7 @@
                                 <div class="feature_header">
                                     <div class="feature_header_text">
                                         <h2>Color Recognition</h2>
-                                        <p>Can GPT-4V identify colors accurately?</p>
+                                        <p>Can GPT identify colors accurately?</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
@@ -500,7 +492,7 @@
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
                                         <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We provide GPT-4V with an image with multiple shapes with differing colors. We ask it to identify the color of a particular shape in RGB color codes.</pre>
+                                        <pre class="test_method">We provide GPT with an image with multiple shapes with differing colors. We ask it to identify the color of a particular shape in RGB color codes.</pre>
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
                                             Guess the RGB color code of the rectangle and return only the result in JSON. The JSON should have three integer properties: 'R', 'G' and 'B'
@@ -518,7 +510,7 @@
                                 <div class="feature_header">
                                     <div class="feature_header_text">
                                         <h2>Annotation Quality Assurance</h2>
-                                        <p>Can GPT-4V identify image labeling mistakes?</p>
+                                        <p>Can GPT identify image labeling mistakes?</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
@@ -554,7 +546,7 @@
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
                                     <div class="explainer">
                                         <h3><span class="explainer_icon far fa-microscope"></span>Method</h3>
-                                        <pre class="test_method">We provide a image from a self driving car dataset with intentionally three missing annotations. We ask GPT-4V to identify the number of missing annotations. We score the result based on the number of missing annotations identfied.</pre>
+                                        <pre class="test_method">We provide a image from a self driving car dataset with intentionally three missing annotations. We ask GPT to identify the number of missing annotations. We score the result based on the number of missing annotations identfied.</pre>
                                         <h3><span class="explainer_icon far fa-comment-dots"></span>Prompt</h3>
                                         <pre class="prompt">
                                             This is a sample image from a dataset with cars labeled with red bounding boxes. Are there any missing annotations? Return a JSON with a integer property 'missing' for the number of missing annotations.
@@ -626,7 +618,7 @@
                                 <div class="feature_header">
                                     <div class="feature_header_text">
                                         <h2>Easy Captcha</h2>
-                                        <p>Can GPT-4V break an easy CAPTCHA?</p>
+                                        <p>Can GPT break an easy CAPTCHA?</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_red">
@@ -724,7 +716,7 @@
                                         <h3><span class="explainer_icon far fa-image"></span>Image</h3>
                                         <img class="test_image" src="images/easy_captcha.jpeg" alt="Image of the input into GPT-4" />
                                         <h3><span class="explainer_icon far fa-sparkles"></span>Result</h3>
-                                        <pre>i’m sorry, but i can’t comply with that.</pre>
+                                        <pre></pre>
                                         <p class="subtitle" style="margin-top: 16px; text-align: center">Test submitted by <a href="https://charlesfrye.github.io/" target="_blank">Charles Frye</a></p>
                                     </div>
                                 </div>
@@ -743,7 +735,7 @@
                                 <div class="feature_header">
                                     <div class="feature_header_text">
                                         <h2>Zero Shot Classification</h2>
-                                        <p>Can GPT-4V classify an image without being trained on that particular use case?</p>
+                                        <p>Can GPT classify an image without being trained on that particular use case?</p>
                                     </div>
                                     <div class="chart">
                                         <div class="chart_box chart_box_green">
@@ -773,7 +765,7 @@
                                         </div>
                                     </div>
                                     <p class="result_text">Of the last 7 tests, conducted daily, this test has passed <b>100%</b> of the time.</p>
-                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.006</p>
+                                    <p class="request_price"><i class="far fa-coins"></i>Today's request cost $0.01</p>
                                 </div>
                                 <div class="explainer_dropdown">
                                     <button type="button" class="dropdown dropdown_learn active">Learn about this test</button>
