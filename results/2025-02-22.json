@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": 1,
+        "success": true,
+        "price": 0.008199999999999999,
+        "pass_fail": "Pass",
+        "response_time": 5.821069240570068,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": 0,
+        "success": false,
+        "price": 0.01545,
+        "pass_fail": "Fail",
+        "response_time": 4.508633136749268,
+        "result": ""
+    },
+    "document_ocr": {
+        "score": 1,
+        "success": true,
+        "price": 0.01168,
+        "pass_fail": "Pass",
+        "response_time": 6.5675108432769775,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.015529999999999999,
+        "pass_fail": "Fail",
+        "response_time": 10.870434761047363,
+        "result": ""
+    },
+    "extraction_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.013649999999999999,
+        "pass_fail": "Fail",
+        "response_time": 6.9948999881744385,
+        "result": "Failed to produce a valid JSON output: "
+    },
+    "math_ocr": {
+        "score": 0,
+        "success": false,
+        "price": 0.02113,
+        "pass_fail": "Fail",
+        "response_time": 6.231112241744995,
+        "result": "Failed to produce a valid JSON output: "
+    },
+    "object_detection": {
+        "score": 0,
+        "success": false,
+        "price": 0.01584,
+        "pass_fail": "Fail",
+        "response_time": 6.399429798126221,
+        "result": "Failed to produce a valid JSON output: "
+    },
+    "graph_understanding": {
+        "score": 0,
+        "success": false,
+        "price": 0.0157,
+        "pass_fail": "Fail",
+        "response_time": 5.807533264160156,
+        "result": "Failed to produce a valid JSON output: "
+    },
+    "color_recognition": {
+        "score": 0,
+        "success": false,
+        "price": 0.0157,
+        "pass_fail": "Fail",
+        "response_time": 5.511937379837036,
+        "result": "Failed to produce a valid JSON output: "
+    },
+    "annotation_qa": {
+        "score": 0,
+        "success": false,
+        "price": 0.02135,
+        "pass_fail": "Fail",
+        "response_time": 6.704406023025513,
+        "result": "Failed to produce a valid JSON output: "
+    },
+    "measurement": {
+        "score": 0,
+        "success": false,
+        "price": 0.01566,
+        "pass_fail": "Fail",
+        "response_time": 7.419784784317017,
+        "result": "Failed to produce a valid JSON output: "
+    },
+    "easy_captcha": {
+        "score": 0,
+        "success": false,
+        "price": 0.01281,
+        "pass_fail": "Fail",
+        "response_time": 6.176659345626831,
+        "result": ""
+    },
+    "easy_captcha_persuade": {
+        "score": 0,
+        "success": false,
+        "price": 0.013309999999999999,
+        "pass_fail": "Fail",
+        "response_time": 4.337949514389038,
+        "result": ""
+    }
+}
