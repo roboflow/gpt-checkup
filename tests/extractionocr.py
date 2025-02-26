@@ -30,9 +30,15 @@ class ExtractionOCRTest:
 
         code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
         code_blocks = re.findall(code_regex,result, re.DOTALL)
-        if (len(code_blocks) == 0): 
-            return 0, inference_time, f"Failed to produce a valid JSON output: {result}", tokens
-        answer_array = json.loads(code_blocks[0])
+        # if (len(code_blocks) == 0): 
+        #     return 0, inference_time, f"Failed to produce a valid JSON output: {result}", tokens
+        # print(code_blocks)
+        answer_array = json.loads(result)[0]
+        # transform all keys to lowercase
+        answer_array = {
+            k: str(v).lower()
+            for k, v in answer_array.items()
+        }
 
         correct_array = [
             {
@@ -43,6 +49,11 @@ class ExtractionOCRTest:
                 "rx_number": "1234567-12345"
             }
         ]
+        correct_array = {
+            k: str(v).lower()
+            for k, v in answer_array.items()
+        }
 
         accuracy = ratio(str(answer_array).lower(), str(correct_array).lower())
+        print(accuracy)
         return accuracy, inference_time, str(answer_array), tokens

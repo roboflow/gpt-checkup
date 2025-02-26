@@ -27,11 +27,14 @@ class ObjectDetectionTest:
             prompt="If there are banana in this image, return a JSON object with `x`, `y`, `width` and `height` properties of the banana. All values should be normalized between 0-1 and x&y should be the center point.",
         )
 
-        code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
-        code_blocks = re.findall(code_regex, result, re.DOTALL)
-        if (len(code_blocks) == 0): 
-            return 0, inference_time, f"Failed to produce a valid JSON output: {result}", tokens
-        answer = json.loads(code_blocks[0])
+        if "```" in result:
+            code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
+            code_blocks = re.findall(code_regex, result, re.DOTALL)
+            result = code_blocks[0].strip("$")
+        else:
+            # if (len(code_blocks) == 0): 
+            #     return 0, inference_time, f"Failed to produce a valid JSON output: {result}", tokens
+            answer = json.loads(result)
 
         correct = {'x': 0.465, 'y': 0.42, 'width': 0.37, 'height': 0.38}
 

@@ -45,15 +45,17 @@ for i in test_list:
     price = (input_token_price * tokens[0]) + (output_token_price * tokens[1])
     score = (1 if score is True else (0 if score is False else score))
 
+    # print(score)
+
     current_results[test_id] = {}
-    current_results[test_id]["score"] = score
-    current_results[test_id]["success"] = score == 1
+    current_results[test_id]["score"] = bool(score)
+    current_results[test_id]["success"] = bool(score == 1)
     current_results[test_id]["price"] = price
     current_results[test_id]["pass_fail"] = "Pass" if score == 1 else "Fail"
     current_results[test_id]["response_time"] = response_time
     current_results[test_id]["result"] = result
 
-print("current_results", current_results)
+# print("current_results", current_results)
 
 # save as today in 2023-01-01 format
 # make results dir
@@ -101,7 +103,7 @@ for file in os.listdir("results"):
         data = json.load(f)
 
         for key, value in data.items():
-            print(key, value)
+            # print(key, value)
             if results.get(key) is None: continue
             results[key]["history"]["scores"].append(value["score"])
             results[key]["history"]["response_times"].append(value["response_time"])
@@ -131,15 +133,15 @@ response_times = []
 for i in test_ids:
     response_times.append(results[i]["average"]["response_time"])
 
-print("response_times", response_times, test_ids)
+# print("response_times", response_times, test_ids)
 info = {}
 info["average_time"] = round(mean(response_times), 2)
 info["day_count"] = len(response_times)
 
-print("- - - - -")
-print(json.dumps(results, indent=4))
-print("- - - - -")
-print(json.dumps(current_results, indent=4))
+# print("- - - - -")
+# print(json.dumps(results, indent=4))
+# print("- - - - -")
+# print(json.dumps(current_results, indent=4))
 
 template = jinja2.Template(open("template.html").read())
 

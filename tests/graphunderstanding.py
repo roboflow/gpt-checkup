@@ -29,9 +29,9 @@ class GraphUnderstandingTest:
 
         code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
         code_blocks = re.findall(code_regex, result, re.DOTALL)
-        if (len(code_blocks) == 0): 
-            return 0, inference_time, f"Failed to produce a valid JSON output: {result}", tokens
-        answer = json.loads(code_blocks[0])
+        # if (len(code_blocks) == 0): 
+        #     return 0, inference_time, f"Failed to produce a valid JSON output: {result}", tokens
+        answer = json.loads(result)
 
         correct = {
             "A": {

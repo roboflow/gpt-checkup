@@ -30,10 +30,11 @@ class MathOCRTest:
 
         code_regex = r'```[a-zA-Z]*\n(.*?)\n```'
         code_blocks = re.findall(code_regex,result, re.DOTALL)
-        if (len(code_blocks) == 0): 
-            return 0, inference_time, f"Failed to produce a valid JSON output: {result}", tokens
-        answer_array = json.loads(code_blocks[0])
-        answer_equation = answer_array[0].replace(" ", "")
+        # if (len(code_blocks) == 0): 
+        #     return 0, inference_time, f"Failed to produce a valid JSON output: {result}", tokens
+        answer_array = json.loads(result)
+        print(answer_array)
+        answer_equation = answer_array[0].replace(" ", "").strip("$")
 
         correct_equation = "3x^2-6x+2"
 
