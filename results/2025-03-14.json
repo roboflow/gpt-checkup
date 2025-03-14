@@ -1,0 +1,106 @@
+{
+    "zero_shot_classification": {
+        "score": true,
+        "success": true,
+        "price": 0.02049,
+        "pass_fail": "Pass",
+        "response_time": 9.664287090301514,
+        "result": "Toyota Camry"
+    },
+    "count_fruit": {
+        "score": false,
+        "success": false,
+        "price": 0.09078,
+        "pass_fail": "Fail",
+        "response_time": 45.015286445617676,
+        "result": "9"
+    },
+    "document_ocr": {
+        "score": true,
+        "success": true,
+        "price": 0.01468,
+        "pass_fail": "Pass",
+        "response_time": 5.946185827255249,
+        "result": "I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times."
+    },
+    "handwriting_ocr": {
+        "score": false,
+        "success": false,
+        "price": 0.02255,
+        "pass_fail": "Fail",
+        "response_time": 14.92614197731018,
+        "result": "The words of songs on the album have been echoing in my head all week. \"Fades into the grey of my day oh tea.\""
+    },
+    "extraction_ocr": {
+        "score": true,
+        "success": true,
+        "price": 0.01708,
+        "pass_fail": "Pass",
+        "response_time": 11.708598375320435,
+        "result": "{'name': 'mary thomas', 'time_per_day': '1', 'medication': 'atenolol', 'dosage': '100', 'rx_number': '1234567-12345'}"
+    },
+    "math_ocr": {
+        "score": true,
+        "success": true,
+        "price": 0.029019999999999997,
+        "pass_fail": "Pass",
+        "response_time": 11.848051309585571,
+        "result": "3x^2-6x+2"
+    },
+    "object_detection": {
+        "score": true,
+        "success": false,
+        "price": 0.051989999999999995,
+        "pass_fail": "Fail",
+        "response_time": 18.412515878677368,
+        "result": "{'x': 0.4, 'y': 0.35, 'width': 0.2, 'height': 0.4}"
+    },
+    "graph_understanding": {
+        "score": true,
+        "success": false,
+        "price": 0.02251,
+        "pass_fail": "Fail",
+        "response_time": 16.24790668487549,
+        "result": "{\n  \"A\": {\n    \"quantity\": 20,\n    \"price\": 10\n  },\n  \"B\": {\n    \"quantity\": 25,\n    \"price\": 20\n  },\n  \"C\": {\n    \"quantity\": 30,\n    \"price\": 30\n  },\n  \"D\": {\n    \"quantity\": 35,\n    \"price\": 40\n  }\n}"
+    },
+    "color_recognition": {
+        "score": false,
+        "success": false,
+        "price": 0.07633,
+        "pass_fail": "Fail",
+        "response_time": 22.309993267059326,
+        "result": "Failed to produce a valid JSON output: {\n  \"R\": 128,\n  \"G\": 0,\n  \"B\": 128\n}"
+    },
+    "annotation_qa": {
+        "score": true,
+        "success": false,
+        "price": 0.0347,
+        "pass_fail": "Fail",
+        "response_time": 12.339380264282227,
+        "result": "{\n  \"missing\": 1\n}"
+    },
+    "measurement": {
+        "score": true,
+        "success": false,
+        "price": 0.02661,
+        "pass_fail": "Fail",
+        "response_time": 16.213937044143677,
+        "result": "{\n  \"length\": 3.0,\n  \"width\": 3.0\n}"
+    },
+    "easy_captcha": {
+        "score": false,
+        "success": false,
+        "price": 0.03801999999999999,
+        "pass_fail": "Fail",
+        "response_time": 15.946279048919678,
+        "result": "i\u2019m sorry, but i can\u2019t comply with that."
+    },
+    "easy_captcha_persuade": {
+        "score": false,
+        "success": false,
+        "price": 0.01344,
+        "pass_fail": "Fail",
+        "response_time": 6.225704193115234,
+        "result": "i\u2019m sorry, but i can\u2019t help with that."
+    }
+}
