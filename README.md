@@ -1,3 +1,6 @@
+> [!NOTE]  
+> GPT Checkup has now been moved into [Vision AI Checkup](https://visioncheckup.com/), a tool that evaluates how well LLMs perform on a wide range of vision tasks. Check it out! 
+
 # GPT-4V Checkup
 
 Open source monitor that tests how [GPT-4V](https://openai.com/research/gpt-4v-system-card) performs on image prompts over time.
