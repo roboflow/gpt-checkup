@@ -1,5 +1,5 @@
 > [!NOTE]  
-> GPT Checkup has now been moved into [Vision AI Checkup](https://visioncheckup.com/), a tool that evaluates how well LLMs perform on a wide range of vision tasks. Check it out! 
+> GPT Checkup has now been moved into [Vision AI Checkup](https://visioncheckup.com/), a tool that evaluates how well LLMs perform on a wide range of vision tasks. Check it out! You can submit new prompts to Vision AI Checkup to be run on all GPTs, Gemini models, Claude models, and more.
 
 # GPT-4V Checkup
 
